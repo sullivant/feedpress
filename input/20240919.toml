@@ -1,0 +1,71 @@
+[[content]]
+source = "Recent content in Posts on Sullivan Scientific."
+link = "https://www.sullivanscientific.com/2023/03/bookmarks-with-shaarli/"
+pub_date = "Mon, 06 Mar 2023 08:05:28 -0500"
+title = "Bookmarks With Shaarli"
+bib_key = "harry"
+content = "Shaarli - Managing bookmarks in a minimalist way TLDR; Here&rsquo;s a link: https://github.com/shaarli/Shaarli Here&rsquo;s a link to the demo site they host: https://demo.shaarli.org Being someone with ADHD, I have found few things more frustrating than figuring out where I tossed that article I want to review later, or bookmark for a system. Rarely do I log in to a browser - never on my work machines, and never on my phone."
+
+[[content]]
+source = "Recent content in Posts on Sullivan Scientific."
+link = "https://www.sullivanscientific.com/2023/02/emulation/"
+pub_date = "Wed, 22 Feb 2023 09:00:47 -0500"
+title = "Emulation"
+bib_key = "harry"
+content = "I like emulators&hellip; As many folks who like tech, I enjoy emulators. Most recently, I am working on one that does its best to emulate the Intel 8080 chip, mostly because I came across a Space Invaders ROM and wanted to play that. The choice to tinker with these things was also because I wanted/needed an &ldquo;excuse&rdquo; to write some &ldquo;real-world&rdquo; Rust code for a project. In my day-to-day life I write a lot of Java, big-data stuff, and other crap."
+
+[[content]]
+source = "Recent content in Posts on Sullivan Scientific."
+link = "https://www.sullivanscientific.com/2023/02/finding-a-good-theme/"
+pub_date = "Wed, 22 Feb 2023 08:16:12 -0500"
+title = "Finding a Good Theme"
+bib_key = "harry"
+content = "Let&rsquo;s talk themes&hellip; A long while ago, like &ldquo;last century,&rdquo; I had a few sites that I had self hosted. Often I would model the site after whatever it was I was visiting on a regular basis those days. At one point it was, probably, fark or something similar. Just lists of content I felt was interesting. Though, my favorite, was probably my love of perl-monks and the game of perl-golf."
+
+[[content]]
+source = "Recent content in Posts on Sullivan Scientific."
+link = "https://www.sullivanscientific.com/2023/02/hello-world/"
+pub_date = "Tue, 21 Feb 2023 18:31:38 -0500"
+title = "Hello World"
+bib_key = "harry"
+content = "Just like the old days This is just an initial post. A hello world of sorts. Hoping the tutorials work."
+
+[[content]]
+source = "BBC News - World"
+link = "https://www.bbc.com/news/articles/c04p7q3k4k9o"
+pub_date = "Thu, 19 Sep 2024 19:12:31 GMT"
+title = "Surgeon 'became robotic' to treat sheer volume of wounded Lebanese"
+bib_key = "harry"
+content = "Elias Jaradeh worked for almost 24 hours on the wounded, many of whom lost eyes or the use of their hands."
+
+[[content]]
+source = "BBC News - World"
+link = "https://www.bbc.com/news/articles/c30ln80z4deo"
+pub_date = "Thu, 19 Sep 2024 18:09:27 GMT"
+title = "Storm Boris batters Italy after wreaking havoc in central Europe"
+bib_key = "harry"
+content = "The storm has hit the north-east and central regions of Italy, days after causing widespread flooding in central Europe."
+
+[[content]]
+source = "BBC News - World"
+link = "https://www.bbc.com/news/articles/cdx9z96ldveo"
+pub_date = "Thu, 19 Sep 2024 08:08:25 GMT"
+title = "UN General Assembly demands Israel ends occupation of Palestinian territories"
+bib_key = "harry"
+content = 'Israel denounces the Palestinian-drafted, non-binding resolution as "diplomatic terrorism".'
+
+[[content]]
+source = "BBC News - World"
+link = "https://www.bbc.com/news/articles/c0m0v99pd3vo"
+pub_date = "Thu, 19 Sep 2024 09:43:27 GMT"
+title = "Hong Kong man jailed for 'seditious' T-shirt"
+bib_key = "harry"
+content = "This is the first jail term handed down under a new local national security law."
+
+[[content]]
+source = "BBC News - World"
+link = "https://www.bbc.com/news/articles/cy4dn4z02emo"
+pub_date = "Thu, 19 Sep 2024 16:05:50 GMT"
+title = "Brazil fines Musk's X for site's return after ban"
+bib_key = "harry"
+content = "The social media platform formerly known as Twitter was banned in the country in August."

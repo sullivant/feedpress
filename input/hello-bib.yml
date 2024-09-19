@@ -1,13 +1,11 @@
 harry:
     type: web
-    author: Rowling, J. K.
     title: Article Title
     date: 2003-06-21
     url: http://rep-am.com
 
 electronic:
     type: Web
-    author: Some Guy, First Name
     title: Ishkur's Guide to Electronic Music
     date: 2003-06-21
     url: http://www.techno.org/electronic-music-guide/

@@ -10,3 +10,5 @@ tokio = { version = "1.40.0", features = ["full"] }
 rss = "2.0"
 toml = "0.8.19"
 serde = { version = "1.0", features = ["derive"] }
+serde_yml = "0.0.12"
+hayagriva = { version = "0.5.3", default-features = false }

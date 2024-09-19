@@ -1,8 +1,13 @@
-feed_limit = 3
+show_errors = false
 
 [[feed]]
   url = "https://www.sullivanscientific.com/posts/index.xml"
+  feed_limit = 5
 
 [[feed]]
   url = "https://feeds.bbci.co.uk/news/world/rss.xml"  
+  feed_limit = 5
+
+[[feed]]
+  url = "https://sullivanscientific.com/notfound.xml"  
   feed_limit = 1
