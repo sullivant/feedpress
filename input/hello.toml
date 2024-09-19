@@ -3,11 +3,11 @@ compileDate = "2024-09-19"
 [[content]]
   source = "Republican American"
   link = "http://rep-am.com"
-  pubDate = "2024-09-18"
+  pub_date = "2024-09-18"
   title = "New tech allows for implanted tracking on your cats."
-  bibKey = "harry"
+  bib_key = "harry"
   content = """
-At etiam Athenis, ut e patre audiebam facete et
+At, etiam Athenis, ut e patre audiebam facete et
 urbane Stoicos irridente, statua est in quo a nobis
 philosophia defensa et collaudata est, cum id, quod
 maxime placeat, facere possimus, omnis voluptas
@@ -46,7 +46,7 @@ non quo ignorare vos arbitrer, sed ut
 
 [[content]]
   source = "Register Citizen"
-  bibKey = "electronic"
+  bib_key = "electronic"
   title = "This is an RC article."
   content = """
 Lorem ipsum dolor sit amet, consectetur adipisc-

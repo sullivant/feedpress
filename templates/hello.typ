@@ -1,11 +1,11 @@
-#import "../templates/feedpress.typ" : conf
+#import "feedpress.typ" : conf
 
 #let bookshelf(articles) = {
   for article in {articles.content} [
     = #article.title  
     #line(length:100%)
 
-    #cite(label(article.bibKey)) #article.content
+    #cite(label(article.bib_key)) #article.content
   ]
 }
 
@@ -17,11 +17,11 @@
 )
 
 #bookshelf(
-  toml("hello.toml")
+  toml("../input/hello.toml")
 )
 
 #line(length:100%)
-#bibliography("hello-bib.yml")
+#bibliography("../input/hello-bib.yml")
 
 
 
