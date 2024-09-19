@@ -2,7 +2,6 @@
   title: none,
   dateStamp: none,
   version: none,
-  authors: (),
   abstract: [],
   doc,
 ) = {
@@ -52,17 +51,10 @@
 
   line(length:100%)
 
-  let count = authors.len()
-  let ncols = calc.min(count, 3)
   grid(
-    columns: (1fr,) * ncols,
+    columns: (1fr,) * 1,
     row-gutter: 24pt,
     align: left,
-    ..authors.map(author => [
-      #author.name \
-      #author.affiliation \
-      #sym.circle.stroked #link("mailto:" + author.email)
-    ]),
     version
   )
 }

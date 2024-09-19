@@ -13,13 +13,6 @@
   title: [Feed Press],
   dateStamp: [Today's date is #datetime.today().display()],
   version: [feedPress v0.0.1],
-  authors: (
-      (
-        name: "Thomas Sullivan",
-        affiliation: "Sullivan Scientific",
-        email: "thomas@sullivanscientific.net",
-      ),
-  ),
   doc,
 )
 
