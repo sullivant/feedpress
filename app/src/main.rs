@@ -39,6 +39,7 @@ struct Content {
 #[derive(Debug, Serialize)]
 struct Biblio {
     r#type: String,
+    key: String,
     title: String,
     date: String,
     url: String,
@@ -63,6 +64,7 @@ async fn main() {
     // This is a placeholder for our pressed together content and related biblios
     let mut press_content: Vec<Content> = Vec::new();
     let mut press_biblio: Vec<Biblio> = Vec::new();
+
 
     // For all of the feeds in our config... do stuff.
     for this_entry in &config.feed {
@@ -107,6 +109,7 @@ async fn main() {
             // Build also its related biblio entry
             let this_biblio = Biblio {
                 r#type: "Web".to_string(),
+                key: format!("key-{}",i),
                 title: this_item.title().unwrap().to_string(),
                 date: this_item.pub_date().unwrap().to_string(),
                 url: this_item.link().unwrap().to_string(),
@@ -132,7 +135,7 @@ async fn main() {
     let mut file = File::create("../input/20240919.toml").unwrap();
     file.write_all(toml.as_bytes()).unwrap();
 
-    println!("{:?}",press_biblio);
+    // println!("{:?}",press_biblio);
 
 }
 
