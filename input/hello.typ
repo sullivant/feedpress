@@ -1,5 +1,13 @@
 #import "../templates/feedpress.typ" : conf
 
+#let bookshelf(articles) = {
+  for article in {articles.content} [
+    = #article.title  
+    #line(length:100%)
+
+    #cite(label(article.bibKey)) #article.content
+  ]
+}
 
 #show: doc => conf(
   title: [Feed Press],
@@ -12,22 +20,15 @@
         email: "thomas@sullivanscientific.net",
       ),
   ),
-  abstract: [#lorem(10)],
   doc,
 )
 
-= Introduction @harry
-#lorem(300)
-
-= Related Work @electronic
-#lorem(200)
-
-= Next Article @harry @electronic
-#lorem(400)
-
-= TODOs
-- Sectional bylines with source name in short form and bib link
-- Consider what to put in abstract area
+#bookshelf(
+  toml("hello.toml")
+)
 
 #line(length:100%)
-#bibliography("hello.yml")
+#bibliography("hello-bib.yml")
+
+
+

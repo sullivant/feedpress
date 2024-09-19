@@ -28,18 +28,19 @@
   )
   
   align(center, text(17pt)[
-    *#title*
+    #sym.dots.h.c *#title* #sym.dots.h.c
     #line(length:100%)
   ])
   
 
   align(center)[
     #set par(justify: false)
-    *Abstract* 
     #align(left)[
-      #abstract
+      #outline()
     ]
+    #line(length:100%)
   ]
+
   show heading: it => [
     #set align(center)
     #set text(12pt, weight: "regular")
@@ -60,7 +61,7 @@
     ..authors.map(author => [
       #author.name \
       #author.affiliation \
-      #link("mailto:" + author.email)
+      #sym.circle.stroked #link("mailto:" + author.email)
     ]),
     version
   )
