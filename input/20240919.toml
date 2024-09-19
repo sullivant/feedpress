@@ -69,3 +69,57 @@ pub_date = "Thu, 19 Sep 2024 16:05:50 GMT"
 title = "Brazil fines Musk's X for site's return after ban"
 bib_key = "harry"
 content = "The social media platform formerly known as Twitter was banned in the country in August."
+
+[[content]]
+source = "CNBC International is the world leader for news on business, technology, China, trade, oil prices, the Middle East and markets."
+link = "https://www.cnbc.com/2024/09/19/the-fed-has-set-out-on-a-recalibration-of-policy-heres-what-powells-new-buzzword-means.html"
+pub_date = "Thu, 19 Sep 2024 19:29:47 GMT"
+title = "The Fed has set out on a 'recalibration' of policy. Here's what Powell's new buzzword means"
+bib_key = "harry"
+content = "Asset prices soared as investors took Powell at his word that the outsized rate cut wasn't in response to a substantial economic weakening."
+
+[[content]]
+source = "CNBC International is the world leader for news on business, technology, China, trade, oil prices, the Middle East and markets."
+link = "https://www.cnbc.com/2024/09/19/lebanese-ministers-warn-of-a-dangerous-next-48-hours-after-pager-attacks.html"
+pub_date = "Thu, 19 Sep 2024 19:13:38 GMT"
+title = "'Very serious escalation': Lebanese ministers warn of a dangerous next 48 hours after pager and device attacks"
+bib_key = "harry"
+content = "The next 48 hours, Lebanon's health and economy ministers told CNBC, will be particularly dangerous."
+
+[[content]]
+source = "CNBC International is the world leader for news on business, technology, China, trade, oil prices, the Middle East and markets."
+link = "https://www.cnbc.com/2024/09/19/teslas-chinese-rival-nio-cuts-price-for-new-onvo-branded-car.html"
+pub_date = "Thu, 19 Sep 2024 16:40:00 GMT"
+title = "Tesla’s Chinese rival Nio cuts price for new Onvo-branded car"
+bib_key = "harry"
+content = "There's yet another Chinese electric car aiming to undercut Tesla, with a steeper discount."
+
+[[content]]
+source = "math.QA updates on the arXiv.org e-print archive."
+link = "https://arxiv.org/abs/2409.11797"
+pub_date = "Thu, 19 Sep 2024 00:00:00 -0400"
+title = "Semisimplicity of module categories of certain affine vertex operator superalgebras"
+bib_key = "harry"
+content = """
+arXiv:2409.11797v1 Announce Type: new 
+Abstract: In this paper, we show Kazhdan-Lusztig categories, that is, the categories of lower bounded generalized weight modules for certain affine vertex operator superalgebras that are locally finite modules of the underlying finite dimensional Lie superalgebra, are semisimple. Those are all representation categories of affine vertex operator superalgebras at conformal but non admissible levels. As a consequence, the categories of finite length generalized modules for these affine vertex operator superalgebras have braided tensor category structures."""
+
+[[content]]
+source = "math.QA updates on the arXiv.org e-print archive."
+link = "https://arxiv.org/abs/2308.05024"
+pub_date = "Thu, 19 Sep 2024 00:00:00 -0400"
+title = "Approximation properties for dynamical W*-correspondences"
+bib_key = "harry"
+content = '''
+arXiv:2308.05024v3 Announce Type: replace-cross 
+Abstract: Let $\mathbb{G}$ be a locally compact quantum group, and $A,B$ von Neumann algebras on which $\mathbb{G}$ acts. We refer to these as $\mathbb{G}$-dynamical W$^*$-algebras. We make a study of $\mathbb{G}$-equivariant $A$-$B$-correspondences, that is, Hilbert spaces $\mathcal{H}$ with an $A$-$B$-bimodule structure by $*$-preserving normal maps, and equipped with a unitary representation of $\mathbb{G}$ which is equivariant with respect to the above bimodule structure. Such structures are a Hilbert space version of the theory of $\mathbb{G}$-equivariant Hilbert C$^*$-bimodules. We show that there is a well-defined Fell topology on equivariant correspondences, and use this to formulate approximation properties for them. Within this formalism, we then characterize amenability of the action of a locally compact group on a von Neumann algebra, using recent results due to Bearden and Crann. We further consider natural operations on equivariant correspondences such as taking opposites, composites and crossed products, and examine the continuity of these operations with respect to the Fell topology.'''
+
+[[content]]
+source = "math.QA updates on the arXiv.org e-print archive."
+link = "https://arxiv.org/abs/2312.16573"
+pub_date = "Thu, 19 Sep 2024 00:00:00 -0400"
+title = "Strong Homotopy Algebras for Chiral Higher Spin Gravity via Stokes Theorem"
+bib_key = "harry"
+content = '''
+arXiv:2312.16573v2 Announce Type: replace-cross 
+Abstract: Chiral higher spin gravity is defined in terms of a strong homotopy algebra of pre-Calabi-Yau type (noncommutative Poisson structure). All structure maps are given by the integrals over the configuration space of concave polygons and the first two maps are related to the (Shoikhet-Tsygan-)Kontsevich Formality. As with the known formality theorems, we prove the $A_\infty$-relations via Stokes' theorem by constructing a closed form and a configuration space whose boundary components lead to the $A_\infty$-relations. This gives a new way to formulate higher spin gravities and hints at a construct encompassing the known formality theorems.'''

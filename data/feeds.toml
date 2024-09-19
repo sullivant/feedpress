@@ -1,4 +1,4 @@
-show_errors = false
+show_errors = true
 
 [[feed]]
   url = "https://www.sullivanscientific.com/posts/index.xml"
@@ -7,6 +7,14 @@ show_errors = false
 [[feed]]
   url = "https://feeds.bbci.co.uk/news/world/rss.xml"  
   feed_limit = 5
+
+[[feed]]
+  url = "https://www.cnbc.com/id/100727362/device/rss/rss.html"
+  feed_limit = 3
+
+[[feed]]
+  url = "https://rss.arxiv.org/rss/math.QA"
+  feed_limit = 3
 
 [[feed]]
   url = "https://sullivanscientific.com/notfound.xml"  
