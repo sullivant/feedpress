@@ -1,4 +1,5 @@
 [[content]]
+section = "Technology"
 source = "Recent content in Posts on Sullivan Scientific."
 link = "https://www.sullivanscientific.com/2023/03/bookmarks-with-shaarli/"
 pub_date = "Mon, 06 Mar 2023 08:05:28 -0500"
@@ -7,119 +8,28 @@ bib_key = "harry"
 content = "Shaarli - Managing bookmarks in a minimalist way TLDR; Here&rsquo;s a link: https://github.com/shaarli/Shaarli Here&rsquo;s a link to the demo site they host: https://demo.shaarli.org Being someone with ADHD, I have found few things more frustrating than figuring out where I tossed that article I want to review later, or bookmark for a system. Rarely do I log in to a browser - never on my work machines, and never on my phone."
 
 [[content]]
-source = "Recent content in Posts on Sullivan Scientific."
-link = "https://www.sullivanscientific.com/2023/02/emulation/"
-pub_date = "Wed, 22 Feb 2023 09:00:47 -0500"
-title = "Emulation"
-bib_key = "harry"
-content = "I like emulators&hellip; As many folks who like tech, I enjoy emulators. Most recently, I am working on one that does its best to emulate the Intel 8080 chip, mostly because I came across a Space Invaders ROM and wanted to play that. The choice to tinker with these things was also because I wanted/needed an &ldquo;excuse&rdquo; to write some &ldquo;real-world&rdquo; Rust code for a project. In my day-to-day life I write a lot of Java, big-data stuff, and other crap."
-
-[[content]]
-source = "Recent content in Posts on Sullivan Scientific."
-link = "https://www.sullivanscientific.com/2023/02/finding-a-good-theme/"
-pub_date = "Wed, 22 Feb 2023 08:16:12 -0500"
-title = "Finding a Good Theme"
-bib_key = "harry"
-content = "Let&rsquo;s talk themes&hellip; A long while ago, like &ldquo;last century,&rdquo; I had a few sites that I had self hosted. Often I would model the site after whatever it was I was visiting on a regular basis those days. At one point it was, probably, fark or something similar. Just lists of content I felt was interesting. Though, my favorite, was probably my love of perl-monks and the game of perl-golf."
-
-[[content]]
-source = "Recent content in Posts on Sullivan Scientific."
-link = "https://www.sullivanscientific.com/2023/02/hello-world/"
-pub_date = "Tue, 21 Feb 2023 18:31:38 -0500"
-title = "Hello World"
-bib_key = "harry"
-content = "Just like the old days This is just an initial post. A hello world of sorts. Hoping the tutorials work."
-
-[[content]]
+section = "News"
 source = "BBC News - World"
-link = "https://www.bbc.com/news/articles/c04p7q3k4k9o"
-pub_date = "Thu, 19 Sep 2024 19:12:31 GMT"
-title = "Surgeon 'became robotic' to treat sheer volume of wounded Lebanese"
+link = "https://www.bbc.com/news/articles/c79n1v4d203o"
+pub_date = "Thu, 19 Sep 2024 19:44:31 GMT"
+title = "Hezbollah leader says exploding device attacks crossed 'all red lines'"
 bib_key = "harry"
-content = "Elias Jaradeh worked for almost 24 hours on the wounded, many of whom lost eyes or the use of their hands."
+content = 'Hassan Nasrallah calls the killing of 37 people by exploding pagers and radios an "unprecedented blow".'
 
 [[content]]
-source = "BBC News - World"
-link = "https://www.bbc.com/news/articles/c30ln80z4deo"
-pub_date = "Thu, 19 Sep 2024 18:09:27 GMT"
-title = "Storm Boris batters Italy after wreaking havoc in central Europe"
-bib_key = "harry"
-content = "The storm has hit the north-east and central regions of Italy, days after causing widespread flooding in central Europe."
-
-[[content]]
-source = "BBC News - World"
-link = "https://www.bbc.com/news/articles/cdx9z96ldveo"
-pub_date = "Thu, 19 Sep 2024 08:08:25 GMT"
-title = "UN General Assembly demands Israel ends occupation of Palestinian territories"
-bib_key = "harry"
-content = 'Israel denounces the Palestinian-drafted, non-binding resolution as "diplomatic terrorism".'
-
-[[content]]
-source = "BBC News - World"
-link = "https://www.bbc.com/news/articles/c0m0v99pd3vo"
-pub_date = "Thu, 19 Sep 2024 09:43:27 GMT"
-title = "Hong Kong man jailed for 'seditious' T-shirt"
-bib_key = "harry"
-content = "This is the first jail term handed down under a new local national security law."
-
-[[content]]
-source = "BBC News - World"
-link = "https://www.bbc.com/news/articles/cy4dn4z02emo"
-pub_date = "Thu, 19 Sep 2024 16:05:50 GMT"
-title = "Brazil fines Musk's X for site's return after ban"
-bib_key = "harry"
-content = "The social media platform formerly known as Twitter was banned in the country in August."
-
-[[content]]
+section = "News"
 source = "CNBC International is the world leader for news on business, technology, China, trade, oil prices, the Middle East and markets."
-link = "https://www.cnbc.com/2024/09/19/the-fed-has-set-out-on-a-recalibration-of-policy-heres-what-powells-new-buzzword-means.html"
-pub_date = "Thu, 19 Sep 2024 19:29:47 GMT"
-title = "The Fed has set out on a 'recalibration' of policy. Here's what Powell's new buzzword means"
+link = "https://www.cnbc.com/2024/09/19/nike-ceo-john-donahoe-is-out-replaced-by-elliott-hill.html"
+pub_date = "Thu, 19 Sep 2024 22:23:35 GMT"
+title = "Nike CEO John Donahoe is out, replaced by company veteran Elliott Hill"
 bib_key = "harry"
-content = "Asset prices soared as investors took Powell at his word that the outsized rate cut wasn't in response to a substantial economic weakening."
+content = "Nike CEO John Donahoe will retire from the company in October. He will be replaced by company veteran Elliott Hill."
 
 [[content]]
-source = "CNBC International is the world leader for news on business, technology, China, trade, oil prices, the Middle East and markets."
-link = "https://www.cnbc.com/2024/09/19/lebanese-ministers-warn-of-a-dangerous-next-48-hours-after-pager-attacks.html"
-pub_date = "Thu, 19 Sep 2024 19:13:38 GMT"
-title = "'Very serious escalation': Lebanese ministers warn of a dangerous next 48 hours after pager and device attacks"
+section = "News"
+source = "Breaking News, World News and Video from Al Jazeera"
+link = "https://www.aljazeera.com/news/2024/9/19/israel-intensifies-air-raids-on-southern-lebanon-amid-escalation-fears?traffic_source=rss"
+pub_date = "Thu, 19 Sep 2024 20:53:50 +0000"
+title = "Israel intensifies air raids on southern Lebanon amid escalation fears"
 bib_key = "harry"
-content = "The next 48 hours, Lebanon's health and economy ministers told CNBC, will be particularly dangerous."
-
-[[content]]
-source = "CNBC International is the world leader for news on business, technology, China, trade, oil prices, the Middle East and markets."
-link = "https://www.cnbc.com/2024/09/19/teslas-chinese-rival-nio-cuts-price-for-new-onvo-branded-car.html"
-pub_date = "Thu, 19 Sep 2024 16:40:00 GMT"
-title = "Tesla’s Chinese rival Nio cuts price for new Onvo-branded car"
-bib_key = "harry"
-content = "There's yet another Chinese electric car aiming to undercut Tesla, with a steeper discount."
-
-[[content]]
-source = "math.QA updates on the arXiv.org e-print archive."
-link = "https://arxiv.org/abs/2409.11797"
-pub_date = "Thu, 19 Sep 2024 00:00:00 -0400"
-title = "Semisimplicity of module categories of certain affine vertex operator superalgebras"
-bib_key = "harry"
-content = """
-arXiv:2409.11797v1 Announce Type: new 
-Abstract: In this paper, we show Kazhdan-Lusztig categories, that is, the categories of lower bounded generalized weight modules for certain affine vertex operator superalgebras that are locally finite modules of the underlying finite dimensional Lie superalgebra, are semisimple. Those are all representation categories of affine vertex operator superalgebras at conformal but non admissible levels. As a consequence, the categories of finite length generalized modules for these affine vertex operator superalgebras have braided tensor category structures."""
-
-[[content]]
-source = "math.QA updates on the arXiv.org e-print archive."
-link = "https://arxiv.org/abs/2308.05024"
-pub_date = "Thu, 19 Sep 2024 00:00:00 -0400"
-title = "Approximation properties for dynamical W*-correspondences"
-bib_key = "harry"
-content = '''
-arXiv:2308.05024v3 Announce Type: replace-cross 
-Abstract: Let $\mathbb{G}$ be a locally compact quantum group, and $A,B$ von Neumann algebras on which $\mathbb{G}$ acts. We refer to these as $\mathbb{G}$-dynamical W$^*$-algebras. We make a study of $\mathbb{G}$-equivariant $A$-$B$-correspondences, that is, Hilbert spaces $\mathcal{H}$ with an $A$-$B$-bimodule structure by $*$-preserving normal maps, and equipped with a unitary representation of $\mathbb{G}$ which is equivariant with respect to the above bimodule structure. Such structures are a Hilbert space version of the theory of $\mathbb{G}$-equivariant Hilbert C$^*$-bimodules. We show that there is a well-defined Fell topology on equivariant correspondences, and use this to formulate approximation properties for them. Within this formalism, we then characterize amenability of the action of a locally compact group on a von Neumann algebra, using recent results due to Bearden and Crann. We further consider natural operations on equivariant correspondences such as taking opposites, composites and crossed products, and examine the continuity of these operations with respect to the Fell topology.'''
-
-[[content]]
-source = "math.QA updates on the arXiv.org e-print archive."
-link = "https://arxiv.org/abs/2312.16573"
-pub_date = "Thu, 19 Sep 2024 00:00:00 -0400"
-title = "Strong Homotopy Algebras for Chiral Higher Spin Gravity via Stokes Theorem"
-bib_key = "harry"
-content = '''
-arXiv:2312.16573v2 Announce Type: replace-cross 
-Abstract: Chiral higher spin gravity is defined in terms of a strong homotopy algebra of pre-Calabi-Yau type (noncommutative Poisson structure). All structure maps are given by the integrals over the configuration space of concave polygons and the first two maps are related to the (Shoikhet-Tsygan-)Kontsevich Formality. As with the known formality theorems, we prove the $A_\infty$-relations via Stokes' theorem by constructing a closed form and a configuration space whose boundary components lead to the $A_\infty$-relations. This gives a new way to formulate higher spin gravities and hints at a construct encompassing the known formality theorems.'''
+content = "Israeli defence minister says Hezbollah to &#039;pay an increasing price&#039; as group promises retaliation over device attacks."

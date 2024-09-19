@@ -1,21 +1,25 @@
-show_errors = true
+show_errors = false
 
 [[feed]]
   url = "https://www.sullivanscientific.com/posts/index.xml"
-  feed_limit = 5
+  feed_limit = 1
+  section = "Technology"
 
 [[feed]]
   url = "https://feeds.bbci.co.uk/news/world/rss.xml"  
-  feed_limit = 5
+  feed_limit = 1
+  section = "News"
 
 [[feed]]
   url = "https://www.cnbc.com/id/100727362/device/rss/rss.html"
-  feed_limit = 3
+  feed_limit = 1
+  section = "News"
 
 [[feed]]
-  url = "https://rss.arxiv.org/rss/math.QA"
-  feed_limit = 3
+  url = "https://www.aljazeera.com/xml/rss/all.xml"
+  feed_limit = 1
 
 [[feed]]
   url = "https://sullivanscientific.com/notfound.xml"  
   feed_limit = 1
+  section = "Not Found"

@@ -19,6 +19,11 @@ struct FeedEntry {
     url: String,
     #[serde(default)]
     feed_limit: usize,
+    #[serde(default = "default_section")]
+    section: String
+}
+fn default_section() -> String {
+    "News".to_string()
 }
 
 #[derive(Debug, Serialize)]
@@ -28,6 +33,7 @@ struct Press {
 
 #[derive(Debug, Serialize)]
 struct Content {
+    section: String,
     source: String,
     link: String,
     pub_date: String,
@@ -79,6 +85,9 @@ async fn main() {
                 continue
             },
         };
+
+        // The section for this entry
+        let entry_section = this_entry.section.to_string();
         
         // Use the feed limit, too
         let mut feed_limit: usize = config.feed_limit;
@@ -98,6 +107,7 @@ async fn main() {
 
             // Build a new struct of this particular content for outbound formatting
             let this_content = Content {
+                section: entry_section.clone(),
                 source: channel.description.to_string(),
                 link: this_item.link().unwrap().to_string(),
                 pub_date: this_item.pub_date().unwrap().to_string(),

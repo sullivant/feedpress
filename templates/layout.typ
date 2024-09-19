@@ -35,7 +35,7 @@
   align(center)[
     #set par(justify: false)
     #align(left)[
-      #outline()
+      #outline(indent: 1em,)
     ]
     #line(length:100%)
   ]
@@ -49,12 +49,4 @@
   set align(left)
   columns(2,doc)
 
-  line(length:100%)
-
-  grid(
-    columns: (1fr,) * 1,
-    row-gutter: 24pt,
-    align: left,
-    version
-  )
 }
