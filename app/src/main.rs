@@ -131,11 +131,15 @@ struct BiblioEntry {
     /// The title of the article
     title: String,
     /// The date published
-    date: String,
+    date: Date,
     /// The direct location of the article
     url: String,
 }
 
+/// Main application entrypoint
+/// 
+/// Does the thing it says on the tin, I suppose.  Gathers configuration data, processes each
+/// feed, and creates content as well as biblio entries.
 #[tokio::main]
 async fn main() {
     println!("feedpress - pressing all the news that's fit to press");
@@ -201,7 +205,12 @@ async fn main() {
                 break;
             }
 
+            /// TODO: A better way to deal with the dates.
             let pub_date = DateTime::parse_from_rfc2822(this_item.pub_date().unwrap()).unwrap();
+            let mut bib_date = Date::from_year(pub_date.year());
+            bib_date.day = Some(pub_date.day().try_into().unwrap());
+            bib_date.month = Some(pub_date.month0().try_into().unwrap());
+            
             let article_age = local_time.fixed_offset() - pub_date;
 
             if article_age > TimeDelta::days(max_age as i64) {
@@ -219,7 +228,7 @@ async fn main() {
                 pub_date: this_item.pub_date().unwrap().to_string(),
                 title: this_item.title().unwrap_or("No Title").to_string(),
                 bib_key: format!("key-{}",r),
-                content: this_item.description().unwrap().to_string(),
+                content: this_item.description().unwrap_or("No Content").to_string(),
             };
 
             // Build also its related biblio entry
@@ -227,7 +236,7 @@ async fn main() {
                 r#type: EntryType::Web,
                 key: format!("key-{}",r),
                 title: this_item.title().unwrap_or("No Title").to_string(),
-                date: this_item.pub_date().unwrap().to_string(),
+                date: bib_date,
                 url: this_item.link().unwrap().to_string(),
             };
 
@@ -243,6 +252,7 @@ async fn main() {
    
 }
 
+/// Creates the output file used in the typsetting portion of this process.
 fn process_content(press_content: Vec<ContentEntry>) -> bool {
     // This structure will likely be expanded, but for now contains the array of our
     // outbound, pressed, content.
@@ -261,6 +271,7 @@ fn process_content(press_content: Vec<ContentEntry>) -> bool {
     true
 }
 
+/// Creates the bibliographic entry corresponding to each of the content entries.
 fn process_biblio(press_biblio: Vec<BiblioEntry>) -> bool {
     // Create a biblio library for this edition and add entries for each of the keys
     let mut library = Library::new();
@@ -268,7 +279,7 @@ fn process_biblio(press_biblio: Vec<BiblioEntry>) -> bool {
         let mut entry: Entry = Entry::new(&bib_entry.key, bib_entry.r#type);
         entry.set_title(FormatString::from_str(&bib_entry.title).unwrap());
         entry.set_url(QualifiedUrl::from_str(&bib_entry.url).unwrap());
-        entry.set_date(Date::from_str(&bib_entry.date).unwrap());
+        entry.set_date(bib_entry.date);
         library.push(&entry);
     }
 
@@ -279,6 +290,7 @@ fn process_biblio(press_biblio: Vec<BiblioEntry>) -> bool {
     true
 }
 
+/// Gets the feed data in the form of a [Channel] 
 async fn get_feed(url: &str) -> Result<Channel, Box<dyn Error>> {
     let content = reqwest::get(url)
         .await?

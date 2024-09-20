@@ -18,12 +18,39 @@ content = "More than 70,000 Russian soldiers have died in Ukraine - volunteers n
 
 [[content]]
 section = "News"
+source = "BBC News - World"
+link = "https://www.bbc.com/news/articles/cx25v2d7zexo"
+pub_date = "Fri, 20 Sep 2024 15:24:13 GMT"
+title = "Microsoft chooses infamous nuclear site for AI power"
+bib_key = "key-7"
+content = "The 1979 accident at Three Mile Island had cast a shadow on nuclear power in the US for decades."
+
+[[content]]
+section = "News"
+source = "BBC News - World"
+link = "https://www.bbc.com/news/articles/c20mn1z3vm6o"
+pub_date = "Fri, 20 Sep 2024 18:10:23 GMT"
+title = "'Our husbands didn't go to war for Ukraine so we can sit around crying'"
+bib_key = "key-8"
+content = "A study suggests 54% of Ukrainians suffer from PTSD as Russia's war of conquest grinds on."
+
+[[content]]
+section = "News"
 source = "CNBC International is the world leader for news on business, technology, China, trade, oil prices, the Middle East and markets."
 link = "https://www.cnbc.com/2024/09/20/indian-ed-tech-startup-physics-wallah-bags-2point8-billion-valuation-with-funding.html"
 pub_date = "Fri, 20 Sep 2024 06:30:01 GMT"
 title = "Indian ed-tech startup Physics Wallah bags $2.8 billion valuation amid sector troubles"
-bib_key = "key-8"
+bib_key = "key-10"
 content = "Physics Wallah CEO Alakh Pandey said the company would use the $210 million funding to expand its business and do acquisitions."
+
+[[content]]
+section = "News"
+source = "CNBC International is the world leader for news on business, technology, China, trade, oil prices, the Middle East and markets."
+link = "https://www.cnbc.com/2024/09/20/qualcomm-reportedly-approached-intel-about-takeover.html"
+pub_date = "Fri, 20 Sep 2024 19:35:00 GMT"
+title = "Intel shares pop on report Qualcomm has approached it about takeover"
+bib_key = "key-11"
+content = "No Content"
 
 [[content]]
 section = "News"
@@ -31,34 +58,61 @@ source = "CNBC International is the world leader for news on business, technolog
 link = "https://www.cnbc.com/2024/09/20/american-airlines-credit-card-talks-to-pick-citigroup-over-barclays.html"
 pub_date = "Fri, 20 Sep 2024 13:15:26 GMT"
 title = "American Airlines in talks to pick Citigroup over rival bank Barclays for crucial credit card deal, sources say"
-bib_key = "key-9"
+bib_key = "key-12"
 content = "American has been working with banks and card networks on a new deal with the aim of consolidating its business with a single issuer, sources tell CNBC."
 
 [[content]]
-section = "Personal"
+section = "News"
+source = "CNBC International is the world leader for news on business, technology, China, trade, oil prices, the Middle East and markets."
+link = "https://www.cnbc.com/2024/09/20/djt-trump-media-stock-selloff-lockup-.html"
+pub_date = "Fri, 20 Sep 2024 19:19:51 GMT"
+title = "Trump Media hits new 52-week low after DJT lockup restrictions expire"
+bib_key = "key-13"
+content = "Former President Donald Trump's majority stake in the Truth Social owner was worth almost $1.6 billion mid-day Friday."
+
+[[content]]
+section = "News"
+source = "Breaking News, World News and Video from Al Jazeera"
+link = "https://www.aljazeera.com/program/newsfeed/2024/9/20/israel-strikes-beirut-suburb-in-latest-attack-in-lebanon?traffic_source=rss"
+pub_date = "Fri, 20 Sep 2024 19:26:37 +0000"
+title = "Israel strikes Beirut suburb in latest attack in Lebanon"
+bib_key = "key-15"
+content = "At least 12 people were killed and dozens injured in an Israeli strike in a Beirut suburb on Friday."
+
+[[content]]
+section = "News"
 source = "Breaking News, World News and Video from Al Jazeera"
 link = "https://www.aljazeera.com/news/2024/9/20/israeli-forces-kill-dozens-across-gaza-as-tanks-advance-deeper-into-rafah?traffic_source=rss"
 pub_date = "Fri, 20 Sep 2024 18:01:56 +0000"
 title = "Israeli forces kill dozens across Gaza as tanks advance deeper into Rafah"
-bib_key = "key-11"
+bib_key = "key-16"
 content = "At least 13 people, including children, were killed in Israeli attacks on two homes in Rafah, medical sources say."
 
 [[content]]
-section = "Personal"
+section = "News"
 source = "Breaking News, World News and Video from Al Jazeera"
 link = "https://www.aljazeera.com/news/2024/9/20/more-than-70-killed-in-mali-attack-what-happened-why-it-matters?traffic_source=rss"
 pub_date = "Fri, 20 Sep 2024 17:23:57 +0000"
 title = "More than 70 killed in Mali attack: What happened, why it matters"
-bib_key = "key-12"
+bib_key = "key-17"
 content = "This is the first major attack on Bamako since 2015 when fighters targeted foreigners in a nightclub and hotel."
+
+[[content]]
+section = "News"
+source = "Breaking News, World News and Video from Al Jazeera"
+link = "https://www.aljazeera.com/news/2024/9/20/who-is-ibrahim-aqil-the-hezbollah-commander-targeted-by-israel?traffic_source=rss"
+pub_date = "Fri, 20 Sep 2024 16:42:21 +0000"
+title = "Who is Ibrahim Aqil, the Hezbollah commander targeted by Israel?"
+bib_key = "key-18"
+content = "Israel targets top Hezbollah commander in air raid on Beirut suburb that kills 12 people and wounds 66."
 
 [[content]]
 section = "News"
 source = ""
 link = "https://www.nytimes.com/2024/09/20/world/middleeast/ibrahim-aqeel-hezbollah-commander-what-to-know.html"
-pub_date = "Fri, 20 Sep 2024 16:36:55 +0000"
+pub_date = "Fri, 20 Sep 2024 19:20:59 +0000"
 title = "Who Is Ibrahim Aqeel, the Hezbollah Commander Targeted by Israel?"
-bib_key = "key-14"
+bib_key = "key-20"
 content = "The senior leader, who survived multiple assassination attempts, has been sought by the United States for bombings in the 1980s. Here is a closer look."
 
 [[content]]
@@ -67,7 +121,7 @@ source = ""
 link = "https://www.nytimes.com/2024/09/20/world/middleeast/israel-lebanon-attacks-hezbollah-war.html"
 pub_date = "Fri, 20 Sep 2024 16:37:34 +0000"
 title = "Israel’s Attacks on Hezbollah Have Intensified but Stop Short of All-Out War"
-bib_key = "key-15"
+bib_key = "key-21"
 content = "Israel is attempting a risky strategy, increasing the intensity of its attacks in an attempt to force Hezbollah to back down, while raising the chances of an aggressive response that devolves into a land war."
 
 [[content]]
@@ -76,8 +130,17 @@ source = ""
 link = "https://www.nytimes.com/2024/09/20/world/middleeast/gaza-cease-fire-talks-hezbollah-lebanon.html"
 pub_date = "Fri, 20 Sep 2024 11:22:08 +0000"
 title = "With Focus Shifting to Lebanon, Some in Gaza Fear Cease-Fire Talks Will Be Sidelined"
-bib_key = "key-16"
+bib_key = "key-22"
 content = "Even as Israel signals that it is moving its focus to its northern border with Lebanon, there has been no pause to its bombardment in Gaza, where residents are facing another winter with little access to food or shelter."
+
+[[content]]
+section = "News - Local"
+source = "Northwest Connecticut's news and information leader"
+link = "https://www.rep-am.com/gallery/2024/09/20/watch-waterbury-police-department-axon-product-demo/"
+pub_date = "Fri, 20 Sep 2024 18:35:00 +0000"
+title = "Watch: Waterbury Police Department – Axon product demo"
+bib_key = "key-24"
+content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/21_NEW_092024SV03-150x150.jpg" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/21_NEW_092024SV03-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" />Waterbury Police Department hosted Axon product demo for their officers and other town departments at the Police Activity League in Waterbury Friday. &#160;'
 
 [[content]]
 section = "News - Local"
@@ -85,8 +148,8 @@ source = "Northwest Connecticut's news and information leader"
 link = "https://www.rep-am.com/life-arts/2024/09/20/cheshire-hosts-big-fat-combo-tonight/"
 pub_date = "Fri, 20 Sep 2024 16:44:28 +0000"
 title = "Cheshire hosts Big Fat Combo tonight"
-bib_key = "key-18"
-content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/20_fea_combo-150x150.jpg" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/20_fea_combo-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" />Cheshire&#8217;s rockabilly favorites, Big Fat Combo, will play our outdoor stage along with The Sophisticatos featuring local troubadour Ken Safety. The concert begins with The Sophisticatos at 6 p.m., followed by Big Fat Combo at 7 p.m. If on-site parking is scarce, extended parking is available just over the Farmington Canal trail at the Municipal [&#8230;]'
+bib_key = "key-25"
+content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/20_fea_combo-150x150.jpg" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" loading="lazy" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/20_fea_combo-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" />Cheshire&#8217;s rockabilly favorites, Big Fat Combo, will play our outdoor stage along with The Sophisticatos featuring local troubadour Ken Safety. The concert begins with The Sophisticatos at 6 p.m., followed by Big Fat Combo at 7 p.m. If on-site parking is scarce, extended parking is available just over the Farmington Canal trail at the Municipal [&#8230;]'
 
 [[content]]
 section = "News - Local"
@@ -94,5 +157,14 @@ source = "Northwest Connecticut's news and information leader"
 link = "https://www.rep-am.com/localnews/2024/09/20/man-fatally-shot-by-officers-years-after-police-tried-to-steer-him-away-from-crime/"
 pub_date = "Fri, 20 Sep 2024 15:02:35 +0000"
 title = "Man fatally shot by officers years after police tried to steer him away from crime"
-bib_key = "key-19"
-content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2022/06/polic-blotter-150x150.jpg" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" loading="lazy" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2022/06/polic-blotter-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" />ASSOCIATED PRESS WEST HAVEN — Connecticut police officers fatally shot a 36-year-old man whom authorities had tried to steer away from crime years ago. A state police sergeant and two New Haven police officers opened fire on the man late Thursday afternoon at a car wash in West Haven after they say he displayed a [&#8230;]'
+bib_key = "key-26"
+content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2022/06/polic-blotter-150x150.jpg" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" loading="lazy" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2022/06/polic-blotter-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" loading="lazy" />ASSOCIATED PRESS WEST HAVEN — Connecticut police officers fatally shot a 36-year-old man whom authorities had tried to steer away from crime years ago. A state police sergeant and two New Haven police officers opened fire on the man late Thursday afternoon at a car wash in West Haven after they say he displayed a [&#8230;]'
+
+[[content]]
+section = "News - Local"
+source = "Northwest Connecticut's news and information leader"
+link = "https://www.rep-am.com/local/records/police/2024/09/20/waterbury-police-blotter-248/"
+pub_date = "Fri, 20 Sep 2024 14:36:11 +0000"
+title = "Waterbury police blotter"
+bib_key = "key-27"
+content = "WATERBURY Waterbury police recently filed the following charges: DENISE BLOW, 37, of no certain address, Waterbury, two counts first-degree failure to appear. INDIA BUTLER, 28, of 354 Long Hill Road, second-degree breach of peace, third-degree assault. ZASHIA LOGAN, 35, of 343 N. Main St., Naugatuck, second-degree failure to appear. TAINA ROSADO, 19, of 215 Horseshoe [&#8230;]"

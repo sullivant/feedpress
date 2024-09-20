@@ -1,44 +1,95 @@
 key-5:
   type: web
   title: Israel investigates after its soldiers filmed throwing bodies off roof
+  date: 2024-09-21
   url: https://www.bbc.com/news/articles/cn8jg0x5xg8o
 key-6:
   type: web
   title: Russia’s war dead tops 70,000 as volunteers face 'meat grinder'
+  date: 2024-09-20
   url: https://www.bbc.com/news/articles/cjr3255gpjgo
+key-7:
+  type: web
+  title: Microsoft chooses infamous nuclear site for AI power
+  date: 2024-09-21
+  url: https://www.bbc.com/news/articles/cx25v2d7zexo
 key-8:
   type: web
-  title: Why EU tariffs are unlikely to dent Chinese EV makers' European expansion
-  url: https://www.cnbc.com/2024/09/20/eu-tariffs-on-chinese-evs-are-unlikely-to-dent-their-european-expansion.html
-key-9:
+  title: '''Our husbands didn''t go to war for Ukraine so we can sit around crying'''
+  date: 2024-09-21
+  url: https://www.bbc.com/news/articles/c20mn1z3vm6o
+key-10:
   type: web
-  title: American Airlines in talks to pick Citigroup over rival bank Barclays for crucial credit card deal, sources say
-  url: https://www.cnbc.com/2024/09/20/american-airlines-credit-card-talks-to-pick-citigroup-over-barclays.html
+  title: Indian ed-tech startup Physics Wallah bags $2.8 billion valuation amid sector troubles$
+  date: 2024-09-21
+  url: https://www.cnbc.com/2024/09/20/indian-ed-tech-startup-physics-wallah-bags-2point8-billion-valuation-with-funding.html
 key-11:
   type: web
-  title: Israeli airstrikes hit densely populated Beirut neighbourhood
-  url: https://www.aljazeera.com/program/newsfeed/2024/9/20/israeli-airstrikes-hit-densely-populated-beirut-neighbourhood?traffic_source=rss
+  title: Intel shares pop on report Qualcomm has approached it about takeover
+  date: 2024-09-21
+  url: https://www.cnbc.com/2024/09/20/qualcomm-reportedly-approached-intel-about-takeover.html
 key-12:
   type: web
-  title: Dozens of women accuse former Harrods boss Mohamed al-Fayed of sexual abuse
-  url: https://www.aljazeera.com/news/2024/9/20/dozens-of-women-accuse-former-harrods-boss-mohamed-al-fayed-of-sexual-abuse?traffic_source=rss
-key-14:
+  title: American Airlines in talks to pick Citigroup over rival bank Barclays for crucial credit card deal, sources say
+  date: 2024-09-21
+  url: https://www.cnbc.com/2024/09/20/american-airlines-credit-card-talks-to-pick-citigroup-over-barclays.html
+key-13:
   type: web
-  title: A Look at Israel-Hezbollah Tensions and How a Wider War Could Impact Lebanon
-  url: https://www.nytimes.com/2024/09/17/world/middleeast/israel-hezbollah-lebanon-war-impact.html
+  title: Trump Media hits new 52-week low after DJT lockup restrictions expire
+  date: 2024-09-21
+  url: https://www.cnbc.com/2024/09/20/djt-trump-media-stock-selloff-lockup-.html
 key-15:
   type: web
-  title: Harris Outspends Trump in Ad Battle, and Israel Bombards Hezbollah
-  url: https://www.nytimes.com/2024/09/20/podcasts/harris-trump-spending-hezbollah.html
+  title: Israel strikes Beirut suburb in latest attack in Lebanon
+  date: 2024-09-21
+  url: https://www.aljazeera.com/program/newsfeed/2024/9/20/israel-strikes-beirut-suburb-in-latest-attack-in-lebanon?traffic_source=rss
 key-16:
   type: web
-  title: Kamala Harris Outspends Donald Trump by Tens of Millions Online
-  url: https://www.nytimes.com/2024/09/20/us/politics/kamala-harris-trump-campaign-spending.html
+  title: Israeli forces kill dozens across Gaza as tanks advance deeper into Rafah
+  date: 2024-09-21
+  url: https://www.aljazeera.com/news/2024/9/20/israeli-forces-kill-dozens-across-gaza-as-tanks-advance-deeper-into-rafah?traffic_source=rss
+key-17:
+  type: web
+  title: 'More than 70 killed in Mali attack: What happened, why it matters'
+  date: 2024-09-21
+  url: https://www.aljazeera.com/news/2024/9/20/more-than-70-killed-in-mali-attack-what-happened-why-it-matters?traffic_source=rss
 key-18:
   type: web
-  title: Man fatally shot by officers years after police tried to steer him away from crime
-  url: https://www.rep-am.com/localnews/2024/09/20/man-fatally-shot-by-officers-years-after-police-tried-to-steer-him-away-from-crime/
-key-19:
+  title: Who is Ibrahim Aqil, the Hezbollah commander targeted by Israel?
+  date: 2024-09-21
+  url: https://www.aljazeera.com/news/2024/9/20/who-is-ibrahim-aqil-the-hezbollah-commander-targeted-by-israel?traffic_source=rss
+key-20:
   type: web
-  title: Torrington schools closed because of online threat; Waterbury increases police presence
-  url: https://www.rep-am.com/localnews/2024/09/20/torrington-schools-closed-because-of-threat/
+  title: Who Is Ibrahim Aqeel, the Hezbollah Commander Targeted by Israel?
+  date: 2024-09-21
+  url: https://www.nytimes.com/2024/09/20/world/middleeast/ibrahim-aqeel-hezbollah-commander-what-to-know.html
+key-21:
+  type: web
+  title: Israel’s Attacks on Hezbollah Have Intensified but Stop Short of All-Out War
+  date: 2024-09-21
+  url: https://www.nytimes.com/2024/09/20/world/middleeast/israel-lebanon-attacks-hezbollah-war.html
+key-22:
+  type: web
+  title: With Focus Shifting to Lebanon, Some in Gaza Fear Cease-Fire Talks Will Be Sidelined
+  date: 2024-09-21
+  url: https://www.nytimes.com/2024/09/20/world/middleeast/gaza-cease-fire-talks-hezbollah-lebanon.html
+key-24:
+  type: web
+  title: 'Watch: Waterbury Police Department – Axon product demo'
+  date: 2024-09-21
+  url: https://www.rep-am.com/gallery/2024/09/20/watch-waterbury-police-department-axon-product-demo/
+key-25:
+  type: web
+  title: Cheshire hosts Big Fat Combo tonight
+  date: 2024-09-21
+  url: https://www.rep-am.com/life-arts/2024/09/20/cheshire-hosts-big-fat-combo-tonight/
+key-26:
+  type: web
+  title: Man fatally shot by officers years after police tried to steer him away from crime
+  date: 2024-09-21
+  url: https://www.rep-am.com/localnews/2024/09/20/man-fatally-shot-by-officers-years-after-police-tried-to-steer-him-away-from-crime/
+key-27:
+  type: web
+  title: Waterbury police blotter
+  date: 2024-09-21
+  url: https://www.rep-am.com/local/records/police/2024/09/20/waterbury-police-blotter-248/
