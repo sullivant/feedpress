@@ -1,5 +1,12 @@
 use std::error::Error;
 use std::io::Write;
+use std::str::FromStr;
+use hayagriva::io::to_yaml_str;
+use hayagriva::types::EntryType;
+use hayagriva::types::FormatString;
+use hayagriva::types::QualifiedUrl;
+use hayagriva::Entry;
+use hayagriva::Library;
 use rss::Channel;
 use std::fs::File;
 use std::io::Read;
@@ -49,8 +56,8 @@ struct Content {
 }
 
 #[derive(Debug, Serialize)]
-struct Biblio {
-    r#type: String,
+struct BiblioEntry {
+    r#type: EntryType,
     key: String,
     title: String,
     date: String,
@@ -61,7 +68,7 @@ struct Biblio {
 async fn main() {
     println!("feedpress - pressing all the news that's fit to press");
 
-    let mut file = File::open("../data/feeds.toml").expect("Failed to open file");
+    let mut file = File::open("../data/config.toml").expect("Failed to open file");
     let mut contents = String::new();
     file.read_to_string(&mut contents).expect("Failed to read file");
    
@@ -79,9 +86,10 @@ async fn main() {
 
     // This is a placeholder for our pressed together content and related biblios
     let mut press_content: Vec<Content> = Vec::new();
-    let mut press_biblio: Vec<Biblio> = Vec::new();
+    let mut press_biblio: Vec<BiblioEntry> = Vec::new();
 
     // For all of the feeds in our config... do stuff.
+    let mut r: usize = 0;
     for this_entry in &config.feed {
         // println!("{:?}", this_entry.url);
         
@@ -110,9 +118,10 @@ async fn main() {
         }
 
         println!("Processing: {} with feed limit of {} and max age of {} days", channel.title(), feed_limit, max_age );
-        let mut i = 0;
+        let mut i: usize = 0;
 
         for this_item in channel.items() {
+            r = r+1;
             // If we have a feed limit, make sure we apply it.
             i = i+1;
             if feed_limit > 0 && i > feed_limit {
@@ -135,16 +144,16 @@ async fn main() {
                 source: channel.description.to_string(),
                 link: this_item.link().unwrap().to_string(),
                 pub_date: this_item.pub_date().unwrap().to_string(),
-                title: this_item.title().unwrap().to_string(),
-                bib_key: "harry".to_string(),
+                title: this_item.title().unwrap_or("No Title").to_string(),
+                bib_key: format!("key-{}",r),
                 content: this_item.description().unwrap().to_string(),
             };
 
             // Build also its related biblio entry
-            let this_biblio = Biblio {
-                r#type: "Web".to_string(),
-                key: format!("key-{}",i),
-                title: this_item.title().unwrap().to_string(),
+            let this_biblio = BiblioEntry {
+                r#type: EntryType::Web,
+                key: format!("key-{}",r),
+                title: this_item.title().unwrap_or("No Title").to_string(),
                 date: this_item.pub_date().unwrap().to_string(),
                 url: this_item.link().unwrap().to_string(),
             };
@@ -166,10 +175,24 @@ async fn main() {
     let toml = toml::to_string(&this_press).unwrap();
 
     // Write this goodness out to a file and its related -bib.yml version
-    let mut file = File::create("../input/20240919.toml").unwrap();
+    let mut file = File::create("../input/input.toml").unwrap();
     file.write_all(toml.as_bytes()).unwrap();
 
-    // println!("{:?}",press_biblio);
+  
+
+    // Create a biblio library for this edition
+    let mut library = Library::new();
+    for bib_entry in press_biblio {
+        let mut entry: Entry = Entry::new(&bib_entry.key, bib_entry.r#type);
+        entry.set_title(FormatString::from_str(&bib_entry.title).unwrap());
+        entry.set_url(QualifiedUrl::from_str(&bib_entry.url).unwrap());
+        library.push(&entry);
+    }
+
+    let yaml = to_yaml_str(&library).unwrap();
+    let mut bib_file = File::create("../input/input-bib.yml").unwrap();
+    bib_file.write_all(yaml.as_bytes()).unwrap();
+    
 
 }
 

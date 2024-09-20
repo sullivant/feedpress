@@ -1,11 +1,44 @@
-harry:
-    type: web
-    title: Article Title
-    date: 2003-06-21
-    url: http://rep-am.com
-
-electronic:
-    type: Web
-    title: Ishkur's Guide to Electronic Music
-    date: 2003-06-21
-    url: http://www.techno.org/electronic-music-guide/
+key-5:
+  type: web
+  title: Russia’s war dead tops 70,000 as volunteers face 'meat grinder'
+  url: https://www.bbc.com/news/articles/cjr3255gpjgo
+key-6:
+  type: web
+  title: Harris says anyone breaking into her home is 'getting shot'
+  url: https://www.bbc.com/news/articles/cn4yxe2xxzdo
+key-8:
+  type: web
+  title: Why EU tariffs are unlikely to dent Chinese EV makers' European expansion
+  url: https://www.cnbc.com/2024/09/20/eu-tariffs-on-chinese-evs-are-unlikely-to-dent-their-european-expansion.html
+key-9:
+  type: web
+  title: American Airlines in talks to pick Citigroup over rival bank Barclays for crucial credit card deal, sources say
+  url: https://www.cnbc.com/2024/09/20/american-airlines-credit-card-talks-to-pick-citigroup-over-barclays.html
+key-11:
+  type: web
+  title: 'Generation rent: How youth are battling the global housing crisis'
+  url: https://www.aljazeera.com/program/the-stream/2024/9/20/generation-rent-how-youth-are-battling-the-global-housing-crisis?traffic_source=rss
+key-12:
+  type: web
+  title: 'Anthony Joshua vs Daniel Dubois: Boxing fight time, undercard, ring walk'
+  url: https://www.aljazeera.com/sports/2024/9/20/anthony-joshua-vs-daniel-dubois-boxing-fight-time-undercard-ring-walk?traffic_source=rss
+key-14:
+  type: web
+  title: Kamala Harris Outspends Donald Trump by Tens of Millions Online
+  url: https://www.nytimes.com/2024/09/20/us/politics/kamala-harris-trump-campaign-spending.html
+key-15:
+  type: web
+  title: At Emotional Event With Oprah, Kamala Harris Hits Core Campaign Themes
+  url: https://www.nytimes.com/2024/09/20/us/politics/kamala-harris-oprah-winfrey-event.html
+key-16:
+  type: web
+  title: How the Fastest-Growing County in Wisconsin Is Scrambling the Presidential Race
+  url: https://www.nytimes.com/2024/09/20/us/trump-harris-election-wisconsin.html
+key-18:
+  type: web
+  title: New complaint points finger at state Board of Education for issues High Road Schools
+  url: https://www.rep-am.com/top-stories/2024/09/20/new-complaint-points-finger-at-state-board-of-education-for-issues-high-road-schools/
+key-19:
+  type: web
+  title: No Title
+  url: https://www.rep-am.com/localnews/2024/09/20/2148638/
