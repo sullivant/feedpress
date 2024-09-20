@@ -35,7 +35,7 @@ bib_key = "key-9"
 content = "American has been working with banks and card networks on a new deal with the aim of consolidating its business with a single issuer, sources tell CNBC."
 
 [[content]]
-section = "News"
+section = "Personal"
 source = "Breaking News, World News and Video from Al Jazeera"
 link = "https://www.aljazeera.com/program/newsfeed/2024/9/20/israeli-airstrikes-hit-densely-populated-beirut-neighbourhood?traffic_source=rss"
 pub_date = "Fri, 20 Sep 2024 13:49:30 +0000"
@@ -44,7 +44,7 @@ bib_key = "key-11"
 content = "Israeli airstrikes have hit the densely populated Dahiyeh neighbourhood of Lebanon’s capital Beirut."
 
 [[content]]
-section = "News"
+section = "Personal"
 source = "Breaking News, World News and Video from Al Jazeera"
 link = "https://www.aljazeera.com/news/2024/9/20/dozens-of-women-accuse-former-harrods-boss-mohamed-al-fayed-of-sexual-abuse?traffic_source=rss"
 pub_date = "Fri, 20 Sep 2024 13:38:45 +0000"
@@ -65,7 +65,7 @@ content = "Plus, an iconic kitchen brand files for bankruptcy."
 section = "News"
 source = ""
 link = "https://www.nytimes.com/2024/09/20/us/politics/kamala-harris-trump-campaign-spending.html"
-pub_date = "Fri, 20 Sep 2024 09:03:57 +0000"
+pub_date = "Fri, 20 Sep 2024 14:14:12 +0000"
 title = "Kamala Harris Outspends Donald Trump by Tens of Millions Online"
 bib_key = "key-15"
 content = "The week of their debate, Kamala Harris outspent Donald Trump by 20 to 1 on Facebook and Instagram. It was just one sign of how uneven their online advertising battle has become."
@@ -74,7 +74,7 @@ content = "The week of their debate, Kamala Harris outspent Donald Trump by 20 t
 section = "News"
 source = ""
 link = "https://www.nytimes.com/2024/09/20/us/politics/kamala-harris-oprah-winfrey-event.html"
-pub_date = "Fri, 20 Sep 2024 12:16:32 +0000"
+pub_date = "Fri, 20 Sep 2024 14:16:47 +0000"
 title = "Harris Hits Core Campaign Themes in Emotional Forum With Oprah Winfrey"
 bib_key = "key-16"
 content = "Vice President Kamala Harris spoke off the cuff, as guests included a teenager shot at her school and the family of a woman in Georgia who died as a result of the state’s abortion ban."
@@ -82,17 +82,17 @@ content = "Vice President Kamala Harris spoke off the cuff, as guests included a
 [[content]]
 section = "News - Local"
 source = "Northwest Connecticut's news and information leader"
-link = "https://www.rep-am.com/localnews/2024/09/20/connecticut-community-foundation-taps-chapman-frew-reynolds-balanda-as-trustees/"
-pub_date = "Fri, 20 Sep 2024 13:47:33 +0000"
-title = "Connecticut Community Foundation taps Chapman, Frew, Reynolds-Balanda as trustees"
+link = "https://www.rep-am.com/localnews/2024/09/20/torrington-schools-closed-because-of-threat/"
+pub_date = "Fri, 20 Sep 2024 14:19:25 +0000"
+title = "Torrington schools closed because of threat"
 bib_key = "key-18"
-content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/28_new_032714js08-150x150.jpg" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/28_new_032714js08-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" />WATERBURY — Connecticut Community Foundation has announced the election of three community leaders to its board of trustees: Dr. Angela Chapman, Baba Frew and JoAnn Reynolds-Balanda. These new trustees will serve on a board that represents residents from across the foundation’s 21-municipality service area in Greater Waterbury and the Litchfield Hills. As stewards of the [&#8230;]'
+content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/07/torrington-icon-1-150x150.png" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/07/torrington-icon-1-150x150.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" />Torrington schools closed because of threat Torrington schools closed Friday because of a threat the district received. Superintendent Michael Wilson posted on the district’s Facebook page the district was in contact with Torrington police and that while the threat was not determined to be caution. Multiple districts across the state decided to close Friday due [&#8230;]'
 
 [[content]]
 section = "News - Local"
 source = "Northwest Connecticut's news and information leader"
-link = "https://www.rep-am.com/top-stories/2024/09/20/new-complaint-points-finger-at-state-board-of-education-for-issues-high-road-schools/"
-pub_date = "Fri, 20 Sep 2024 13:37:57 +0000"
-title = "New complaint points finger at state Board of Education for issues High Road Schools"
+link = "https://www.rep-am.com/localnews/2024/09/20/connecticut-community-foundation-taps-chapman-frew-reynolds-balanda-as-trustees/"
+pub_date = "Fri, 20 Sep 2024 13:47:33 +0000"
+title = "Connecticut Community Foundation taps Chapman, Frew, Reynolds-Balanda as trustees"
 bib_key = "key-19"
-content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/high-road-150x150.png" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" loading="lazy" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/high-road-150x150.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" />By Laura Tillman &#124; ctmirror.org The Office of the Child Advocate and Disability Rights Connecticut have jointly filed a complaint with the U.S. Office of Special Education Programs against the Connecticut Department of Education, alleging that the department is not fulfilling its role of monitoring schools for children with disabilities. The complaint, filed on Wednesday, [&#8230;]'
+content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/28_new_032714js08-150x150.jpg" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" loading="lazy" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/28_new_032714js08-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" />WATERBURY — Connecticut Community Foundation has announced the election of three community leaders to its board of trustees: Dr. Angela Chapman, Baba Frew and JoAnn Reynolds-Balanda. These new trustees will serve on a board that represents residents from across the foundation’s 21-municipality service area in Greater Waterbury and the Litchfield Hills. As stewards of the [&#8230;]'

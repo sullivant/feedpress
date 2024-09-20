@@ -19,9 +19,9 @@ use chrono::TimeDelta;
 struct FeedConfig {
     show_errors: bool, 
     #[serde(default)]
-    feed_limit: usize,
-    #[serde(default)]
     max_age: usize,
+    #[serde(default)]
+    feed_limit: usize,
     feed: Vec<FeedEntry>,
 }
 
@@ -36,7 +36,7 @@ struct FeedEntry {
     max_age: usize,
 }
 fn default_section() -> String {
-    "News".to_string()
+    "Personal".to_string()
 }
 
 #[derive(Debug, Serialize)]

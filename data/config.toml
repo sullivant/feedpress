@@ -1,6 +1,14 @@
-show_errors = false
-max_age = 3
-feed_limit = 2
+# global configurations
+show_errors = false # true if you'd like to see feed collection errors
+max_age = 3 # number of days old an article is skipped if it is older than
+feed_limit = 2  # max number of articles to pull from a feed
+
+# feed array
+# example:
+# [[feed]]
+#   url = "https://yourfeedurl/rss.xml"
+#   feed_limit = 10
+#   section = "Personal"
 
 [[feed]]
   url = "https://www.sullivanscientific.com/posts/index.xml"
