@@ -11,7 +11,7 @@ content = "More than 70,000 Russian soldiers have died in Ukraine - volunteers n
 section = "News"
 source = "BBC News - World"
 link = "https://www.bbc.com/news/articles/cn4yxe2xxzdo"
-pub_date = "Fri, 20 Sep 2024 10:55:21 GMT"
+pub_date = "Fri, 20 Sep 2024 13:45:28 GMT"
 title = "Harris says anyone breaking into her home is 'getting shot'"
 bib_key = "key-6"
 content = "The Democratic presidential nominee has discussed her gun ownership in a jokey exchange with Oprah Winfrey."
@@ -37,20 +37,29 @@ content = "American has been working with banks and card networks on a new deal 
 [[content]]
 section = "News"
 source = "Breaking News, World News and Video from Al Jazeera"
-link = "https://www.aljazeera.com/program/the-stream/2024/9/20/generation-rent-how-youth-are-battling-the-global-housing-crisis?traffic_source=rss"
-pub_date = "Fri, 20 Sep 2024 13:00:00 +0000"
-title = "Generation rent: How youth are battling the global housing crisis"
+link = "https://www.aljazeera.com/program/newsfeed/2024/9/20/israeli-airstrikes-hit-densely-populated-beirut-neighbourhood?traffic_source=rss"
+pub_date = "Fri, 20 Sep 2024 13:49:30 +0000"
+title = "Israeli airstrikes hit densely populated Beirut neighbourhood"
 bib_key = "key-11"
-content = "We dive into the global housing crisis and explore how young people are finding creative ways to build community."
+content = "Israeli airstrikes have hit the densely populated Dahiyeh neighbourhood of Lebanon’s capital Beirut."
 
 [[content]]
 section = "News"
 source = "Breaking News, World News and Video from Al Jazeera"
-link = "https://www.aljazeera.com/sports/2024/9/20/anthony-joshua-vs-daniel-dubois-boxing-fight-time-undercard-ring-walk?traffic_source=rss"
-pub_date = "Fri, 20 Sep 2024 12:56:31 +0000"
-title = "Anthony Joshua vs Daniel Dubois: Boxing fight time, undercard, ring walk"
+link = "https://www.aljazeera.com/news/2024/9/20/dozens-of-women-accuse-former-harrods-boss-mohamed-al-fayed-of-sexual-abuse?traffic_source=rss"
+pub_date = "Fri, 20 Sep 2024 13:38:45 +0000"
+title = "Dozens of women accuse former Harrods boss Mohamed al-Fayed of sexual abuse"
 bib_key = "key-12"
-content = "The British pair to meet in a bout for the IBF world heavyweight title at a sold-out Wembley Stadium."
+content = "Harrods, now under Qatari ownership, issues apology for abuse of power when store was under al-Fayed’s control."
+
+[[content]]
+section = "News"
+source = ""
+link = "https://www.nytimes.com/2024/09/20/podcasts/harris-trump-spending-hezbollah.html"
+pub_date = "Fri, 20 Sep 2024 10:00:14 +0000"
+title = "Harris Outspends Trump in Ad Battle, and Israel Bombards Hezbollah"
+bib_key = "key-14"
+content = "Plus, an iconic kitchen brand files for bankruptcy."
 
 [[content]]
 section = "News"
@@ -58,7 +67,7 @@ source = ""
 link = "https://www.nytimes.com/2024/09/20/us/politics/kamala-harris-trump-campaign-spending.html"
 pub_date = "Fri, 20 Sep 2024 09:03:57 +0000"
 title = "Kamala Harris Outspends Donald Trump by Tens of Millions Online"
-bib_key = "key-14"
+bib_key = "key-15"
 content = "The week of their debate, Kamala Harris outspent Donald Trump by 20 to 1 on Facebook and Instagram. It was just one sign of how uneven their online advertising battle has become."
 
 [[content]]
@@ -66,18 +75,18 @@ section = "News"
 source = ""
 link = "https://www.nytimes.com/2024/09/20/us/politics/kamala-harris-oprah-winfrey-event.html"
 pub_date = "Fri, 20 Sep 2024 12:16:32 +0000"
-title = "At Emotional Event With Oprah, Kamala Harris Hits Core Campaign Themes"
-bib_key = "key-15"
+title = "Harris Hits Core Campaign Themes in Emotional Forum With Oprah Winfrey"
+bib_key = "key-16"
 content = "Vice President Kamala Harris spoke off the cuff, as guests included a teenager shot at her school and the family of a woman in Georgia who died as a result of the state’s abortion ban."
 
 [[content]]
-section = "News"
-source = ""
-link = "https://www.nytimes.com/2024/09/20/us/trump-harris-election-wisconsin.html"
-pub_date = "Fri, 20 Sep 2024 09:02:31 +0000"
-title = "How the Fastest-Growing County in Wisconsin Is Scrambling the Presidential Race"
-bib_key = "key-16"
-content = "Madison, Wis., and its blossoming suburbs are drawing newcomers for tech and health care jobs. With a swing state in the balance, Democrats see promise."
+section = "News - Local"
+source = "Northwest Connecticut's news and information leader"
+link = "https://www.rep-am.com/localnews/2024/09/20/connecticut-community-foundation-taps-chapman-frew-reynolds-balanda-as-trustees/"
+pub_date = "Fri, 20 Sep 2024 13:47:33 +0000"
+title = "Connecticut Community Foundation taps Chapman, Frew, Reynolds-Balanda as trustees"
+bib_key = "key-18"
+content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/28_new_032714js08-150x150.jpg" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/28_new_032714js08-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" />WATERBURY — Connecticut Community Foundation has announced the election of three community leaders to its board of trustees: Dr. Angela Chapman, Baba Frew and JoAnn Reynolds-Balanda. These new trustees will serve on a board that represents residents from across the foundation’s 21-municipality service area in Greater Waterbury and the Litchfield Hills. As stewards of the [&#8230;]'
 
 [[content]]
 section = "News - Local"
@@ -85,14 +94,5 @@ source = "Northwest Connecticut's news and information leader"
 link = "https://www.rep-am.com/top-stories/2024/09/20/new-complaint-points-finger-at-state-board-of-education-for-issues-high-road-schools/"
 pub_date = "Fri, 20 Sep 2024 13:37:57 +0000"
 title = "New complaint points finger at state Board of Education for issues High Road Schools"
-bib_key = "key-18"
-content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/high-road-150x150.png" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/high-road-150x150.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" />By Laura Tillman &#124; ctmirror.org The Office of the Child Advocate and Disability Rights Connecticut have jointly filed a complaint with the U.S. Office of Special Education Programs against the Connecticut Department of Education, alleging that the department is not fulfilling its role of monitoring schools for children with disabilities. The complaint, filed on Wednesday, [&#8230;]'
-
-[[content]]
-section = "News - Local"
-source = "Northwest Connecticut's news and information leader"
-link = "https://www.rep-am.com/localnews/2024/09/20/2148638/"
-pub_date = "Fri, 20 Sep 2024 13:26:13 +0000"
-title = "No Title"
 bib_key = "key-19"
-content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/06_new_100520shho01-e1726838754706-150x150.jpg" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" loading="lazy" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/06_new_100520shho01-e1726838754706-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" />BRIDGEPORT — Justin Cabrera, 25, of Waterbury, pleaded guilty Wednesday before U.S. District Judge Kari A. Dooley in Bridgeport to offenses stemming from his participation in the 960 gang, a violent Waterbury street gang. According to court documents and statements made in court, the FBI, ATF and Waterbury police have been investigating multiple Waterbury-based groups, [&#8230;]'
+content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/high-road-150x150.png" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" loading="lazy" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/high-road-150x150.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" />By Laura Tillman &#124; ctmirror.org The Office of the Child Advocate and Disability Rights Connecticut have jointly filed a complaint with the U.S. Office of Special Education Programs against the Connecticut Department of Education, alleging that the department is not fulfilling its role of monitoring schools for children with disabilities. The complaint, filed on Wednesday, [&#8230;]'

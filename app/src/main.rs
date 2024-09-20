@@ -41,11 +41,11 @@ fn default_section() -> String {
 
 #[derive(Debug, Serialize)]
 struct Press {
-    content: Vec<Content>,
+    content: Vec<ContentEntry>,
 }
 
 #[derive(Debug, Serialize)]
-struct Content {
+struct ContentEntry {
     section: String,
     source: String,
     link: String,
@@ -85,14 +85,12 @@ async fn main() {
     println!("Done parsing configuration.  Current time is: {}", local_time);
 
     // This is a placeholder for our pressed together content and related biblios
-    let mut press_content: Vec<Content> = Vec::new();
+    let mut press_content: Vec<ContentEntry> = Vec::new();
     let mut press_biblio: Vec<BiblioEntry> = Vec::new();
 
     // For all of the feeds in our config... do stuff.
-    let mut r: usize = 0;
+    let mut r: usize = 0;   // This is our "key" for the biblio.
     for this_entry in &config.feed {
-        // println!("{:?}", this_entry.url);
-        
         let channel: Channel = match get_feed(&this_entry.url).await {
             Ok(c) => c,
             Err(e) => {
@@ -112,6 +110,7 @@ async fn main() {
             feed_limit = this_entry.feed_limit;
         }
 
+        // And the maximum age, in days
         let mut max_age: usize = config.max_age;
         if this_entry.max_age > 0 {
             max_age = this_entry.max_age;
@@ -120,8 +119,10 @@ async fn main() {
         println!("Processing: {} with feed limit of {} and max age of {} days", channel.title(), feed_limit, max_age );
         let mut i: usize = 0;
 
+        // For each item in this channel's current feed data, grab stuff and deal with it.
         for this_item in channel.items() {
-            r = r+1;
+            r = r+1;    // Increment our biblio key.
+
             // If we have a feed limit, make sure we apply it.
             i = i+1;
             if feed_limit > 0 && i > feed_limit {
@@ -139,7 +140,7 @@ async fn main() {
             }
 
             // Build a new struct of this particular content for outbound formatting
-            let this_content = Content {
+            let this_content = ContentEntry {
                 section: entry_section.clone(),
                 source: channel.description.to_string(),
                 link: this_item.link().unwrap().to_string(),
@@ -158,12 +159,19 @@ async fn main() {
                 url: this_item.link().unwrap().to_string(),
             };
 
-            // Slap it into the outbound vector
+            // Slap it into the outbound vectors
             press_content.push(this_content);
             press_biblio.push(this_biblio);
         }
     }
 
+    // Call out and create our content and biblio files.
+    process_content(press_content);
+    process_biblio(press_biblio);
+   
+}
+
+fn process_content(press_content: Vec<ContentEntry>) -> bool {
     // This structure will likely be expanded, but for now contains the array of our
     // outbound, pressed, content.
     let this_press: Press = Press {
@@ -178,9 +186,11 @@ async fn main() {
     let mut file = File::create("../input/input.toml").unwrap();
     file.write_all(toml.as_bytes()).unwrap();
 
-  
+    true
+}
 
-    // Create a biblio library for this edition
+fn process_biblio(press_biblio: Vec<BiblioEntry>) -> bool {
+    // Create a biblio library for this edition and add entries for each of the keys
     let mut library = Library::new();
     for bib_entry in press_biblio {
         let mut entry: Entry = Entry::new(&bib_entry.key, bib_entry.r#type);
@@ -192,10 +202,9 @@ async fn main() {
     let yaml = to_yaml_str(&library).unwrap();
     let mut bib_file = File::create("../input/input-bib.yml").unwrap();
     bib_file.write_all(yaml.as_bytes()).unwrap();
-    
 
+    true
 }
-
 
 async fn get_feed(url: &str) -> Result<Channel, Box<dyn Error>> {
     let content = reqwest::get(url)
