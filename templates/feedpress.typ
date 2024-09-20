@@ -1,10 +1,12 @@
 #import "layout.typ" : conf
 #import "bookshelf.typ" : bookshelf
 
+#let ver = toml("../app/Cargo.toml")
+
 #show: doc => conf(
   title: [Feed Press],
   dateStamp: [Today's date is #datetime.today().display()],
-  version: [feedPress v0.0.1],
+  version: [feedPress #ver.package.version],
   doc,
 )
 

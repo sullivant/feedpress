@@ -12,6 +12,7 @@ use std::error::Error;
 use std::io::Write;
 use std::str::FromStr;
 use hayagriva::io::to_yaml_str;
+use hayagriva::types::Date;
 use hayagriva::types::EntryType;
 use hayagriva::types::FormatString;
 use hayagriva::types::QualifiedUrl;
@@ -123,10 +124,15 @@ struct ContentEntry {
 /// conforms to the standard found in the [hayagriva] crate and project.
 #[derive(Debug, Serialize)]
 struct BiblioEntry {
+    /// The default of [EntryType::Web]
     r#type: EntryType,
+    /// The key that is linked via [ContentEntry]
     key: String,
+    /// The title of the article
     title: String,
+    /// The date published
     date: String,
+    /// The direct location of the article
     url: String,
 }
 
@@ -262,6 +268,7 @@ fn process_biblio(press_biblio: Vec<BiblioEntry>) -> bool {
         let mut entry: Entry = Entry::new(&bib_entry.key, bib_entry.r#type);
         entry.set_title(FormatString::from_str(&bib_entry.title).unwrap());
         entry.set_url(QualifiedUrl::from_str(&bib_entry.url).unwrap());
+        entry.set_date(Date::from_str(&bib_entry.date).unwrap());
         library.push(&entry);
     }
 

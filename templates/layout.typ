@@ -7,16 +7,12 @@
 ) = {
   set page(
     paper: "us-letter",
-    header: align(
-      right + horizon,
-      dateStamp,
-    ),
     footer: context [
       #set text(8pt)
       #set align(right)
-      #counter(page).display(
-        "1 of 1",
-        both: true,
+      #grid(columns: (2fr, 8fr), rows: 1,
+        rect(stroke: 0pt, align(left, [$dateStamp$ $version$])),
+        rect(stroke: 0pt, align(horizon + center, [#counter(page).display("1 of 1", both: true, )]))
       )
     ],
   )
@@ -25,9 +21,13 @@
     font: "Linux Libertine",
     size: 11pt,
   )
+
   
   align(center, text(17pt)[
-    #sym.dots.h.c *#title* #sym.dots.h.c
+    #grid(columns: 2, rows: 1, 
+      rect(height: 7em, stroke: 0pt, align(horizon, image("../assets/logo.jpg", width: 5em, height: 5em))),
+      rect(height: 7em, stroke: 0pt, align(horizon + center, [#sym.dots.h.c  *#title* #sym.dots.h.c]))
+    )
     #line(length:100%)
   ])
   
