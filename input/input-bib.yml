@@ -1,18 +1,18 @@
 key-5:
   type: web
+  title: Top Hezbollah commander killed in Israeli strike on Beirut
+  date: 2024-09-21
+  url: https://www.bbc.com/news/articles/c5y9wyy9pr2o
+key-6:
+  type: web
   title: Israel investigates after its soldiers filmed throwing bodies off roof
   date: 2024-09-21
   url: https://www.bbc.com/news/articles/cn8jg0x5xg8o
-key-6:
+key-7:
   type: web
   title: Russia’s war dead tops 70,000 as volunteers face 'meat grinder'
   date: 2024-09-20
   url: https://www.bbc.com/news/articles/cjr3255gpjgo
-key-7:
-  type: web
-  title: Microsoft chooses infamous nuclear site for AI power
-  date: 2024-09-21
-  url: https://www.bbc.com/news/articles/cx25v2d7zexo
 key-8:
   type: web
   title: '''Our husbands didn''t go to war for Ukraine so we can sit around crying'''
@@ -20,14 +20,14 @@ key-8:
   url: https://www.bbc.com/news/articles/c20mn1z3vm6o
 key-10:
   type: web
+  title: Qualcomm recently approached Intel about a possible takeover
+  date: 2024-09-21
+  url: https://www.cnbc.com/2024/09/20/qualcomm-reportedly-approached-intel-about-takeover.html
+key-11:
+  type: web
   title: Indian ed-tech startup Physics Wallah bags $2.8 billion valuation amid sector troubles$
   date: 2024-09-21
   url: https://www.cnbc.com/2024/09/20/indian-ed-tech-startup-physics-wallah-bags-2point8-billion-valuation-with-funding.html
-key-11:
-  type: web
-  title: Intel shares pop on report Qualcomm has approached it about takeover
-  date: 2024-09-21
-  url: https://www.cnbc.com/2024/09/20/qualcomm-reportedly-approached-intel-about-takeover.html
 key-12:
   type: web
   title: American Airlines in talks to pick Citigroup over rival bank Barclays for crucial credit card deal, sources say
@@ -35,29 +35,29 @@ key-12:
   url: https://www.cnbc.com/2024/09/20/american-airlines-credit-card-talks-to-pick-citigroup-over-barclays.html
 key-13:
   type: web
-  title: Trump Media hits new 52-week low after DJT lockup restrictions expire
+  title: Trump Media closes at a new 52-week low on heavy trading after lockup expires
   date: 2024-09-21
   url: https://www.cnbc.com/2024/09/20/djt-trump-media-stock-selloff-lockup-.html
 key-15:
   type: web
-  title: Israel strikes Beirut suburb in latest attack in Lebanon
+  title: UN warns escalating Israel-Hezbollah violence risks devastating conflict
   date: 2024-09-21
-  url: https://www.aljazeera.com/program/newsfeed/2024/9/20/israel-strikes-beirut-suburb-in-latest-attack-in-lebanon?traffic_source=rss
+  url: https://www.aljazeera.com/news/2024/9/20/un-warns-escalating-israel-hezbollah-violence-risks-devastating-conflict?traffic_source=rss
 key-16:
   type: web
-  title: Israeli forces kill dozens across Gaza as tanks advance deeper into Rafah
+  title: How will immigration shape the US presidential election?
   date: 2024-09-21
-  url: https://www.aljazeera.com/news/2024/9/20/israeli-forces-kill-dozens-across-gaza-as-tanks-advance-deeper-into-rafah?traffic_source=rss
+  url: https://www.aljazeera.com/program/inside-story/2024/9/20/how-will-immigration-shape-the-us-presidential-election?traffic_source=rss
 key-17:
   type: web
-  title: 'More than 70 killed in Mali attack: What happened, why it matters'
+  title: Afghanistan seal historic cricket series win against South Africa
   date: 2024-09-21
-  url: https://www.aljazeera.com/news/2024/9/20/more-than-70-killed-in-mali-attack-what-happened-why-it-matters?traffic_source=rss
+  url: https://www.aljazeera.com/sports/2024/9/20/afghanistan-seal-historic-cricket-series-win-against-south-africa?traffic_source=rss
 key-18:
   type: web
-  title: Who is Ibrahim Aqil, the Hezbollah commander targeted by Israel?
+  title: More strikes on Hezbollah escalate decades-long conflict
   date: 2024-09-21
-  url: https://www.aljazeera.com/news/2024/9/20/who-is-ibrahim-aqil-the-hezbollah-commander-targeted-by-israel?traffic_source=rss
+  url: https://www.aljazeera.com/program/newsfeed/2024/9/20/more-strikes-on-hezbollah-escalate-decades-long-conflict?traffic_source=rss
 key-20:
   type: web
   title: Who Is Ibrahim Aqeel, the Hezbollah Commander Targeted by Israel?
@@ -70,26 +70,26 @@ key-21:
   url: https://www.nytimes.com/2024/09/20/world/middleeast/israel-lebanon-attacks-hezbollah-war.html
 key-22:
   type: web
-  title: With Focus Shifting to Lebanon, Some in Gaza Fear Cease-Fire Talks Will Be Sidelined
+  title: Israeli Soldiers Throw Three Seemingly Lifeless Palestinians Off a Roof
   date: 2024-09-21
-  url: https://www.nytimes.com/2024/09/20/world/middleeast/gaza-cease-fire-talks-hezbollah-lebanon.html
+  url: https://www.nytimes.com/2024/09/20/world/middleeast/israel-soldiers-palestinian-bodies-roof.html
 key-24:
   type: web
-  title: 'Watch: Waterbury Police Department – Axon product demo'
+  title: Torrington’s Five Points to feature John Frederick Walker, other artists
   date: 2024-09-21
-  url: https://www.rep-am.com/gallery/2024/09/20/watch-waterbury-police-department-axon-product-demo/
+  url: https://www.rep-am.com/life-arts/2024/09/20/torringtons-five-points-to-feature-john-frederick-walker-other-artists/
 key-25:
-  type: web
-  title: Cheshire hosts Big Fat Combo tonight
-  date: 2024-09-21
-  url: https://www.rep-am.com/life-arts/2024/09/20/cheshire-hosts-big-fat-combo-tonight/
-key-26:
-  type: web
-  title: Man fatally shot by officers years after police tried to steer him away from crime
-  date: 2024-09-21
-  url: https://www.rep-am.com/localnews/2024/09/20/man-fatally-shot-by-officers-years-after-police-tried-to-steer-him-away-from-crime/
-key-27:
   type: web
   title: Waterbury police blotter
   date: 2024-09-21
-  url: https://www.rep-am.com/local/records/police/2024/09/20/waterbury-police-blotter-248/
+  url: https://www.rep-am.com/local/records/police/2024/09/20/waterbury-police-blotter-249/
+key-26:
+  type: web
+  title: PURA not looking out for ratepayers
+  date: 2024-09-21
+  url: https://www.rep-am.com/opinion/letters-opinion/2024/09/20/pura-not-looking-out-for-ratepayers/
+key-27:
+  type: web
+  title: Country’s direction is up to the voters
+  date: 2024-09-21
+  url: https://www.rep-am.com/opinion/letters-opinion/2024/09/20/countrys-direction-is-up-to-the-voters/

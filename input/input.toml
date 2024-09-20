@@ -1,10 +1,19 @@
 [[content]]
 section = "News"
 source = "BBC News - World"
+link = "https://www.bbc.com/news/articles/c5y9wyy9pr2o"
+pub_date = "Fri, 20 Sep 2024 21:57:37 GMT"
+title = "Top Hezbollah commander killed in Israeli strike on Beirut"
+bib_key = "key-5"
+content = "The strike in Lebanon's capital, which killed at least 14 people, adds to fears of an all-out war."
+
+[[content]]
+section = "News"
+source = "BBC News - World"
 link = "https://www.bbc.com/news/articles/cn8jg0x5xg8o"
 pub_date = "Fri, 20 Sep 2024 15:53:45 GMT"
 title = "Israel investigates after its soldiers filmed throwing bodies off roof"
-bib_key = "key-5"
+bib_key = "key-6"
 content = 'The IDF says the incident does not "conform" to its values, while Palestinian officials say it is a "crime".'
 
 [[content]]
@@ -13,17 +22,8 @@ source = "BBC News - World"
 link = "https://www.bbc.com/news/articles/cjr3255gpjgo"
 pub_date = "Thu, 19 Sep 2024 23:12:45 GMT"
 title = "Russia’s war dead tops 70,000 as volunteers face 'meat grinder'"
-bib_key = "key-6"
-content = "More than 70,000 Russian soldiers have died in Ukraine - volunteers now make up the highest number of deaths."
-
-[[content]]
-section = "News"
-source = "BBC News - World"
-link = "https://www.bbc.com/news/articles/cx25v2d7zexo"
-pub_date = "Fri, 20 Sep 2024 15:24:13 GMT"
-title = "Microsoft chooses infamous nuclear site for AI power"
 bib_key = "key-7"
-content = "The 1979 accident at Three Mile Island had cast a shadow on nuclear power in the US for decades."
+content = "More than 70,000 Russian soldiers have died in Ukraine - volunteers now make up the highest number of deaths."
 
 [[content]]
 section = "News"
@@ -37,20 +37,20 @@ content = "A study suggests 54% of Ukrainians suffer from PTSD as Russia's war o
 [[content]]
 section = "News"
 source = "CNBC International is the world leader for news on business, technology, China, trade, oil prices, the Middle East and markets."
-link = "https://www.cnbc.com/2024/09/20/indian-ed-tech-startup-physics-wallah-bags-2point8-billion-valuation-with-funding.html"
-pub_date = "Fri, 20 Sep 2024 06:30:01 GMT"
-title = "Indian ed-tech startup Physics Wallah bags $2.8 billion valuation amid sector troubles"
+link = "https://www.cnbc.com/2024/09/20/qualcomm-reportedly-approached-intel-about-takeover.html"
+pub_date = "Fri, 20 Sep 2024 20:52:52 GMT"
+title = "Qualcomm recently approached Intel about a possible takeover"
 bib_key = "key-10"
-content = "Physics Wallah CEO Alakh Pandey said the company would use the $210 million funding to expand its business and do acquisitions."
+content = "If Qualcomm were to acquire Intel, it would be one of the largest technology deals on record, but would first invite hefty regulatory scrutiny."
 
 [[content]]
 section = "News"
 source = "CNBC International is the world leader for news on business, technology, China, trade, oil prices, the Middle East and markets."
-link = "https://www.cnbc.com/2024/09/20/qualcomm-reportedly-approached-intel-about-takeover.html"
-pub_date = "Fri, 20 Sep 2024 19:35:00 GMT"
-title = "Intel shares pop on report Qualcomm has approached it about takeover"
+link = "https://www.cnbc.com/2024/09/20/indian-ed-tech-startup-physics-wallah-bags-2point8-billion-valuation-with-funding.html"
+pub_date = "Fri, 20 Sep 2024 06:30:01 GMT"
+title = "Indian ed-tech startup Physics Wallah bags $2.8 billion valuation amid sector troubles"
 bib_key = "key-11"
-content = "No Content"
+content = "Physics Wallah CEO Alakh Pandey said the company would use the $210 million funding to expand its business and do acquisitions."
 
 [[content]]
 section = "News"
@@ -65,46 +65,46 @@ content = "American has been working with banks and card networks on a new deal 
 section = "News"
 source = "CNBC International is the world leader for news on business, technology, China, trade, oil prices, the Middle East and markets."
 link = "https://www.cnbc.com/2024/09/20/djt-trump-media-stock-selloff-lockup-.html"
-pub_date = "Fri, 20 Sep 2024 19:19:51 GMT"
-title = "Trump Media hits new 52-week low after DJT lockup restrictions expire"
+pub_date = "Fri, 20 Sep 2024 20:44:21 GMT"
+title = "Trump Media closes at a new 52-week low on heavy trading after lockup expires"
 bib_key = "key-13"
-content = "Former President Donald Trump's majority stake in the Truth Social owner was worth almost $1.6 billion mid-day Friday."
+content = "Former President Donald Trump's majority stake in the Truth Social owner was worth $1.5 billion by Friday's close."
 
 [[content]]
 section = "News"
 source = "Breaking News, World News and Video from Al Jazeera"
-link = "https://www.aljazeera.com/program/newsfeed/2024/9/20/israel-strikes-beirut-suburb-in-latest-attack-in-lebanon?traffic_source=rss"
-pub_date = "Fri, 20 Sep 2024 19:26:37 +0000"
-title = "Israel strikes Beirut suburb in latest attack in Lebanon"
+link = "https://www.aljazeera.com/news/2024/9/20/un-warns-escalating-israel-hezbollah-violence-risks-devastating-conflict?traffic_source=rss"
+pub_date = "Fri, 20 Sep 2024 20:51:01 +0000"
+title = "UN warns escalating Israel-Hezbollah violence risks devastating conflict"
 bib_key = "key-15"
-content = "At least 12 people were killed and dozens injured in an Israeli strike in a Beirut suburb on Friday."
+content = "At UNSC, UN rights chief says Israel&#039;s attacks on Hezbollah devices violated international law and could be a war crime."
 
 [[content]]
 section = "News"
 source = "Breaking News, World News and Video from Al Jazeera"
-link = "https://www.aljazeera.com/news/2024/9/20/israeli-forces-kill-dozens-across-gaza-as-tanks-advance-deeper-into-rafah?traffic_source=rss"
-pub_date = "Fri, 20 Sep 2024 18:01:56 +0000"
-title = "Israeli forces kill dozens across Gaza as tanks advance deeper into Rafah"
+link = "https://www.aljazeera.com/program/inside-story/2024/9/20/how-will-immigration-shape-the-us-presidential-election?traffic_source=rss"
+pub_date = "Fri, 20 Sep 2024 20:45:02 +0000"
+title = "How will immigration shape the US presidential election?"
 bib_key = "key-16"
-content = "At least 13 people, including children, were killed in Israeli attacks on two homes in Rafah, medical sources say."
+content = "Donald Trump and Kamala Harris present conflicting plans on the issue of immigration."
 
 [[content]]
 section = "News"
 source = "Breaking News, World News and Video from Al Jazeera"
-link = "https://www.aljazeera.com/news/2024/9/20/more-than-70-killed-in-mali-attack-what-happened-why-it-matters?traffic_source=rss"
-pub_date = "Fri, 20 Sep 2024 17:23:57 +0000"
-title = "More than 70 killed in Mali attack: What happened, why it matters"
+link = "https://www.aljazeera.com/sports/2024/9/20/afghanistan-seal-historic-cricket-series-win-against-south-africa?traffic_source=rss"
+pub_date = "Fri, 20 Sep 2024 19:46:27 +0000"
+title = "Afghanistan seal historic cricket series win against South Africa"
 bib_key = "key-17"
-content = "This is the first major attack on Bamako since 2015 when fighters targeted foreigners in a nightclub and hotel."
+content = "Afghanistan&#039;s cricketers seal their three-match ODI series against South Africa with a 177-run victory in Sharjah."
 
 [[content]]
 section = "News"
 source = "Breaking News, World News and Video from Al Jazeera"
-link = "https://www.aljazeera.com/news/2024/9/20/who-is-ibrahim-aqil-the-hezbollah-commander-targeted-by-israel?traffic_source=rss"
-pub_date = "Fri, 20 Sep 2024 16:42:21 +0000"
-title = "Who is Ibrahim Aqil, the Hezbollah commander targeted by Israel?"
+link = "https://www.aljazeera.com/program/newsfeed/2024/9/20/more-strikes-on-hezbollah-escalate-decades-long-conflict?traffic_source=rss"
+pub_date = "Fri, 20 Sep 2024 19:43:48 +0000"
+title = "More strikes on Hezbollah escalate decades-long conflict"
 bib_key = "key-18"
-content = "Israel targets top Hezbollah commander in air raid on Beirut suburb that kills 12 people and wounds 66."
+content = "Hezbollah has been rocked by days of suspected Israeli sabotage, bombings and assassinations."
 
 [[content]]
 section = "News"
@@ -127,44 +127,44 @@ content = "Israel is attempting a risky strategy, increasing the intensity of it
 [[content]]
 section = "News"
 source = ""
-link = "https://www.nytimes.com/2024/09/20/world/middleeast/gaza-cease-fire-talks-hezbollah-lebanon.html"
-pub_date = "Fri, 20 Sep 2024 11:22:08 +0000"
-title = "With Focus Shifting to Lebanon, Some in Gaza Fear Cease-Fire Talks Will Be Sidelined"
+link = "https://www.nytimes.com/2024/09/20/world/middleeast/israel-soldiers-palestinian-bodies-roof.html"
+pub_date = "Fri, 20 Sep 2024 19:36:23 +0000"
+title = "Israeli Soldiers Throw Three Seemingly Lifeless Palestinians Off a Roof"
 bib_key = "key-22"
-content = "Even as Israel signals that it is moving its focus to its northern border with Lebanon, there has been no pause to its bombardment in Gaza, where residents are facing another winter with little access to food or shelter."
+content = "Several videos have emerged of the gruesome scene, but it remains unclear if the three were alive or dead at the time."
 
 [[content]]
 section = "News - Local"
 source = "Northwest Connecticut's news and information leader"
-link = "https://www.rep-am.com/gallery/2024/09/20/watch-waterbury-police-department-axon-product-demo/"
-pub_date = "Fri, 20 Sep 2024 18:35:00 +0000"
-title = "Watch: Waterbury Police Department – Axon product demo"
+link = "https://www.rep-am.com/life-arts/2024/09/20/torringtons-five-points-to-feature-john-frederick-walker-other-artists/"
+pub_date = "Fri, 20 Sep 2024 21:38:57 +0000"
+title = "Torrington’s Five Points to feature John Frederick Walker, other artists"
 bib_key = "key-24"
-content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/21_NEW_092024SV03-150x150.jpg" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/21_NEW_092024SV03-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" />Waterbury Police Department hosted Axon product demo for their officers and other town departments at the Police Activity League in Waterbury Friday. &#160;'
+content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/29_FEA_FIVE-150x150.jpg" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/29_FEA_FIVE-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" />Five Points Gallery will present three new exhibitions at its Water Street location. In the Torrington Savings Bank Gallery, Michael Border’s, mural-sized paintings depict the history and industrialization of the eight Connecticut counties. The Torrington Downtown Partners Gallery features one-of-a-kind altered books by John Frederick Walker. In the West Gallery, Zbigniew Grzyb &#38; Susan Bogle [&#8230;]'
 
 [[content]]
 section = "News - Local"
 source = "Northwest Connecticut's news and information leader"
-link = "https://www.rep-am.com/life-arts/2024/09/20/cheshire-hosts-big-fat-combo-tonight/"
-pub_date = "Fri, 20 Sep 2024 16:44:28 +0000"
-title = "Cheshire hosts Big Fat Combo tonight"
-bib_key = "key-25"
-content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/20_fea_combo-150x150.jpg" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" loading="lazy" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/20_fea_combo-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" />Cheshire&#8217;s rockabilly favorites, Big Fat Combo, will play our outdoor stage along with The Sophisticatos featuring local troubadour Ken Safety. The concert begins with The Sophisticatos at 6 p.m., followed by Big Fat Combo at 7 p.m. If on-site parking is scarce, extended parking is available just over the Farmington Canal trail at the Municipal [&#8230;]'
-
-[[content]]
-section = "News - Local"
-source = "Northwest Connecticut's news and information leader"
-link = "https://www.rep-am.com/localnews/2024/09/20/man-fatally-shot-by-officers-years-after-police-tried-to-steer-him-away-from-crime/"
-pub_date = "Fri, 20 Sep 2024 15:02:35 +0000"
-title = "Man fatally shot by officers years after police tried to steer him away from crime"
-bib_key = "key-26"
-content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2022/06/polic-blotter-150x150.jpg" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" loading="lazy" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2022/06/polic-blotter-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" loading="lazy" />ASSOCIATED PRESS WEST HAVEN — Connecticut police officers fatally shot a 36-year-old man whom authorities had tried to steer away from crime years ago. A state police sergeant and two New Haven police officers opened fire on the man late Thursday afternoon at a car wash in West Haven after they say he displayed a [&#8230;]'
-
-[[content]]
-section = "News - Local"
-source = "Northwest Connecticut's news and information leader"
-link = "https://www.rep-am.com/local/records/police/2024/09/20/waterbury-police-blotter-248/"
-pub_date = "Fri, 20 Sep 2024 14:36:11 +0000"
+link = "https://www.rep-am.com/local/records/police/2024/09/20/waterbury-police-blotter-249/"
+pub_date = "Fri, 20 Sep 2024 20:25:36 +0000"
 title = "Waterbury police blotter"
-bib_key = "key-27"
+bib_key = "key-25"
 content = "WATERBURY Waterbury police recently filed the following charges: DENISE BLOW, 37, of no certain address, Waterbury, two counts first-degree failure to appear. INDIA BUTLER, 28, of 354 Long Hill Road, second-degree breach of peace, third-degree assault. ZASHIA LOGAN, 35, of 343 N. Main St., Naugatuck, second-degree failure to appear. TAINA ROSADO, 19, of 215 Horseshoe [&#8230;]"
+
+[[content]]
+section = "News - Local"
+source = "Northwest Connecticut's news and information leader"
+link = "https://www.rep-am.com/opinion/letters-opinion/2024/09/20/pura-not-looking-out-for-ratepayers/"
+pub_date = "Fri, 20 Sep 2024 20:24:35 +0000"
+title = "PURA not looking out for ratepayers"
+bib_key = "key-26"
+content = '<img width="150" height="146" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/20240920-172435-pic-536466020-150x146.jpg" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" loading="lazy" /><img width="150" height="146" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/20240920-172435-pic-536466020-150x146.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" />Somehow I missed the news story about the Public Utilities Regulatory Authority becoming a representative of Eversource. I thought that they represented us but I guess I was wrong. When they can have their meeting on Zoom and pass another rate hike for Eversource within a few minutes, they don&#8217;t represent us! I remember the [&#8230;]'
+
+[[content]]
+section = "News - Local"
+source = "Northwest Connecticut's news and information leader"
+link = "https://www.rep-am.com/opinion/letters-opinion/2024/09/20/countrys-direction-is-up-to-the-voters/"
+pub_date = "Fri, 20 Sep 2024 20:24:34 +0000"
+title = "Country’s direction is up to the voters"
+bib_key = "key-27"
+content = '<img width="150" height="146" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/20240920-172434-pic-706628838-150x146.jpg" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" loading="lazy" /><img width="150" height="146" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/20240920-172434-pic-706628838-150x146.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" loading="lazy" />American voters in November will decide between Republican presidential nominee Donald Trump, representing the Old World Order, and Democratic nominee Kamala Harris, representing the New World Order. The country&#8217;s direction will be decided at the polls. Donald Trump is advocating and presenting in his political platform a form of government based on authoritative and traditional [&#8230;]'
