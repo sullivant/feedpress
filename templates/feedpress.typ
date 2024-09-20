@@ -9,11 +9,11 @@
 )
 
 #bookshelf(
-  toml("../input/20240919.toml")
+  toml("../input/input.toml")
 )
 
 #line(length:100%)
-#bibliography("../input/20240919-bib.yml")
+#bibliography("../input/input-bib.yml")
 
 
 

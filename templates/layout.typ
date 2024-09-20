@@ -11,13 +11,13 @@
       right + horizon,
       dateStamp,
     ),
-  footer: context [
-    #set text(8pt)
-    #set align(right)
-    #counter(page).display(
-      "1 of 1",
-      both: true,
-    )
+    footer: context [
+      #set text(8pt)
+      #set align(right)
+      #counter(page).display(
+        "1 of 1",
+        both: true,
+      )
     ],
   )
   set par(justify: true)

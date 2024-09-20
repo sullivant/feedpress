@@ -1,25 +1,36 @@
 show_errors = false
+max_age = 3
+feed_limit = 2
 
 [[feed]]
   url = "https://www.sullivanscientific.com/posts/index.xml"
-  feed_limit = 1
+  feed_limit = 100
   section = "Technology"
-
+  
 [[feed]]
   url = "https://feeds.bbci.co.uk/news/world/rss.xml"  
-  feed_limit = 1
   section = "News"
-
+  
 [[feed]]
   url = "https://www.cnbc.com/id/100727362/device/rss/rss.html"
-  feed_limit = 1
   section = "News"
 
 [[feed]]
   url = "https://www.aljazeera.com/xml/rss/all.xml"
-  feed_limit = 1
 
 [[feed]]
   url = "https://sullivanscientific.com/notfound.xml"  
-  feed_limit = 1
   section = "Not Found"
+
+[[feed]]
+  url = "https://www.reddit.com/r/politics.rss"
+  section = "Politics"
+
+[[feed]]
+  url = "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+  feed_limit = 3
+  section = "News"
+
+[[feed]]
+  url = "https://www.rep-am.com/feed/"
+  section = "News - Local"
