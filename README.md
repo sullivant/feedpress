@@ -1,4 +1,4 @@
-# feedpress
+# <img src="https://github.com/sullivant/feedpress/blob/main/assets/logo.jpg?raw=true" height=100 width=100> feedpress
 RSS to Newspaper Tooling
 
 
