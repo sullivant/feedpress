@@ -1,3 +1,13 @@
+#![warn(missing_docs)]
+
+//! feedpress
+//! 
+//! Pressing together all your RSS news thats fit to press.
+//! - Supports rss feed standards
+//! - Creates [typst](https://typst.app) output files.
+//!
+//! 
+
 use std::error::Error;
 use std::io::Write;
 use std::str::FromStr;
@@ -15,6 +25,7 @@ use serde::Serialize;
 use chrono::prelude::*;
 use chrono::TimeDelta;
 
+/// Contains our application configuration.
 #[derive(Debug, Deserialize)]
 struct FeedConfig {
     show_errors: bool, 
