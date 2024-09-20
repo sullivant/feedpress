@@ -60,7 +60,7 @@ The directories in this project are as follows:
 - ~[typst](https://github.com/typst/typst) formatting and layout with callouts/includes to sections?~
 - ~add feed configs so they can be put into sections "sports" "news" etc and show the sections in the PDF~
 - ~allow for date filtering - max lookback, etc.~
-- auto generate the proper biblios so we can see a section at the end instead of links intermixed.
+- ~auto generate the proper biblios so we can see a section at the end instead of links intermixed.~
 - create CLI flags to run the workflow, and a flag to add a feed URL to the config file
 - other tweaks to layout, etc.
 - strip any inline img and other tags
