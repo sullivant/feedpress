@@ -121,10 +121,10 @@ async fn main() {
 
         // For each item in this channel's current feed data, grab stuff and deal with it.
         for this_item in channel.items() {
-            r = r+1;    // Increment our biblio key.
+            r += 1;    // Increment our biblio key.
 
             // If we have a feed limit, make sure we apply it.
-            i = i+1;
+            i += 1;
             if feed_limit > 0 && i > feed_limit {
                 break;
             }

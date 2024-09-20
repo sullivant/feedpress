@@ -1,20 +1,20 @@
 [[content]]
 section = "News"
 source = "BBC News - World"
-link = "https://www.bbc.com/news/articles/cjr3255gpjgo"
-pub_date = "Thu, 19 Sep 2024 23:12:45 GMT"
-title = "Russia’s war dead tops 70,000 as volunteers face 'meat grinder'"
+link = "https://www.bbc.com/news/articles/cn8jg0x5xg8o"
+pub_date = "Fri, 20 Sep 2024 14:35:19 GMT"
+title = "Israel investigates after its soldiers filmed throwing bodies off roof"
 bib_key = "key-5"
-content = "More than 70,000 Russian soldiers have died in Ukraine - volunteers now make up the highest number of deaths."
+content = 'The IDF says the incident does not "conform" to its values, while Palestinian officials say it is a "crime".'
 
 [[content]]
 section = "News"
 source = "BBC News - World"
-link = "https://www.bbc.com/news/articles/cn4yxe2xxzdo"
-pub_date = "Fri, 20 Sep 2024 13:45:28 GMT"
-title = "Harris says anyone breaking into her home is 'getting shot'"
+link = "https://www.bbc.com/news/articles/cjr3255gpjgo"
+pub_date = "Thu, 19 Sep 2024 23:12:45 GMT"
+title = "Russia’s war dead tops 70,000 as volunteers face 'meat grinder'"
 bib_key = "key-6"
-content = "The Democratic presidential nominee has discussed her gun ownership in a jokey exchange with Oprah Winfrey."
+content = "More than 70,000 Russian soldiers have died in Ukraine - volunteers now make up the highest number of deaths."
 
 [[content]]
 section = "News"
@@ -55,10 +55,19 @@ content = "Harrods, now under Qatari ownership, issues apology for abuse of powe
 [[content]]
 section = "News"
 source = ""
+link = "https://www.nytimes.com/2024/09/17/world/middleeast/israel-hezbollah-lebanon-war-impact.html"
+pub_date = "Wed, 18 Sep 2024 08:54:56 +0000"
+title = "A Look at Israel-Hezbollah Tensions and How a Wider War Could Impact Lebanon"
+bib_key = "key-14"
+content = "Hezbollah and Israel have repeatedly traded strikes since the Gaza war began in October, killing civilians and combatants in Lebanon and Israel."
+
+[[content]]
+section = "News"
+source = ""
 link = "https://www.nytimes.com/2024/09/20/podcasts/harris-trump-spending-hezbollah.html"
 pub_date = "Fri, 20 Sep 2024 10:00:14 +0000"
 title = "Harris Outspends Trump in Ad Battle, and Israel Bombards Hezbollah"
-bib_key = "key-14"
+bib_key = "key-15"
 content = "Plus, an iconic kitchen brand files for bankruptcy."
 
 [[content]]
@@ -67,32 +76,23 @@ source = ""
 link = "https://www.nytimes.com/2024/09/20/us/politics/kamala-harris-trump-campaign-spending.html"
 pub_date = "Fri, 20 Sep 2024 14:14:12 +0000"
 title = "Kamala Harris Outspends Donald Trump by Tens of Millions Online"
-bib_key = "key-15"
+bib_key = "key-16"
 content = "The week of their debate, Kamala Harris outspent Donald Trump by 20 to 1 on Facebook and Instagram. It was just one sign of how uneven their online advertising battle has become."
 
 [[content]]
-section = "News"
-source = ""
-link = "https://www.nytimes.com/2024/09/20/us/politics/kamala-harris-oprah-winfrey-event.html"
-pub_date = "Fri, 20 Sep 2024 14:16:47 +0000"
-title = "Harris Hits Core Campaign Themes in Emotional Forum With Oprah Winfrey"
-bib_key = "key-16"
-content = "Vice President Kamala Harris spoke off the cuff, as guests included a teenager shot at her school and the family of a woman in Georgia who died as a result of the state’s abortion ban."
+section = "News - Local"
+source = "Northwest Connecticut's news and information leader"
+link = "https://www.rep-am.com/localnews/2024/09/20/man-fatally-shot-by-officers-years-after-police-tried-to-steer-him-away-from-crime/"
+pub_date = "Fri, 20 Sep 2024 15:02:35 +0000"
+title = "Man fatally shot by officers years after police tried to steer him away from crime"
+bib_key = "key-18"
+content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2022/06/polic-blotter-150x150.jpg" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2022/06/polic-blotter-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" />ASSOCIATED PRESS WEST HAVEN — Connecticut police officers fatally shot a 36-year-old man whom authorities had tried to steer away from crime years ago. A state police sergeant and two New Haven police officers opened fire on the man late Thursday afternoon at a car wash in West Haven after they say he displayed a [&#8230;]'
 
 [[content]]
 section = "News - Local"
 source = "Northwest Connecticut's news and information leader"
 link = "https://www.rep-am.com/localnews/2024/09/20/torrington-schools-closed-because-of-threat/"
 pub_date = "Fri, 20 Sep 2024 14:19:25 +0000"
-title = "Torrington schools closed because of threat"
-bib_key = "key-18"
-content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/07/torrington-icon-1-150x150.png" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/07/torrington-icon-1-150x150.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" />Torrington schools closed because of threat Torrington schools closed Friday because of a threat the district received. Superintendent Michael Wilson posted on the district’s Facebook page the district was in contact with Torrington police and that while the threat was not determined to be caution. Multiple districts across the state decided to close Friday due [&#8230;]'
-
-[[content]]
-section = "News - Local"
-source = "Northwest Connecticut's news and information leader"
-link = "https://www.rep-am.com/localnews/2024/09/20/connecticut-community-foundation-taps-chapman-frew-reynolds-balanda-as-trustees/"
-pub_date = "Fri, 20 Sep 2024 13:47:33 +0000"
-title = "Connecticut Community Foundation taps Chapman, Frew, Reynolds-Balanda as trustees"
+title = "Torrington schools closed because of online threat; Waterbury increases police presence"
 bib_key = "key-19"
-content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/28_new_032714js08-150x150.jpg" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" loading="lazy" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/09/28_new_032714js08-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" />WATERBURY — Connecticut Community Foundation has announced the election of three community leaders to its board of trustees: Dr. Angela Chapman, Baba Frew and JoAnn Reynolds-Balanda. These new trustees will serve on a board that represents residents from across the foundation’s 21-municipality service area in Greater Waterbury and the Litchfield Hills. As stewards of the [&#8230;]'
+content = '<img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/08/20240802-131400-pic-598577038-150x150.jpg" class="webfeedsFeaturedVisual wp-post-image" alt="" decoding="async" style="float: right; margin-left: 5px;" link_thumbnail="" loading="lazy" /><img width="150" height="150" src="https://cdn.rep-am.com/wp-content/uploads/2024/08/20240802-131400-pic-598577038-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="float:left; margin:0 15px 15px 0;" />BY SLOAN BREWSTER AND Livi Stanford &#124; REPUBLICAN-AMERICAN TORRINGTON — Schools in Torrington and Bristol were closed Friday due to online threats. In a message to the community, Superintendent Michael Wilson said school officials were “made aware of a very disturbing and threatening post on social media.” He said they had contacted Torrington police, which [&#8230;]'
