@@ -1,5 +1,5 @@
 #![warn(missing_docs)]
-
+#![allow(rustdoc::bare_urls)]
 //! feedpress
 //! 
 //! Pressing together all your RSS news thats fit to press.
@@ -26,46 +26,101 @@ use chrono::prelude::*;
 use chrono::TimeDelta;
 
 /// Contains our application configuration.
+/// Configuration is written in the TOML format, seen most places.
+/// 
+/// Fields are not really optional but some will contain defaults
+/// when necessary.  This struct contains *global* configurations that
+/// can be overridden by individual feed entries.
 #[derive(Debug, Deserialize)]
 struct FeedConfig {
-    show_errors: bool, 
+    /// Controls if we show feed errors
+    show_errors: bool,  
+    /// Max age, in days, we will consider an article acceptable to print
     #[serde(default)]
     max_age: usize,
+    /// Maximum number of articles for each feed to print
     #[serde(default)]
     feed_limit: usize,
+    /// The vec containing each feed we will process
     feed: Vec<FeedEntry>,
 }
 
+/// Holds detailed information about a specific source RSS feed to 
+/// pull articles from.  Configuration is held in the `[[feed]]` array in
+/// the configuration toml.
+/// 
+/// This is an example feed entry in the configuration that will pull a
+/// maximum of 10 articles no older than 3 days and place them into 
+/// the "News" section.
+/// ```toml
+/// [[feed]]
+///   url = "https://yourfeedurl.com/rss.xml"
+///   feed_limit = 10
+///   max_age = 3
+///   section = "News"
+/// ```
 #[derive(Debug, Deserialize)]
 struct FeedEntry {
+    /// Feed URL
     url: String,
+    /// Article count limit, default is all (0)
     #[serde(default)]
     feed_limit: usize,
+    /// Article section, default is seen in the fn [default_section]
     #[serde(default = "default_section")]
     section: String,
+    /// Max age, in days, before an article is skipped or ignored
     #[serde(default)]
     max_age: usize,
 }
+
+/// Contains the default section used when one is not provided within
+/// a feed's configuration.
 fn default_section() -> String {
     "Personal".to_string()
 }
 
+/// A container to hold all of our compiled [ContentEntry] items.
 #[derive(Debug, Serialize)]
 struct Press {
     content: Vec<ContentEntry>,
 }
 
+/// A specific item of content used by the layout engine to create a section of
+/// news or content in the final PDF.  Think of this like an "article" of sorts.
+/// 
+/// An example piece of content is as follows:
+/// ```toml
+///     [[content]]
+///     section = "News"
+///     source = "BBC News - World"
+///     link = "https://www.bbc.com/news/articles/<article code>"
+///     pub_date = "Fri, 20 Sep 2024 14:35:19 GMT"
+///     title = "The article title."
+///     bib_key = "key-5"
+///     content = `The entire content to be shown in the output pdf...`
+/// ```
 #[derive(Debug, Serialize)]
 struct ContentEntry {
+    /// The section where this article appears on the PDF.  Its default is described
+    /// within the function [default_section]
     section: String,
+    /// The source of the article in its text form "NY Times" etc.
     source: String,
+    /// The link to the direct article
     link: String,
+    /// The publication date, gathered from the RSS feed
     pub_date: String,
+    /// The title of the article as appears on the RSS feed
     title: String,
+    /// The bibliography key, used to relate to an entry in [BiblioEntry]
     bib_key: String,
+    /// The entire content of the article, as much as can be found in the RSS feed
     content: String,
 }
 
+/// The bibliographic information that links to a [ContentEntry] record and this 
+/// conforms to the standard found in the [hayagriva] crate and project.
 #[derive(Debug, Serialize)]
 struct BiblioEntry {
     r#type: EntryType,
