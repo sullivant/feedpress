@@ -72,5 +72,4 @@ The directories in this project are as follows:
 - while in container, present a config webpage to add feeds, set options, etc.
 
 ### feedpress.dev
-- Should it be a single readme with the usual "it does things" information?
-- A hostable service some day?
+Basically just a cloudflare page that pulls from the site directory, here.
