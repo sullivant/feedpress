@@ -11,6 +11,7 @@
 use std::error::Error;
 use std::io::Write;
 use std::str::FromStr;
+use article_scraper::Article;
 use hayagriva::io::to_yaml_str;
 use hayagriva::types::Date;
 use hayagriva::types::EntryType;
@@ -25,6 +26,10 @@ use serde::Deserialize;
 use serde::Serialize;
 use chrono::prelude::*;
 use chrono::TimeDelta;
+use article_scraper::ArticleScraper;
+use article_scraper::Readability;
+use url::Url;
+use reqwest::Client;
 
 /// Contains our application configuration.
 /// Configuration is written in the TOML format, seen most places.
@@ -157,6 +162,17 @@ async fn main() {
         },
     };
 
+
+    let html = reqwest::get("https://www.nytimes.com/interactive/2023/04/21/science/parrots-video-chat-facetime.html")
+        .await
+        .unwrap()
+        .text()
+        .await
+        .unwrap();
+    let base_url = Url::parse("https://www.nytimes.com").unwrap();
+    let extracted_content = Readability::extract(&html, Some(base_url)).await.unwrap();
+    println!("{:?}", extracted_content);
+
     let local_time: DateTime<Local> = Local::now();
     println!("Done parsing configuration.  Current time is: {}", local_time);
 
@@ -220,15 +236,20 @@ async fn main() {
                 continue;
             }
 
+            // Article's link
+            let article_link = this_item.link().unwrap().to_string();
+            let article_short_content = this_item.description().unwrap_or("No Content").to_string();
+            let article_content = scrape_this(&article_link).await.unwrap_or(article_short_content.clone());
+
             // Build a new struct of this particular content for outbound formatting
             let this_content = ContentEntry {
                 section: entry_section.clone(),
                 source: channel.description.to_string(),
-                link: this_item.link().unwrap().to_string(),
+                link: article_link,
                 pub_date: this_item.pub_date().unwrap().to_string(),
                 title: this_item.title().unwrap_or("No Title").to_string(),
                 bib_key: format!("key-{}",r),
-                content: this_item.description().unwrap_or("No Content").to_string(),
+                content: article_content,
             };
 
             // Build also its related biblio entry
@@ -250,6 +271,30 @@ async fn main() {
     process_content(press_content);
     process_biblio(press_biblio);
    
+}
+
+
+async fn scrape_this(article_link: &String) -> Option<String> {
+    // This is our scraper for gathering more detail
+    let scraper = ArticleScraper::new(None);
+    let client = Client::new();
+    let url = Url::parse(&article_link).unwrap();
+    let article = scraper.await.parse(&url, false, &client, None).await;
+
+    // let config: FeedConfig = match toml::from_str(&contents) {
+    //     Ok(f) => f,
+    //     Err(_) => {
+    //         println!("Unable to parse feed entries from config toml.  Going to panic now.");
+    //         panic!();
+    //     },
+    // };
+
+    // Return our article's html
+    match article {
+        Ok(a) => a.html,
+        Err(_) =>  Some("No Content".to_string()),
+    }
+
 }
 
 /// Creates the output file used in the typsetting portion of this process.

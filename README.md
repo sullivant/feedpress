@@ -63,9 +63,11 @@ The directories in this project are as follows:
 - ~auto generate the proper biblios so we can see a section at the end instead of links intermixed.~
 - create CLI flags to run the workflow, and a flag to add a feed URL to the config file
 - other tweaks to layout, etc.
-- strip any inline img and other tags
 - create usage case and example documentation for how to configure or adjust feed entries, etc
 - *maybe*: consider allowing it to run with a file per day, so there are archived copies available, etc.  Instead of `input.toml` and `input-bib.toml` allow for it to be dated and reflected as params into `feedpress.typ` and then output to `date.pdf`?
+
+### Cleanup of content
+**strip any inline img and other tags**: Using pandoc helps via the CLI - to translate HTML to TYP format with a command like `pandoc temp.html -o temp.typ` - but it's not yet integrated and does not download images.  There is work to do there on setting it up as part of the main pipeline.
 
 ### Containerization
 - make it runable in a docker container on a cron job

@@ -13,3 +13,5 @@ serde = { version = "1.0", features = ["derive"] }
 serde_yml = "0.0.12"
 hayagriva = { version = "0.5.3", default-features = false }
 chrono = "0.4.38"
+url = "2.5.2"
+article_scraper = "2.1.0"

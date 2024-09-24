@@ -24,6 +24,7 @@
     == #article.title
     #line(length:100%)
     #cite(label(article.bib_key)) #article.content
+    //#cite(label(article.bib_key)) #eval(article.content, mode: "markup")
   ]
 }
 
