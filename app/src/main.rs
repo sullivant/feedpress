@@ -11,6 +11,7 @@
 use article_scraper::Readability;
 use chrono::prelude::*;
 use chrono::TimeDelta;
+use clap::Parser;
 use hayagriva::io::to_yaml_str;
 use hayagriva::types::Date;
 use hayagriva::types::EntryType;
@@ -37,7 +38,7 @@ use url::Url;
 /// Fields are not really optional but some will contain defaults
 /// when necessary.  This struct contains *global* configurations that
 /// can be overridden by individual feed entries.
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 struct FeedConfig {
     /// Controls if we show feed errors
     show_errors: bool,
@@ -65,7 +66,7 @@ struct FeedConfig {
 ///   max_age = 3
 ///   section = "News"
 /// ```
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize, PartialEq)]
 struct FeedEntry {
     /// Feed URL
     url: String,
@@ -141,14 +142,61 @@ struct BiblioEntry {
     url: String,
 }
 
-/// Main application entrypoint
-///
-/// Does the thing it says on the tin, I suppose.  Gathers configuration data, processes each
-/// feed, and creates content as well as biblio entries.
-#[tokio::main]
-async fn main() {
-    println!("feedpress - pressing all the news that's fit to press");
+#[derive(Parser, Debug)]
+#[command(version, about, long_about = None)]
+struct Args {
+    /// Name of the url to add to, or remove from, the feed collection
+    #[arg(short, long, default_value_t, required(false))]
+    url: String,
 
+    /// Will add the provided URL to the feed listing
+    #[arg(short, long, default_value_t = false)]
+    add: bool,
+
+    /// Will remove the provided URL from the feed listing
+    #[arg(short, long, default_value_t = false)]
+    remove: bool,
+}
+
+fn add_feed_url(this_url: &str) {
+    if this_url.is_empty() || !this_url.is_ascii() {
+        println!("Invalid URL, doing nothing.");
+        return;
+    }
+    println!("Adding URL {}", this_url);
+
+    let this_entry = FeedEntry {
+        url: this_url.to_string(),
+        feed_limit: 3,
+        section: "Personal".to_string(),
+        max_age: 3
+    };
+
+    let mut config = get_config().unwrap();
+    if !config.feed.contains(&this_entry) {
+        config.feed.push(this_entry);
+    }
+
+    let toml = toml::to_string(&config).unwrap();
+
+    // Write this updated config to a file
+    let mut file = File::create("../data/config.toml").unwrap();
+    file.write_all(toml.as_bytes()).unwrap();
+
+
+    return;
+}
+
+fn remove_feed_url(url: &str) {
+    if url.is_empty() || !url.is_ascii() {
+        println!("Invalid URL, doing nothing.");
+        return;
+    }
+    println!("Removing URL {}", url);
+}
+
+
+fn get_config() -> Result<FeedConfig, String> {
     let mut file = File::open("../data/config.toml").expect("Failed to open file");
     let mut contents = String::new();
     file.read_to_string(&mut contents)
@@ -162,6 +210,31 @@ async fn main() {
             panic!();
         }
     };
+
+    Ok(config)
+}
+
+/// Main application entrypoint
+///
+/// Does the thing it says on the tin, I suppose.  Gathers configuration data, processes each
+/// feed, and creates content as well as biblio entries.
+#[tokio::main]
+async fn main() {
+    println!("feedpress - pressing all the news that's fit to press");
+
+    let args = Args::parse();
+
+    if args.add {
+        add_feed_url(&args.url);
+        return;
+    }
+    if args.remove {
+        remove_feed_url(&args.url);
+        return;
+    }
+
+    // Parse the config into a toml object
+    let config: FeedConfig = get_config().unwrap();
 
     let local_time: DateTime<Local> = Local::now();
     println!(
