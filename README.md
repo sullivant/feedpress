@@ -2,10 +2,29 @@
 RSS to Newspaper Tooling
 
 
-## Configuration
-- After checkout of this repository, note that there are a few "defaults" configured and a few example feeds.
+## The Pitch
+I am a big fan of RSS feeds and readers - in fact my current setup involves using a self-hosted feed processing container [freshrss](https://freshrss.org) which is then "read" by an iOS app, [reeder](https://reederapp.com/).
 
-- Configuration is located in `data/config.toml`
+However it was occurring to me that sometimes I'd like a simple, collected, PDF with articles I found most interesting, in a newspaper format.  Even if I simply read this PDF on an ipad or sent it to a printer each day, I think I'd enjoy that.
+
+Enter **feedpress**:
+
+[x] Pull a few articles from curated RSS feeds
+[x] Process them, cleaning up as much crap as possible
+[x] Output a *typst* formatted file - and combined with layout/templating, use typst to create a PDF
+
+## Requisites
+- rust & cargo (https://rust-lang.org)
+- typst (https://typst.app)
+- git (https://git-scm.com)
+
+## Running and Configuration
+Get the code: 
+`git@github.com:sullivant/feedpress.git`
+
+Update some configuration.  After checkout of this repository, note that there are a few "defaults" configured and a few example feeds.
+
+Configuration is located in `data/config.toml`
 ```toml
 # global configurations
 show_errors = false # true if you'd like to see feed collection errors
@@ -43,35 +62,13 @@ The directories in this project are as follows:
 ./templates/layout.typ - The overall layout of the page
 ```
 
-## Flow
-- Source feeds
-- Extract and process
-- Collect and organize/layout
-- Export
-
-## CLI Requirements
-- [typst](https://github.com/typst/typst) - for formatting and layout processing.
-- Rust and Cargo - for compilation and running via `cargo run`
-
-
 ## Next Steps
-
-### Planning and Proof of Concepts
-- ~Source RSS text from list and pull out content~
-- ~[typst](https://github.com/typst/typst) formatting and layout with callouts/includes to sections?~
-- ~add feed configs so they can be put into sections "sports" "news" etc and show the sections in the PDF~
-- ~allow for date filtering - max lookback, etc.~
-- ~auto generate the proper biblios so we can see a section at the end instead of links intermixed.~
-- create CLI flags to run the workflow, and a flag to add a feed URL to the config file
-- create usage case and example documentation for how to configure or adjust feed entries, etc
-
-
-### Cleanup of content
-**strip any inline img and other tags**: Using pandoc helps via the CLI - to translate HTML to TYP format with a command like `pandoc temp.html -o temp.typ` - but it's not yet integrated and does not download images.  There is work to do there on setting it up as part of the main pipeline.
-
-### Containerization
-- make it runable in a docker container on a cron job
-- while in container, present a config webpage to add feeds, set options, etc.
-
+### General
+- [x] Dockerization of build process
+- [ ] Releases and runnability on its own in a container
+- [ ] Integration of typst as a library not a separate callout
+### Configuration
+- [ ] CLI utility or flags to add/remove feed URLs and options.
+- [ ] Container execution should involve a small served web page allowing for feed and option manipulation
 ### feedpress.dev
-Basically just a cloudflare page that pulls from the site directory, here.
+- [ ] Create static markdown driven site - that's just this readme at first?
