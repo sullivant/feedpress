@@ -21,7 +21,8 @@ WORKDIR /app
 RUN cargo install --git https://github.com/typst/typst --locked typst-cli
 
 # Copy the Rust project files to the working directory
-COPY ./app/src .
+COPY ./app/src ./src
+COPY ./app/Cargo.toml ./
 
 # Our utility to run the extract and post process
 COPY --chmod=0755 ./feedpress.sh ./feedpress.sh

@@ -20,7 +20,7 @@
   set par(justify: true)
   set text(
     font: "Linux Libertine",
-    size: 11pt,
+    size: 8pt,
   )
 
   // Feedpress logo
@@ -51,6 +51,6 @@
   ]
   
   set align(left)
-  columns(2,doc)
+  columns(3,doc)
 
 }

@@ -72,7 +72,7 @@ Ukraine would not accept a return to a "brutal, colonial past", he added.
 section = "News"
 source = "CNBC International is the world leader for news on business, technology, China, trade, oil prices, the Middle East and markets."
 link = "https://www.cnbc.com/2024/09/25/meta-unveils-cheaper-299-quest-3s-vr-headset-.html"
-pub_date = "Wed, 25 Sep 2024 18:13:32 GMT"
+pub_date = "Wed, 25 Sep 2024 18:57:38 GMT"
 title = "Meta unveils $299 Quest 3S VR headset, Orion AR glasses prototype"
 bib_key = "key-8"
 content = '''
@@ -84,7 +84,7 @@ David Paul Morris | Bloomberg | Getty Images
 
 announced the Quest 3S, the latest virtual reality headset to come out of the company's Reality Labs division and a cheaper offering than its predecessor.
 
-The device will go on sale on Oct. 15 and will retail starting at $299, down from the $499 starting price for 2023's Quest 3. The device can be used to watch movies, as well as run VR fitness apps and gaming, Meta said Wednesday at its Connect event at its headquarters in Menlo Park, California. The company positioned the headset as a multitasking computer, putting it in competition with Apple's $3,499 Vision Pro headset that launched in February.
+The device will go on sale on Oct. 15, and it'll retail starting at $299, down from the $499 starting price for 2023's Quest 3. The device can be used to watch movies, as well as run VR fitness apps and gaming, Meta said Wednesday at its Connect event in Menlo Park, California. The company positioned the headset as a multitasking computer, putting it in competition with Apple's $3,499 Vision Pro headset that launched in February.
 
 In addition to the Quest 3S, Meta on Wednesday also showcased its latest prototype of augmented-reality smart glasses and announced a flurry of new features for its Meta AI chatbot.
 
@@ -92,7 +92,7 @@ Meta's previous Quest devices are the bestselling VR headsets, withthanks to hea
 
 Meta CEOhas defended the company's spending as a strategic initiative to preventfrom controlling future hardware platforms.
 
-Although there was hope among VR developers that Apple's entry into the market would spur a wave of new apps and users, Apple hasn't revealed sales for its headset and reports say that sales have been in, under 1 million units, partially due to its high price.
+Although there was hope among VR developers that Apple's entry into the market would spur a wave of new apps and users, Apple hasn't revealed sales for its headset and reports suggest that sales have been in, under 1 million units, partially due to its high price.
 
 ## What it does
 
@@ -108,9 +108,9 @@ The company has emphasized the ability of the Quest 3S to multitask and run apps
 
 In demos provided Tuesday, Meta showcased the device running as many as four apps at one time on floating screens inside the headset, including a YouTube video, a browser, Amazon Music and Meta's app store. Meta says the headset can handle six windows. But the demo experience was not smooth. The Amazon Music app crashed, window controls would disappear and Meta's controllers would fall asleep after a few minutes if the user wasn't pressing buttons.
 
-Besides the Quest 3S, Meta also announced a price cut for last's year Quest 3, bringing the price of the 512GB version down from $650 to $500. The Quest 3 has more advanced lenses and a superior screen with a higher resolution than the Quest 3S.
+Besides the Quest 3S, Meta also announced a price cut for last's year Quest 3, bringing the price of the 512GB version down from $649 to $499. The Quest 3 has more advanced lenses and a superior screen with a higher resolution than the Quest 3S.
 
-Additionally, Meta said it will discontinue the Quest Pro, its $999 headset launched in 2022 that never gained much momentum.
+Additionally, Meta said it will discontinue the Quest Pro, its $999 headset launched in 2022 that never gained much momentum, and the older Quest 2 headset.
 
 ## Eventually, glasses
 
@@ -120,7 +120,7 @@ Meta
 
 Zuckerberg's justification for spending so much on VR and AR is his belief that the technology will eventually end up in lightweight, transparent glasses that overlay computer graphics and information onto the real world.
 
-Investing in VR software and hardware are early steps toward those glasses, which could take as much as a decade to develop, Zuckerberg has previously said.
+Investing in VR software and hardware are early steps toward those glasses, which could take as much as a decade to develop, Zuckerberg previously said.
 
 Zuckerberg showed off an early concept of what those glasses could look like on Wednesday. The thick, black-framed prototype, called Orion, won't be sold to consumers, but Meta says they will be used internally as the company continues working toward the consumer glasses it hopes to one day sell.
 
@@ -128,9 +128,9 @@ Zuckerberg showed off an early concept of what those glasses could look like on 
 
 Meta hopes the next version of Orion will be available to consumers as the company's first full AR glasses, Zuckerberg said without giving a timetable for when that may be.
 
-Zuckerberg said the device revealed on Wednesday was Meta's first "fully-functioning" prototype of the glasses, and would be physically tethered to a small "puck." Zuckerberg also said that it would take advantage of a wrist-based interface, which came out of stems from the company's 2019.
+Orion is Meta's first "fully-functioning" prototype AR glasses, Zuckerberg said, and the device is tethered wirelessly to a small "puck." The prototype uses a wristband component to pick up on users neural signals and let them control the Orion glasses using their brains. That technology stems from the company's 2019.
 
-Zuckerberg said that Orion enables users to play games, multi-task with multiple windows. and videoconference with people around the world represented by a realistic avatar.
+Orion enables users to play games, multi-task with multiple windows and videoconference with people around the world represented by a realistic avatar, Zuckerberg said.
 
 Meta's Orion prototype comes a week after. Those thick-framed glasses will only be made available to developers, who must commit to paying $99 a month for one full year if they want to build AR apps for the device.
 
@@ -140,7 +140,7 @@ Ray-Ban Meta smart glasses are powered by a Qualcomm chip. Qualcomm, Samsung and
 
 Nurphoto | Nurphoto | Getty Images
 
-Meta does sell a pair of glasses with a built-in camera in partnership with EssilorLuxottica called Ray-Ban Meta, which start at $299. While these glasses don't have any displays, they do have tiny speakers that allow the device to play music or interact with Meta AI, the company's voice assistant.
+Meta does sell a pair of glasses with a built-in camera in partnership with EssilorLuxottica called Ray-Ban Meta, which start at $299 and were announced in 2023. While these glasses don't have any displays, they do have tiny speakers that allow the device to play music or interact with Meta AI, the company's voice assistant.
 
 As part of Wednesday's event, Meta announced new Meta AI features for its Ray-Ban smart glasses.
 
@@ -150,23 +150,25 @@ Another new capability for the glasses is the ability to remember facts like whe
 
 Li-Chen Miller, the vice president of product in charge of Ray-Ban Meta glasses, told CNBC that when she travels, she uses the glasses to take photos of her hotel room door, and later, she asks Meta AI to recall the number.
 
-Zuckerberg is excited about the Ray-Ban Meta smart glasses, which have sold more than 730,000 units in their first three quarters, according to market researcher IDC. In July, he told investors that they were "a bigger hit sooner than expected."
+Those features will become available "later this year," the company said.
+
+The Ray-Ban Meta smart glasses have sold more than 730,000 units in their first three quarters, according to market researcher IDC. In July, Zuckerberg told investors that they were "a bigger hit sooner than expected."
 
 Last week, EssilorLuxottica and Meta announced that they had extended their partnership to develop more smart glasses.
 
 ## AI that speaks
 
-Zuckerberg also introduced improvements to its Meta AI chatbot that will allow people to interact with it using their voice instead of written text.
+Zuckerberg also introduced improvements to its Meta AI chatbot that will allow people to interact with it using their voice in addition to written prompts.
 
-Users will now be able to have natural voice conversations with Meta AI, which is accessed through Meta apps like Messenger and Instagram. Users will be able to perform actions using their voice, such as telling Meta AI to take a photo by talking to their smartphone.
+With voice, users will be able to have oral conversations with Meta AI, which is accessed through Meta's apps. Users will be able to perform actions using their voice, such as telling Meta AI to take a photo by talking to their smartphone.
 
 For Meta AI's new feature, the company is using computer-generated voices from celebrities including Awkwafina, Judi Dench, John Cena, Keegan-Michael Key and Kristen Bell.
 
 The new Siri-like Meta AI voice feature will be available over the next month for U.S., Canadian, Australian and New Zealand users of WhatsApp, Instagram, Facebook and Messenger.
 
-The feature comes one day after rival OpenAI, the maker of ChatGPT, announcedfor people who pay its premium service.
+The Meta AI announcement comes a day after rival OpenAI, the maker of ChatGPT, announcedfor people who pay for its premium service.
 
-The company said that the new chatbot features are based on Meta's AI model, Llama. The company also announced a newer version of Llama, called Llama 3.2. This updated model can understand both images and text, an upgrade from its predecessors which generated responses to people's written prompts.
+Meta's new chatbot features are based on the company's AI model, Llama. Meta on Wednesday announced a newer version of Llama, called Llama 3.2. This updated model can understand both images and text, an upgrade from its predecessors which generated responses to people's written prompts.
 
 **WATCH:**
 
@@ -215,105 +217,85 @@ Geopolitics could also be a factor prompting a chip shortage. Semiconductors are
 [[content]]
 section = "News - International"
 source = "Breaking News, World News and Video from Al Jazeera"
-link = "https://www.aljazeera.com/news/2024/9/25/zelenskyy-pledges-ukraine-will-never-accept-outside-deal-to-end-war?traffic_source=rss"
-pub_date = "Wed, 25 Sep 2024 17:25:11 +0000"
-title = "Ukraine urges world not to seek ‘lull’ in Russia’s war instead of peace"
+link = "https://www.aljazeera.com/news/2024/9/25/israeli-invasion-lebanon-would-deadly-consequences-both-sides?traffic_source=rss"
+pub_date = "Wed, 25 Sep 2024 19:02:12 +0000"
+title = "Is Israel about to invade Lebanon?"
 bib_key = "key-11"
 content = """
+A week of intense Israeli air attacks on Lebanon hasand displaced 90,000, pushing the conflict between Israel and Hezbollah closer to an all-out war – one that some believe has already begun in all but name.
 
+But this conflict could still escalate further, as fears of an Israeli military ground invasion increase, and civilians flee the.
 
-*Ukrainian president singles out China, Brazil for pushing what he called ‘half-hearted settlement plans’.*
+On Wednesday, Israeli officials announced that two regiments of reserve forces had been called up to the Northern Command, the branch of Israel’s military engaged in fighting Hezbollah.
 
-Ukraine’s president has urged global leaders to stand with his country and not seek “a lull” instead of a “real, just peace” more than two years into Russia’s war.
+While the news signalled that Israel may be planning to escalate the conflict further, analysts who spoke to Al Jazeera are sceptical that a ground invasion is imminent, although they noted that the situation remained volatile and Israel seemed to lack a clear strategy.
 
-Volodymyr Zelenskyy delivered the message during anin New York Wednesday, rallying support for histhat demands the expulsion of Russian forces from Ukraine and justice for war crimes.
+Two regiments “is not a lot, not for an invasion of Lebanon”, Ori Goldberg, an Israeli political analyst, told Al Jazeera. He added that, in Gaza, Israel deployed a much greater number – and that was for an enclave that is far smaller than Lebanon and against a force in Hamas that is less powerful militarily than Hezbollah.
 
-“Any parallel or alternative attempts to seek peace are, in fact, efforts to achieve a lull instead of an end to the war,” Zelenskyy told the UN body more thanthat has claimed hundreds of thousands of casualties.
+“Right now, my assessment would be that it’s still for show, but it might change within 24 hours,” he said, noting that Israel seemed to lack a clear goal or strategy, making an assessment of their next moves more difficult. “We’re still on the brink, but I don’t think a decision has been made to launch an invasion.”
+## Momentum for war
 
-Zelenskyy also singled out China and Brazil for pushing what he called “half-hearted settlement plans”, accusing them of playing to their own interests “at Ukraine’s expense”.
+The now almost yearlong war on Gaza has already put a great strain on the Israeli economy, military and society. Tens of thousands of Israeli reservists have been called up at various times by the military, taking them away from their jobs and their families. Israeli society is divided on the strategy being pursued by the government, with many calling for a focus on the release of the captives held in Gaza, rather than the defeat of Hamas.
 
-On Friday, representatives of 20 UN states are set to discuss a six-point peace planas an alternative to Zelenskyy’s proposal. The plan calls for non-escalation, a boost in humanitarian assistance, efforts to stop nuclear proliferation and an international conference backed by both Russia and Ukraine.
-## Fear of nuclear fallout
+And yet, with some 10,000 Israelis displaced from their homes in the north of the country since late last year as a result of Hezbollah rocket fire, Israeli Prime Minister Benjamin Netanyahu has pledged that the “threat” from Lebanon will be removed, by force, and that those forced to leave the north will return.
 
-Zelenskyy’s UN address came as Russian forces claimed further advances in eastern Ukraine, including seizing the settlements of Gostre and Grigorivka in the Donetsk region.
+“For a year now, [the government has] been telling them that the only thing that will give [Israelis] the necessary security is a war,” said Goldberg. “So, a war has been in the cards pretty much forever. But Netanyahu is afraid to start a war because he’s afraid that if he launches a ground invasion, the Israeli public, [which] doesn’t trust him, will think of it as Netanyahu’s war.”
 
-Despite waging ain Russia’s Kursk region in August, Ukraine has continued suffering a series of battlefield losses in the east.
+But, with events moving fast on the ground – particularly following Israel’s “pager attack” on Hezbollah and the subsequent killing of one of the group’s leaders and several other commanders in an air attack – all-out war appears closer than at any point in the last year.
 
-Kyiv now fears intensified Russian attacks on its energy infrastructure, much of which is already battered by the war, could leave it further exposed during the upcoming winter months.
+“The possibility of an Israeli invasion in Lebanon is gaining momentum within the Israeli political and military establishment,” Imad Salamey, a professor of political science at the Lebanese American University in Beirut, told Al Jazeera. “Should the Israeli government opt for this strategy, it is likely that the invasion could commence within 72 hours, as Israel may believe that Hezbollah’s control and command structure has been sufficiently weakened, leaving the party vulnerable to a swift strike before it has the chance to regroup.”
 
-“Since Russia can’t defeat our people’s resistance on the battlefield, Putin is looking for other ways to break the Ukrainian spirit,” Zelenskyy told the UN assembly. “One of his methods is targeting our energy infrastructure.”
+An invasion, Salamey added, would almost inevitably lead to a protracted war, with a devastating effect on Lebanon’s civilian population.
 
-The Ukrainian leader specifically warned of potential Russian attacks on the country’s nuclear power plants, saying he had received intelligence alerts of such plans.
+“Hezbollah, although weakened, would likely respond with guerrilla tactics and retaliatory strikes aimed at Israeli military targets, potentially extending the conflict and making any occupation of southern Lebanon costly for Israel,” he said. “The group’s resilience and deep roots in the region suggest that any invasion would not lead to a quick or easy victory, instead resulting in protracted warfare with long-term consequences for both sides.”
 
-“If God forbid, Russia causes a disaster in one of our nuclear power plants, radiation will not respect state borders. And unfortunately, various nations could feel the devastating effects,” Zelenskyy warned.
-## White House meeting
+During Israel’s last war with Lebanon in 2006 — which killed more than 1,200 Lebanese, mostly civilians, and 158 Israelis, mostly soldiers – Hezbollah fighters displayed a competence with asymmetric tactics that, and analysts note they have only grown stronger since then, with an expanded arsenal and tunnel network. They also are able to resupply across the border with Syria, an advantage that Hamas in Gaza has not had.
+## Unclear goals, enormous cost
 
-Zelenskyy will continue pressing for backing in the war Thursday during a. During the meeting at the White House, Zelenskyy plans to present details of a revamped “victory plan”, which he said includes “quick and concrete steps by our strategic partners”.
+The long-term strategy behind Israel’s recent escalation is unclear, with some analysts noting that it may be an effort to distract from its own internal political crisis and redeem the military’s reputation domestically after a drawn-out war in Gaza that has failed to achieve Israel’s goals, even as it has killed more than 40,000 Palestinians.
 
-The Ukrainian leader is also expected to push for authorisation to use US-supplied ballistic missiles deeper inside Russian territory, a move Washington has feared would escalate the conflict.
+Still, a ground war would have little political benefit for Israel, analysts warn, and it would come at an enormous cost to the civilians caught in the middle.
 
-Zelenskyy also plans to convene separately with Vice President Kamala Harris, US presidential candidate Donald Trump, and Congress while in Washington.
+On the ground in Lebanon, they noted, Hezbollah retains a tactical advantage.
 
-“Ukraine wants to end this war more than anyone in the world,” said Zelenskyy in his UN address.
+“If there is an Israeli ground invasion of Lebanon, paradoxically, Hezbollah could feel that it is back in its ‘comfort zone’ because they are used to fighting Israeli invasions, they know every single village in south Lebanon,” Karim Emile Bitar, a professor of international relations at St Joseph’s University in Beirut, told Al Jazeera. “They still have an abundance of fighters ready to try to repel this Israeli invasion.”
 
-"""
+The enormous human cost of Israel’s air raids — the highest death toll since the Lebanese civil war (1975-90) — has given Israel “an edge in the psychological war”, added Bitar. But that could change with a ground invasion, in which Israel would likely have significant casualties of its own.
+
+“So far, they have managed to accomplish several of their objectives, obviously at the cost of a human tragedy for the Lebanese civilians,” he said. “If they decide to wage a ground invasion, it would be a completely different ball game, and they might witness significant losses because even if Hezbollah has been weakened, Hezbollah still has the capacity to inflict harm on Israel.”
+## Goading Hezbollah
+
+Whether Israeli officials are actually laying the ground for an invasion or merely escalating their threats of one — while continuing to carry out relentless air raids on Lebanon — their objective appears to be to force Hezbollah into either capitulating to Israeli demands or responding in a way that offers Israel a pretext for further attacks.
+
+So far, neither scenario has materialised.
+
+“They are really trying to do something quick, in the hopes that they might be able to bring so much pressure to bear on Hezbollah that they will have no choice but to try to negotiate a quick end to this thing,” Yousef Munayyer, head of the Palestine/Israel Program and senior fellow at the Arab Center Washington DC, told Al Jazeera. “
+
+Munayyer said that Israel was following the same playbook it used in Gaza, attacking civilian infrastructure and people’s homes, “hoping that if they can do so much of that, so quick, that it will essentially allow them to get out of the situation without a ground invasion, without a long … battle, and save them much of the costs of a war like that”.
+
+“The Israelis were hoping with the assassinations, with the pager explosions and so on, that they’d be able to change the dynamic by doing something so significant, so unprecedented, that it would force Hezbollah to recalculate the idea of trying to make this a long drawn-out war,” he added. “But so far that doesn’t seem to have happened.”
+
+Hezbollah has responded to Israel’s attacks by firing a barrage of missiles at Israeli air bases and attacking a naval base with drones. On Wednesday, ita missile attack that, for the first time, reached as far as Tel Aviv.
+
+But so far, the group seems to have aimed for military targets alone — exercising a restraint that seems to have taken Israel by surprise.
+
+“What they both want, Netanyahu and the military, is for Hezbollah to do something that would sort of force Israel’s hand. But Hezbollah is not doing that, Iran is not doing that,” said Goldberg. “Israel went in full force to try and goad Hezbollah into doing something. But Hezbollah has yet to bite.”"""
 
 [[content]]
 section = "News - International"
 source = "Breaking News, World News and Video from Al Jazeera"
-link = "https://www.aljazeera.com/news/2024/9/25/florida-braces-for-major-hurricane-as-helene-strengthening-rapidly?traffic_source=rss"
-pub_date = "Wed, 25 Sep 2024 17:08:51 +0000"
-title = "Florida braces for major hurricane as Helene strengthening rapidly"
+link = "https://www.aljazeera.com/program/newsfeed/2024/9/25/israeli-army-boss-tells-troops-to-prepare-for-possible-lebanon-push?traffic_source=rss"
+pub_date = "Wed, 25 Sep 2024 18:29:21 +0000"
+title = "Israeli army boss tells troops to prepare for possible Lebanon push"
 bib_key = "key-12"
-content = '''
-Hurricane Helene has rapidly strengthened in the Caribbean Sea while moving north between the coasts of Mexico and Cuba towards the United States, prompting officials to declare an emergency in Florida.
+content = """
+## Israeli army boss tells troops to prepare for possible Lebanon push
 
-Helene is expected to move overon Wednesday as it moves north across the Gulf of Mexico, the US National Hurricane Center (NHC) said.
+Israeli general Herzi Halevi told soldiers in northern Israel on Wednesday that the air attacks on Lebanon would continue in order to destroy Hezbollah’s infrastructure and to prepare the way for a possible ground offensive.
 
-Heavy rainfall was forecast for the southeastern US starting Wednesday, with a “life-threatening storm surge” along the entire west coast of Florida, according to the NHC.
+Published On 25 Sep 2024
 
-On Wednesday afternoon, Helene was located about 135 kilometres (85 miles) from Cozumel, Mexico, and about 810km (503 miles) south-southwest of Tampa, on Florida’s west coast, as it moved northwest at 17km/h (10mph) with maximum sustained winds of 130km/h (80mph).
-
-The strong winds knocked out power in the Cayman Islands where heavy rain and waves reached as high as three metres (10 feet).
-
-Many in Cuba also worried about the storm, whose outer bands are expected to reach the capital of Havana, which is already struggling with chronic power outages.
-
-Mexico is still reeling from former, killing two people, blowing tin roofs off houses, triggering mudslides and toppling trees, officials said.
-
-John weakened to a depression after reaching land but then reformed as a tropical storm on Wednesday, and is forecast to make another landfall in the Mexican state of Guerrero, about 155 km (96 miles) north of Acapulco, on Thursday.
-## Forecast to be a ‘major’ hurricane
-
-Helene is expected to grow into a major hurricane — a Category 3 or higher — on Thursday, the day it’s set to reach Apalachee Bay on Florida’s Gulf Coast, according to the official forecast. The NHC has issued hurricane warnings for part of Mexico’s Yucatan Peninsula and Florida’s northwestern coastline, where large storm surges of up to 4.5 metres (15 feet) were expected.
-
-“It’s going to be a very large system with impacts across all of Florida,” said Larry Kelly, a hurricane specialist at the NHC.
-
-> 
-> 9/25 5am EDT: There is a danger of life-threatening storm surge from Tropical Stormalong the entire west coast of the Florida Peninsula & Florida Big Bend, where a Storm Surge Warning is in effect. Residents in those areas should follow advice given by local officials.
-> 
-> — NHC Storm Surge (@NHC\_Surge)
-> 
-
-Florida Governor Ron DeSantis issued an emergency for most of the state’s counties, with Helene expected to pass close to the state capital, Tallahassee where local officials worried about major tree damage.
-
-Federal authorities were positioning generators, food and water, along with search-and-rescue and power restoration teams, the White House said.
-Dave McCurley boards up the windows to his home in advance of Tropical Storm Helene, expected to make landfall as a hurricane, in Ochlockonee Bay, Florida, Wednesday, September 25, 2024 [Gerald Herbert/AP]
-The storm is anticipated to be unusually large and fast-moving, meaning storm surges, wind and rain will likely extend several hundred kilometres from the storm’s centre, the NHC added. States as far inland as Georgia, Tennessee, Kentucky and Indiana could see rainfall.
-
-Some residents along the Gulf Coast in Florida’s Panhandle, are already evacuating to safer areas inland, with memories still fresh of recent storm surge events.
-
-In 2018,struck Mexico Beach about 160km (100 miles) west of where Helene is expected to make landfall. Michael rapidly intensified into a devastating Category 5 hurricane and caught residents off guard, causing an estimated $25.5bn damage and 59 deaths.
-
-In 2023, another Category 3 storm,left as many as 500,000 customers without power after it struck the northwest coast of Florida, also causing major flood damage from storm surge. Idalia was the most powerful hurricane to hit Florida’s Big Bend region since 1950.
-
-Helene is the eighth named storm of the current Atlantic hurricane season, which runs from June 1 to November 30, and the fourth to make landfall in the US.struck the Gulf Coast of Louisiana as a Category 2 storm barely two weeks ago.
-
-Since 2000, only three other years besides 2024 have had four or more storms make landfall in the continental US.
-
-This year’s hurricane season coincides withhit by rising fees and reluctance from private insurers to provide coverage in coastal areas.
-
-The US National Oceanic and Atmospheric Administrationthis year because of record-setting warm ocean temperatures. It forecast 17 to 25 named storms, with four to seven major hurricanes of Category 3 or higher.
-
-But the season is off to a slow start, leaving forecasters searching for factors that may have impeded the formation of major storms as they cross the Atlantic Ocean “hurricane corridor”.'''
+"""
 
 [[content]]
 section = "News"
@@ -441,7 +423,7 @@ From: Masoud Ataei []
 """
 
 [[content]]
-section = "News - Local"
+section = "Personal"
 source = "Connecticut's Nonprofit Journalism."
 link = "https://ctmirror.org/2024/09/25/suicide-and-the-healthcare-workforce/"
 pub_date = "Wed, 25 Sep 2024 16:01:00 +0000"
@@ -469,7 +451,7 @@ The Joint Commission, which accredits hospitals, has emphasized since 2020 that�
 """
 
 [[content]]
-section = "News - Local"
+section = "Personal"
 source = "Connecticut's Nonprofit Journalism."
 link = "https://ctmirror.org/2024/09/25/abbott-terrace-health-center-waterbury-ct-financiacion/"
 pub_date = "Wed, 25 Sep 2024 15:15:15 +0000"
@@ -521,7 +503,7 @@ As manager of audience engagement, Gabby works to grow CT Mirror’s reach and v
 """
 
 [[content]]
-section = "News - Local"
+section = "Personal"
 source = "Connecticut's Nonprofit Journalism."
 link = "https://ctmirror.org/2024/09/25/ct-school-shooting-threats/"
 pub_date = "Wed, 25 Sep 2024 14:30:00 +0000"
