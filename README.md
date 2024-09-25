@@ -13,6 +13,8 @@ Enter **feedpress**:
 - [x] Process them, cleaning up as much crap as possible
 - [x] Output a *typst* formatted file - and combined with layout/templating, use typst to create a PDF
 
+Documentation: ./docs/index.html
+
 ## Requisites
 - rust & cargo (https://rust-lang.org)
 - typst (https://typst.app)
