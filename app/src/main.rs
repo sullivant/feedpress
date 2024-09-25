@@ -8,6 +8,7 @@
 //!
 //! 
 
+use std::collections::HashMap;
 use std::error::Error;
 use std::io::Write;
 use std::str::FromStr;
@@ -19,7 +20,9 @@ use hayagriva::types::FormatString;
 use hayagriva::types::QualifiedUrl;
 use hayagriva::Entry;
 use hayagriva::Library;
+use html2md::parse_html_custom;
 use rss::Channel;
+use spider_transformations::transformation::content::IgnoreTagFactory;
 use std::fs::File;
 use std::io::Read;
 use serde::Deserialize;
@@ -30,6 +33,7 @@ use article_scraper::ArticleScraper;
 use article_scraper::Readability;
 use url::Url;
 use reqwest::Client;
+use html2md::parse_html;
 
 /// Contains our application configuration.
 /// Configuration is written in the TOML format, seen most places.
@@ -162,17 +166,6 @@ async fn main() {
         },
     };
 
-
-    let html = reqwest::get("https://www.nytimes.com/interactive/2023/04/21/science/parrots-video-chat-facetime.html")
-        .await
-        .unwrap()
-        .text()
-        .await
-        .unwrap();
-    let base_url = Url::parse("https://www.nytimes.com").unwrap();
-    let extracted_content = Readability::extract(&html, Some(base_url)).await.unwrap();
-    println!("{:?}", extracted_content);
-
     let local_time: DateTime<Local> = Local::now();
     println!("Done parsing configuration.  Current time is: {}", local_time);
 
@@ -241,6 +234,9 @@ async fn main() {
             let article_short_content = this_item.description().unwrap_or("No Content").to_string();
             let article_content = scrape_this(&article_link).await.unwrap_or(article_short_content.clone());
 
+            // println!("{}", article_content);
+
+
             // Build a new struct of this particular content for outbound formatting
             let this_content = ContentEntry {
                 section: entry_section.clone(),
@@ -273,27 +269,33 @@ async fn main() {
    
 }
 
-
+/// Utilizes [Readability] to scrape the article's provided link and then send it through
+/// a simple html -> markdown processor.
 async fn scrape_this(article_link: &String) -> Option<String> {
-    // This is our scraper for gathering more detail
-    let scraper = ArticleScraper::new(None);
-    let client = Client::new();
-    let url = Url::parse(&article_link).unwrap();
-    let article = scraper.await.parse(&url, false, &client, None).await;
+    let html = reqwest::get(article_link)
+        .await
+        .unwrap()
+        .text()
+        .await
+        .unwrap();
+    let base_url = Url::parse("https://feedpress.dev/").unwrap();
+    let extracted_html = Readability::extract(&html, Some(base_url)).await;
 
-    // let config: FeedConfig = match toml::from_str(&contents) {
-    //     Ok(f) => f,
-    //     Err(_) => {
-    //         println!("Unable to parse feed entries from config toml.  Going to panic now.");
-    //         panic!();
-    //     },
-    // };
+    // println!("{:?}", extracted_html);
 
-    // Return our article's html
-    match article {
-        Ok(a) => a.html,
-        Err(_) =>  Some("No Content".to_string()),
-    }
+    // Parse the extracted HTML into markdown, ignoring some tags
+    let mut tag_factory: HashMap<String, Box<dyn html2md::TagHandlerFactory>> =
+        HashMap::new();
+    let tag = Box::new(IgnoreTagFactory {});
+    tag_factory.insert(String::from("script"), tag.clone());
+    tag_factory.insert(String::from("a"), tag.clone());
+    tag_factory.insert(String::from("img"), tag.clone());
+    tag_factory.insert(String::from("i"), tag.clone());
+
+
+    let md = parse_html_custom(&extracted_html.unwrap_or("**NO CONTENT**".to_string()), &tag_factory, true);
+
+    Some(md)
 
 }
 

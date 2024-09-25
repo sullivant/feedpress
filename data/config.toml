@@ -1,7 +1,7 @@
 # global configurations
 show_errors = false # true if you'd like to see feed collection errors
 max_age = 3 # number of days old an article is skipped if it is older than
-feed_limit = 4  # max number of articles to pull from a feed
+feed_limit = 2  # max number of articles to pull from a feed
 
 # feed array
 # example:
@@ -25,7 +25,7 @@ feed_limit = 4  # max number of articles to pull from a feed
 
 [[feed]]
   url = "https://www.aljazeera.com/xml/rss/all.xml"
-  section = "News"
+  section = "International"
 
 [[feed]]
   url = "https://sullivanscientific.com/notfound.xml"  
@@ -39,7 +39,3 @@ feed_limit = 4  # max number of articles to pull from a feed
   url = "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
   feed_limit = 3
   section = "News"
-
-[[feed]]
-  url = "https://www.rep-am.com/feed/"
-  section = "News - Local"

@@ -1,95 +1,45 @@
 key-5:
   type: web
-  title: '''We just had to flee'': Fear and tension in Lebanon under deadly Israeli bombardment'
-  date: 2024-09-24
-  url: https://www.bbc.com/news/articles/crl8xw7ww70o
+  title: BBC finds Lebanese seaside city deserted after Israeli attacks
+  date: 2024-09-26
+  url: https://www.bbc.com/news/videos/cx2m8z52y5zo
 key-6:
   type: web
-  title: War with Russia closer to end than we think - Zelensky
-  date: 2024-09-25
-  url: https://www.bbc.com/news/articles/cr7582l4015o
-key-7:
-  type: web
-  title: Three killed in Russian strike on Kharkiv apartment
-  date: 2024-09-25
-  url: https://www.bbc.com/news/articles/cx245n0gex5o
+  title: China test-fires intercontinental ballistic missile for first time in decades
+  date: 2024-09-26
+  url: https://www.bbc.com/news/articles/c4gl843l90zo
 key-8:
   type: web
-  title: German grandmother and baby missing in Tuscany floods
-  date: 2024-09-25
-  url: https://www.bbc.com/news/articles/c5y3pgz0nqqo
-key-10:
+  title: Google files EU antitrust complaint accusing Microsoft of stifling cloud competition
+  date: 2024-09-26
+  url: https://www.cnbc.com/2024/09/25/google-files-eu-antitrust-complaint-accusing-microsoft-of-stifling-cloud-competition.html
+key-9:
   type: web
-  title: '''Stop ripping us off'': Novo Nordisk CEO defends weight loss drug pricing during Senate grilling'
-  date: 2024-09-25
-  url: https://www.cnbc.com/2024/09/24/novo-nordisk-ceo-to-testify-at-senate-over-weight-loss-drug-prices.html
+  title: 'Bettina Orlopp: The woman tasked with leading Commerzbank amid UniCredit takeover battle'
+  date: 2024-09-26
+  url: https://www.cnbc.com/2024/09/25/bettina-orlopp-who-is-the-new-commerzbank-ceo.html
 key-11:
   type: web
-  title: OPEC is highly bullish on long-term oil demand growth. Not everyone agrees
-  date: 2024-09-25
-  url: https://www.cnbc.com/2024/09/24/opec-is-bullish-on-long-term-oil-demand-growth-not-everyone-agrees.html
+  title: Israeli soldiers hide from Hezbollah rockets
+  date: 2024-09-26
+  url: https://www.aljazeera.com/program/newsfeed/2024/9/25/israeli-soldiers-hide-from-hezbollah-rockets?traffic_source=rss
 key-12:
   type: web
-  title: U.S. Steel CEO defends planned sale to Japan's Nippon, believes deal will close on its merits
-  date: 2024-09-25
-  url: https://www.cnbc.com/2024/09/24/us-steel-ceo-defends-planned-sale-to-japans-nippon-believes-deal-will-close-on-its-merits.html
-key-13:
+  title: Israel has been bombing Gaza and Lebanon at the same time
+  date: 2024-09-26
+  url: https://www.aljazeera.com/program/newsfeed/2024/9/25/israel-has-been-bombing-gaza-and-lebanon-at-the-same-time?traffic_source=rss
+key-14:
   type: web
-  title: Justice Department accuses Visa of debit network monopoly that impacts price of 'nearly everything’
-  date: 2024-09-25
-  url: https://www.cnbc.com/2024/09/24/doj-accuses-visa-of-debit-network-monopoly-that-impacts-price-of-nearly-everything.html
+  title: 'Iran’s Dilemma: How to Preserve Its Proxies and Avoid Full-Scale War'
+  date: 2024-09-26
+  url: https://www.nytimes.com/2024/09/25/world/middleeast/iran-israel-hezbollah.html
 key-15:
   type: web
-  title: Maldives leader says Israel must be held to account for ‘genocide’ in Gaza
-  date: 2024-09-25
-  url: https://www.aljazeera.com/news/2024/9/24/maldives-leader-says-israel-must-be-held-to-account-for-genocide-in-gaza?traffic_source=rss
+  title: Israel’s Attacks on Hezbollah Achieved Short-Term Aims, Officials Say
+  date: 2024-09-26
+  url: https://www.nytimes.com/2024/09/24/world/middleeast/israel-hezbollah-gaza-hamas.html
 key-16:
   type: web
-  title: Palestinian child mourns father killed by Israeli strike
+  title: What Lebanon Looks Like After Israel’s Historic Airstrikes
   date: 2024-09-25
-  url: https://www.aljazeera.com/program/newsfeed/2024/9/24/palestinian-child-mourns-father-killed-by-israeli-strike?traffic_source=rss
-key-17:
-  type: web
-  title: Qatari leader condemns ‘blatant aggression’ against Palestinians
-  date: 2024-09-25
-  url: https://www.aljazeera.com/program/newsfeed/2024/9/24/qatari-leader-condemns-blatant-aggression-against-palestinians?traffic_source=rss
-key-18:
-  type: web
-  title: Three killed in Ukraine’s Kharkiv as Russia bombs an apartment block
-  date: 2024-09-25
-  url: https://www.aljazeera.com/news/2024/9/24/several-killed-in-ukraines-kharkiv-as-russia-bombs-an-apartment-block?traffic_source=rss
-key-20:
-  type: web
-  title: As Lebanon Reels From Israeli Attacks, the Future Is Murky for a Wounded Hezbollah
-  date: 2024-09-25
-  url: https://www.nytimes.com/2024/09/24/world/middleeast/israel-lebanon-hezbollah.html
-key-21:
-  type: web
-  title: What Is Hezbollah, the Militant Group Based in Lebanon?
-  date: 2024-09-25
-  url: https://www.nytimes.com/article/what-is-hezbollah-lebanon.html
-key-22:
-  type: web
-  title: Biden Warns the World Is at an ‘Inflection Point’
-  date: 2024-09-25
-  url: https://www.nytimes.com/2024/09/24/us/politics/biden-unga-speech.html
-key-24:
-  type: web
-  title: 'Today in History: September 25'
-  date: 2024-09-25
-  url: https://www.rep-am.com/today_in_history/2024/09/24/today-in-history-september-25-3/
-key-25:
-  type: web
-  title: Why the internet’s so hooked on TikTok’s king of sandwiches
-  date: 2024-09-25
-  url: https://www.rep-am.com/life-arts/food/2024/09/24/why-the-internets-so-hooked-on-tiktoks-king-of-sandwiches/
-key-26:
-  type: web
-  title: 'Gretchen’s table: Bang bang chicken skewers are a spicy-sweet air fryer revelation'
-  date: 2024-09-25
-  url: https://www.rep-am.com/life-arts/food/2024/09/24/gretchens-table-bang-bang-chicken-skewers-are-a-spicy-sweet-air-fryer-revelation/
-key-27:
-  type: web
-  title: 'Loca Vore: Curate with a chef; spook with a cookie; celebrate with apples'
-  date: 2024-09-25
-  url: https://www.rep-am.com/columns/ct-music/2024/09/24/loca-vore-curate-with-a-chef-spook-with-a-cookie-celebrate-with-apples/
+  url: https://www.nytimes.com/2024/09/24/world/middleeast/lebanon-damage-israel-airstrikes.html
