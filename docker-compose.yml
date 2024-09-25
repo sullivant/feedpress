@@ -1,0 +1,13 @@
+version: "2.4"
+services:
+  
+  #feedpress
+  feedpress:
+    image: feedpress:latest
+    restart: "no"
+    volumes:
+      - ./assets:/assets
+      - ./data:/data
+      - ./input:/input
+      - ./output:/output
+      - ./templates:/templates

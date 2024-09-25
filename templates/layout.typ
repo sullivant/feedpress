@@ -44,10 +44,6 @@
     #line(length:100%)
   ]
 
-  set page(
-    paper: "us-letter",
-    margin: (top: auto),
-  )
   show heading: it => [
     #set align(center)
     #set text(12pt, weight: "regular")

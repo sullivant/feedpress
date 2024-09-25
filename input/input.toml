@@ -83,56 +83,41 @@ The report also projected that China will reach over 1,000 warheads by 2030. Sti
 [[content]]
 section = "News"
 source = "CNBC International is the world leader for news on business, technology, China, trade, oil prices, the Middle East and markets."
-link = "https://www.cnbc.com/2024/09/25/google-files-eu-antitrust-complaint-accusing-microsoft-of-stifling-cloud-competition.html"
-pub_date = "Wed, 25 Sep 2024 12:19:10 GMT"
-title = "Google files EU antitrust complaint accusing Microsoft of stifling cloud competition"
+link = "https://www.cnbc.com/2024/09/25/surging-ai-demand-could-cause-the-worlds-next-chip-shortage-report.html"
+pub_date = "Wed, 25 Sep 2024 15:00:38 GMT"
+title = "Surging AI demand could cause the world's next chip shortage, research says"
 bib_key = "key-8"
 content = '''
 
 
-Jakub Porzycki | Nurphoto | Getty Images
+Georgijevic | E+ | Getty Images
 
-filed an antitrust complaint with the European Commission Wednesday accusingof using unfair licensing contracts to stifle competition in the multibillion-dollar cloud computing industry.
+A surge in demand for artificial intelligence-focused semiconductors and AI-enabled smartphones and laptops could lead to the next global chip shortage, according to a report released Wednesday by consultancy Bain & Company.
 
-At the heart of Google's complaint is the allegation that Microsoft uses unfair licensing terms to "lock in" clients and exert control over the cloud market.
+The last major semiconductor shortage happened during the Covid-19 pandemic amid supply chain disruption and a rise in demand for consumer electronics as people were forced to stay and work at home.
 
-Google alleges that Microsoft, through its dominant Windows Server and Microsoft Office products, can make it difficult for its massive roster of clients to use anything but its Azure cloud infrastructure offering.
+Technology giants have been snapping up graphics processing units, or GPUs, mainly from. These GPUs which are housed in data centers are critical for the training of huge AI models which underpin applications like OpenAI's ChatGPT.
 
-The internet giant said in its complaint that restrictions contained in Microsoft's cloud licensing terms makes it harder for customers to move their workloads from Microsoft's Azure cloud technology to competitors' clouds, despite there being no technical barriers to doing so.
+Meanwhile, companies likeare designing chips that go into smartphones and personal computers and allow those devices torather than via an internet connection in the cloud. These are often referred to as AI-enabled devices and companies from Samsung tohave released such products.
 
-European businesses and public sector organizations have been forced to pay the firm up to 1 billion euros ($1.1 billion) a year in licensing penalties due to restrictions on customers' ability to switch from one cloud provider to another, Google said, citing a 2023 study by CISPE, a trade body for the cloud computing sector.
+Bain said demand for GPUs and AI consumer electronics could be the cause of a chip shortage.
 
-The antitrust complaint from Google arrives after CISPE and its members in July agreed a settlement with Microsoft which would see the firm make changes to address competition concerns.
+"Surging demand for graphics processing units (GPUs) has caused shortages in specific elements of the semiconductor value chain," Anne Hoecker, head of the technology practice in the Americas at Bain & Company, told CNBC by email.
 
-Referring to the CISPE settlement, Microsoft said in a statement Wednesday that it expects the European Commission to dismiss Google's complaint.
+"If we combine the growth in demand for GPUs alongside a wave of AI-enabled devices, which could accelerate PC product refresh cycles, there could be more widespread constraints on semiconductor supply."
 
-"Microsoft settled amicably similar concerns raised by European cloud providers, even after Google hoped they would keep litigating," a Microsoft spokesperson told CNBC via email. "Having failed to persuade European companies, we expect Google similarly will fail to persuade the European Commission."
+However, it'show much demand such AI-enabled gadgets will have, given what appears to be a cautious approach to them from consumers so far.
 
-## Microsoft's cloud 'tax' at issue
+Bain & Company noted that the semiconductor supply chain is "incredibly complex, and a demand increase of about 20% or more has a high likelihood of upsetting the equilibrium and causing a chip shortage."
 
-In a summary of the complaint, Google — which ranks third globally in the cloud computing market behind market leadersWeb Services and Microsoft Azure, respectively — said that Microsoft "harms cybersecurity and undermines innovation."
+"The AI explosion across the confluence of the large end markets could easily surpass that threshold, creating vulnerable chokepoints throughout the supply chain," the report added.
 
-According to Google, if a company runs Microsoft's Office suite of productivity tools and other applications on Google Cloud Platform or other competing clouds, they are effectively required to pay a "tax" in the form of punchy licensing fees to Microsoft.
+The semiconductor supply chain is spread across multiple companies. For example, while Nvidia might design its GPUs, they are made by Taiwan Semiconductor Manufacturing Co., or, in Taiwan. TSMCfrom countries around the world, such as the Netherlands. Furthermore, the most cutting-edge chips.
 
-Google said that Microsoft undermined competition in cloud, and referred to findings of a U.K. Competition and Markets Authority study which determined Microsoft acquired over 60% to 70% of all new British businesses in 2021 and 2022.
+Geopolitics could also be a factor prompting a chip shortage. Semiconductors are seen by governments around the world as strategic technology. The U.S. has been on a campaign,, of trying to restrict China's access to the most advanced chips. Meanwhile, Washington has sought to shore up its own domestic capacity to produce semiconductors.
 
-Google also suggested that Microsoft's cloud practices have potentially made businesses more prone to security issues.
-
-In an interview with CNBC's Arjun Kharpal Wednesday, Amit Zavery, Google Cloud's head of platform, said Google believes Microsoft is "100%" in violation of EU antitrust rules.
-
-"We would like the cloud market to remain and become very vibrant and open for all the providers including European vendors, vendors like us, AWS and others," Zavery said.
-
-"Today the restrictions does not allow choice for customers," Zavery said. "Today the restrictions does not allow choice for customers," he said, adding that Microsoft included restrictions once it realized the massive commercial potential of the technology.
-
-"So, we would want those restrictions to be removed and allow customers to have and choose whatever cloud provider they think is best for them commercially and technically," he added.
-
-Zavery told CNBC that if Microsoft makes changes to its cloud licensing terms as a result of its complaint, Google and cloud customers more broadly would be "very happy."
-
-Following the July settlement agreement with Microsoft, CISPE said the tech giant would work with its members to release an enhanced version of Azure Stack HCI, a cloud infrastructure product, to offer the same features that Microsoft customers using its Azure product currently benefit from.
-
-Google, which is not a CISPE member, said it disagreed with the settlement and chose not to participate in the agreement. Amazon Web Services, which is a CISPE member, and's cloud unit AliCloud, also chose not to become part of the settlement.
-
-For its part, Microsoft has denied that its cloud practices harm competition. In response to a cloud market study initiated by the U.K.'s Competition and Markets Authority, the firm said that it "firmly believes that the cloud services market is functioning well."
+"Geopolitical tensions, trade restrictions, and multinational tech companies' decoupling of their
+supply chains from China continue to pose serious risks to semiconductor supply. Delays in factory construction, materials shortages, and other unpredictable factors could also create pinch points," Bain & Company said.
 
 '''
 
@@ -197,34 +182,130 @@ Orlopp's extensive experience at Commerzbank will allow her to hit the ground ru
 [[content]]
 section = "International"
 source = "Breaking News, World News and Video from Al Jazeera"
-link = "https://www.aljazeera.com/program/newsfeed/2024/9/25/israeli-soldiers-hide-from-hezbollah-rockets?traffic_source=rss"
-pub_date = "Wed, 25 Sep 2024 13:50:28 +0000"
-title = "Israeli soldiers hide from Hezbollah rockets"
+link = "https://www.aljazeera.com/news/2024/9/25/german-green-party-leaders-resign-after-election-losses?traffic_source=rss"
+pub_date = "Wed, 25 Sep 2024 15:59:55 +0000"
+title = "German Green party leaders resign after election losses"
 bib_key = "key-11"
 content = """
-## Israeli soldiers hide from Hezbollah rockets
 
-Video shows Israeli soldiers lying on the ground and sheltering from Hezbollah rockets believed to be targeting a military base in northern Israel on Wednesday.
 
-Published On 25 Sep 2024
+*Co-leaders’ exits come after the party failed to cross five percent threshold in Thuringia and Brandenburg state polls.*
+
+The co-leaders of Germany’s Greens party, which is part of Chancellor Olaf Scholz’s ruling coalition, have said they would quit after a series of election blows that saw their party ejected from two regional parliaments.
+
+The decision made by Omid Nouripour and Ricarda Lang on Wednesday comes at a time of turbulence for the, buffeted by voter angst over the economic challenges facing Germany and by fierce debates over migration as a national election looms next year.
+
+“The result in Brandenburg [in the regional election] on Sunday is a sign our party is in its deepest crisis of a decade,” Nouripour told a news conference. “It is time to lay our beloved party’s fate in others’ hands.”
+
+In Thuringia and Brandenburg states, the Greensto cross the five percent threshold needed to enter parliament, and in Saxony, they just scraped in.
+
+Co-leader Lang said the party “needs new faces to lead it out of this crisis” and oversee a “strategic reorientation” before the national poll.
+
+Lang and Nouripour will remain in place until successors are elected at a party conference in mid-November.
+
+The Greens emerged out of Germany’s environmental, peace and anti-nuclear protest movements of the 1970s, and participated in previous Social Democratic Party (SPD)-led national governments between 1998 and 2005.
+
+While the Green party leadership’s move has no direct impact on the German government or on Greens ministers serving in it – including Scholz’s deputy Robert Habeck and Foreign Minister Annalena Baerbock – analysts said it could stoke greater political instability.
+
+Habeck said he shared responsibility for the poor election results and called for an open debate on the Greens’ future at their party congress in mid-November.
+
+“The Greens will reorder their ranks to start the catch-up ahead of the elections with new force,” he added.
+
+Meanwhile, the parliamentary leader of Scholz’s centre-left SPD, Katja Mast, said she believed the Greens would want to stay in the governing coalition.
+
+The Greens need to adapt to a dramatically changed political climate, outgoing co-leader Lang said at Wednesday’s news conference.
+
+“Next year’s election is not just any election,” she said. “[It will be a choice between] a country focused on achieving prosperity by sticking to climate neutrality or a country run by people who want to back away from all that.”
 
 """
 
 [[content]]
 section = "International"
 source = "Breaking News, World News and Video from Al Jazeera"
-link = "https://www.aljazeera.com/program/newsfeed/2024/9/25/israel-has-been-bombing-gaza-and-lebanon-at-the-same-time?traffic_source=rss"
-pub_date = "Wed, 25 Sep 2024 13:42:02 +0000"
-title = "Israel has been bombing Gaza and Lebanon at the same time"
+link = "https://www.aljazeera.com/news/2024/9/25/israel-is-repeating-its-gaza-assault-in-lebanon-why?traffic_source=rss"
+pub_date = "Wed, 25 Sep 2024 15:32:19 +0000"
+title = "Israel is repeating its Gaza assault in Lebanon. Why?"
 bib_key = "key-12"
 content = """
-## Israel has been bombing Gaza and Lebanon at the same time
+United Nations Secretary-General Antonio Guterres has been clear, tellingthat the world “cannot afford Lebanon to become another Gaza”.
 
-Hundreds of Israeli air strikes hit areas across Lebanon this week but Israel’s attacks on Gaza haven’t stopped either.
+Many prominent Israeli figures seem to want exactly that, however, drawing straight lines between Hamas in Gaza and Hezbollah in Lebanon to underscore the threat they pose and justify assaults on Gaza and Lebanon.
+## So, are Hamas and Hezbollah the same?
 
-Published On 25 Sep 2024
+Not even a bit.
 
-"""
+In Lebanon, Hezbollah is part of a wider tapestry of the political and military mosaic. While it plays a prominent role in the country, it does not have control over the presidency or parliament.
+
+Unlike Gaza, Lebanon is present in international systems of governance and finance. Gaza and Hamas’s links with the international order are primarily via aid provided by organisations like the UN.
+
+Hamas, which has an effective military wing like Hezbollah, governs Gaza completely and has to maintain a functioning society and governing structure.
+## Aren’t they both ‘Iranian proxies’?
+
+They’re allies, yes.
+
+Israel has portrayed them as equal extensions of what is typically cast as Israel’s ultimate foe: Iran.
+
+Addressing the, Israeli Prime Minister Benjamin Netanyahu said Iran was behind everything and that its “proxy” forces – Hamas, Hezbollah and the Houthis in Yemen – pose an equal threat to Israel and, by extension, the West.
+
+Both groups maintain strong alliances with Iran, but they are distinct from each other, and their relationship with Iran changes.
+
+Hezbollah is more aligned with Iran’s regional goals, while Hamas utilises Iranian support but is more independent.
+
+Hamas broke with Iranover its support for Syrian President Bashar al-Assad, and it does not seem to have forewarned Iran of its October 7 attack on Israel.
+## But they said both groups use human shields?
+
+To justify its widespread targeting of civilian areas, Israel has accused both Hamas and Hezbollah of “hiding” their military hardware there.
+
+Israel claims Hamas hides in or near schools, hospitals and homes as it tries to justify the destruction of Gaza.
+
+It also claims Hamas uses UN facilities in Gaza as military fronts “in contravention of the Geneva Convention”.
+
+Israel has also targeted the United Nations Relief and Works Agency for Palestine Refugees (UNRWA) – the only support for Palestinian refugee populations displaced in the ethnic cleansing of 1948’s Nakba by Zionist gangs.
+
+Recently, Israel made similar claims about homes in southern Israel – that they are being used by Hezbollah.
+
+On Monday, Israel released images of what it said was a Hezbollah missile concealed in an attic in southern Lebanon, appearing to be trying to pre-empt criticism of its ongoing strikes.
+
+Pointing to an image, an Israeli military spokesperson said, “It’s ready to launch from an opening in the roof.
+
+“Under the attic, on the first floor, a Lebanese family lives, serving as a human shield.”
+
+At the time of writing, Israel has carried out thousands of strikes on homes across Lebanon.
+## But what about civilians?
+
+In Gaza, Israel has shown little concern for fatalities – bombing homes, displacement camps, hospitals and schools.
+
+In Lebanon, Israel sent opaque “evacuation notices” to the citizens of a foreign country ahead of strikes on targets the people may not know are nearby.
+
+The paper notices, text messages and recorded phone calls were cited by Israel as “evidence” that it is trying to avoid civilian casualties.
+
+During a visit to a military base on Tuesday, Netanyahu told the people of Lebanon “our war is not with you; our war is with Hezbollah”, urging the Lebanese people to rise up against the group.
+
+At the time of writing, more than 600 people in Lebanon have been killed in the ongoing Israeli strikes and more than 2,000 injured.
+## Are people in Lebanon displaced as in Gaza?
+
+Yes.
+
+In an echo of the attack on Gaza, thousands of terrified Lebanese families have fled southern Lebanon, joining an estimated 110,000 people who fled earlier, seeking shelter wherever possible.
+
+The total number of displaced is about 500,000 now, Lebanon’s Foreign Minister Abdallah Bou Habib said on Tuesday.
+
+Someseeking shelter in Palestinian refugee camps in southern Beirut like Shatila – camps that have housed Palestinians fleeing Israeli attacks since the 1940s.
+
+Others are cramming into bomb shelters, sleeping in cars, or crowding into Beirut’s schools, which, unlike the UNRWA-operated schools in Gaza, were never designed to double as shelters.
+## If they’re so different, why are Israel’s tactics the same?
+
+Because Israel needs a quick end and thinks this will work, said Yousef Munayyer from the Arab Center Washington DC.
+
+In Gaza, Hamas survived a year of Israeli attacks by relying on its tunnel network.
+
+Hezbollah says it has an expansive network of tunnels in Lebanon with extensive munitions in them,.
+
+Israel would struggle more in Lebanon, not least because Hezbollah is stronger.
+
+“And so they’re using the same sort of tactics that they used in Gaza,” Munayyer said. “This is part of an Israeli strategy aimed at bringing great pressure on Hezbollah.”
+
+He said Israel hoped to “get out of the situation without a ground invasion, without a long drawn-out battle” – and to avoid getting bogged down in Lebanon just as it has in Gaza."""
 
 [[content]]
 section = "News"
@@ -281,36 +362,42 @@ Advertisement
 [[content]]
 section = "News"
 source = ""
-link = "https://www.nytimes.com/2024/09/24/world/middleeast/israel-hezbollah-gaza-hamas.html"
-pub_date = "Wed, 25 Sep 2024 05:20:18 +0000"
-title = "Israel’s Attacks on Hezbollah Achieved Short-Term Aims, Officials Say"
+link = "https://www.nytimes.com/2024/09/25/upshot/trump-electoral-college-harris.html"
+pub_date = "Wed, 25 Sep 2024 15:05:35 +0000"
+title = "Republicans’ Electoral College Edge, Once Seen as Ironclad, Looks to Be Fading"
 bib_key = "key-15"
 content = """
 
 
 Advertisement
 
-## Israel’s Attacks on Hezbollah Achieved Short-Term Aims, Officials Say, but End Goal Is Unclear
+You have a preview view of this article while we are checking your access. When we have confirmed access, the full article content will load.
 
-Some hawkish generals think that Hezbollah can be forced to back down, current and former Israeli officials said, while others in the government think Israel must reach a deal with Hamas before expanding the war.
+Image
 
-An area hit by an Israeli strike in Beirut’s southern suburbs on Tuesday.Credit...Anwar Amro/Agence France-Presse — Getty Images
+In the Electoral College, it doesn’t matter if you win a state by one vote or a million.Credit...Adriana Zehbrauskas for The New York Times
 
-* Published Sept. 24, 2024Updated Sept. 25, 2024,1:20 a.m. ET
+Ever since Donald J. Trump’sin 2016 — when he lost the popular vote by almost three million votes but still triumphed with over 300 electoral votes — many who follow politics have believed Republicans hold an intractable advantage in the Electoral College.
 
-Israel achieved many short-term goals in a series of strikes on Hezbollah during the last week, according to five current and former senior Israeli officials. But they also expressed concern that there wason bringing calm and returning tens of thousands of displaced people back to Israel’s north.
+But there’s growing evidence to support a surprising possibility: His once formidable advantage in the Electoral College is not as ironclad as many presumed. Instead, it might be shrinking.
 
-The escalations against Hezbollah began almost by chance after last-minute Israeli intelligence suggested that an operation to blow up pagers owned by members of the Iranian-backed Lebanese militia was in danger of being exposed, according to the officials, who spoke on the condition of anonymity to discuss a sensitive matter. If the plan was not activated by the beginning of last week, the officials said, Hezbollah might discover it, possibly along with a second operation targeting walkie-talkies.
+According to The New York Times’s, it does not seem that Kamala Harris will necessarily need to win the popular vote by much to prevail.
 
-That set up a dizzying week of attacks in Lebanon. Israeldistributed by Hezbollah, killing dozens of people and injuring thousands more. It then assassinated a group of itsnear Beirut. On Monday, a wave of Israeli airstrikes targeting parts of the country where Hezbollah holds sway.
+The simplest way to measure the advantage in the Electoral College is to take the difference between the national popular vote and the vote in the “tipping-point” state (the state that puts one candidate over the top in the Electoral College). Right now, Vice President Harris leads the polling in the national vote by 2.6 percentage points, and leads— the current tipping-point state — by 1.8 points, which makes Mr. Trump’s advantage less than a point.
 
-The intensified attacks against Hezbollah reflect the opinion of some hawkish generals and others who think that the group can be forced to back down, the officials said, while others in the government believe Israeland hostage deal with Hamas before turning to another battleground. Prime Minister Benjamin Netanyahu has opposed a truce that would allow Hamas to survive the war.
+By this measure, Mr. Trump’s advantage is only around one-fifth as large as it was four years ago, when President Biden fared 3.8 points better nationally than in Wisconsin (the tipping-point state in 2020).
 
-The decision to escalate was met with strong opposition from some senior officials, according to three current and former officials who spoke to The Times. They worried that such actions, the officials said, could lead to all-out war with face-to-face fighting and questioned how they would pave the way for the return of Israelis to the north.
+---
 
-Hezbollah has been targeting northern Israel with rockets and drones since last year in solidarity with Hamas and its war against Israel in Gaza. Hassan Nasrallah, the Hezbollah leader, has said the group will not agree to stop firing at Israel until Israel and Hamas reach an agreement that ends the war in Gaza.
+Thank you for your patience while we verify access. If you are in Reader mode please exit andyour Times account, orfor all of The Times.
 
-Ronen Bergman is a staff writer for The New York Times Magazine, based in Tel Aviv. His latest book is “Rise and Kill First: The Secret History of Israel’s Targeted Assassinations,” published by Random House.
+---
+
+Thank you for your patience while we verify access.
+
+Already a subscriber?.
+
+Want all of The Times?.
 
 Advertisement
 
@@ -319,9 +406,9 @@ Advertisement
 [[content]]
 section = "News"
 source = ""
-link = "https://www.nytimes.com/2024/09/24/world/middleeast/lebanon-damage-israel-airstrikes.html"
-pub_date = "Tue, 24 Sep 2024 21:35:56 +0000"
-title = "What Lebanon Looks Like After Israel’s Historic Airstrikes"
+link = "https://www.nytimes.com/2024/09/25/style/donald-trump-embraces-love.html"
+pub_date = "Wed, 25 Sep 2024 13:48:55 +0000"
+title = "Why Is Donald Trump Using the Word ‘Love’ So Much?"
 bib_key = "key-16"
 content = """
 
@@ -330,21 +417,31 @@ Advertisement
 
 You have a preview view of this article while we are checking your access. When we have confirmed access, the full article content will load.
 
-Sept. 24, 2024
+## Donald Trump Embraces ‘Love’
 
-After nearly a year of back-and-forth attacks between Israel and Hezbollah, the fighting along the border in the last two days has been remarkably one-sided.
+Politicians often lean toward hyperbole, but the frequent use of the word “love” in the former president’s fund-raising notes is an increasingly common tactic for him.
 
-Israel has waged one of thein modern warfare, leaving large parts of southern Lebanon in ruins and forcing tens of thousands of people to flee. Many videos circulating on social media and verified by The New York Times show multiple strikes in quick succession.
+Politicians of all parties often testify to their love of America, as well as to the crowds that flock to their rallies.Credit...Doug Mills/The New York Times
 
-About 10 miles north of the border, this city was hit hard.
+Sept. 25, 2024Updated9:48 a.m. ET
 
-Video
+The emails have been pleading and plaintive.
 
-CreditCredit...
+“Listen, you know I love you,” a Sept. 6 missive read, adding, “I will always love you.”
 
-Monday was the country’s deadliest day since its 15-year civil war, which ended in 1990. The number of people reported dead in Lebanon on Monday almost surpassed the number believed to have lost their lives there since the current conflict began in October.
+Another, on Aug. 30, was even more heartfelt.
 
-The figures do not distinguish between civilians and combatants, although Lebanon’s health minister, Firass Abiad, said on Tuesday that scores of women and children were among those killed.
+“I truly mean it when I say that I will always love and appreciate you.”
+
+As recently as last week, the emotions continued to flow.
+
+“I really do love you,” the email gushed. “I KNOW I JUST WON THE ELECTION!”
+
+The writer in question? Donald J. Trump, who has peppered his pleas for donations with declarations of ardor for his followers in fund-raising pitches of late.
+
+And while Mr. Trump’s tendency toward loving remarks to his supporters dates back years, the pace of such statements has intensified as the campaign rolls toward its conclusion and as he rails against Kamala Harris, whose campaign has made a point of emphasizingand
+
+In the last nine days, Mr. Trump’s email blasts have told prospective donors he “loves” them at least 10 times, sometimes promising that his passion had nothing to do with his requests for money.
 
 ---
 

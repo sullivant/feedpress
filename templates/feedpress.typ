@@ -14,6 +14,7 @@
   toml("../input/input.toml")
 )
 
+#colbreak()
 #line(length:100%)
 #bibliography("../input/input-bib.yml")
 
