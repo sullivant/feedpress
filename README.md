@@ -9,9 +9,9 @@ However it was occurring to me that sometimes I'd like a simple, collected, PDF 
 
 Enter **feedpress**:
 
-[x] Pull a few articles from curated RSS feeds
-[x] Process them, cleaning up as much crap as possible
-[x] Output a *typst* formatted file - and combined with layout/templating, use typst to create a PDF
+- [x] Pull a few articles from curated RSS feeds
+- [x] Process them, cleaning up as much crap as possible
+- [x] Output a *typst* formatted file - and combined with layout/templating, use typst to create a PDF
 
 ## Requisites
 - rust & cargo (https://rust-lang.org)
