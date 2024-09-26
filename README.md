@@ -16,15 +16,21 @@ Enter **feedpress**:
 Documentation: ./docs/index.html
 
 ## Requisites
+### Building
 - rust & cargo (https://rust-lang.org)
 - typst (https://typst.app)
 - git (https://git-scm.com)
+### Development
+- rust & cargo
+- typst
+- git
+- tailwindcss (https://tailwindcss.com) (for UI elements)
 
 ## Running and Configuration
 Get the code: 
 `git@github.com:sullivant/feedpress.git`
 
-Update some configuration.  After checkout of this repository, note that there are a few "defaults" configured and a few example feeds.
+Update some configuration.  After checkout of this repository, note that there are a few "defaults" configured and a few example feeds.  Without parameters, the application will run and serve a simple front end, available at `http://localhost:8081/`.
 
 Configuration is located in `data/config.toml`
 ```toml
@@ -69,6 +75,9 @@ The directories in this project are as follows:
 - [x] Dockerization of build process
 - [ ] Releases and runnability on its own in a container
 - [ ] Integration of typst as a library not a separate callout
+- [ ] Output should be datestamped in PDF name, not static
+- [ ] On container startup or `cargo run` default behavior should be to serve the static site
+- [ ] But still allow for parameterized CLI execution
 ### Configuration
 - [ ] CLI utility or flags to add/remove feed URLs and options.
 - [ ] Container execution should involve a small served web page allowing for feed and option manipulation

@@ -183,7 +183,7 @@ async fn main() {
 
     let rocket_config = Config {
         port: 8081,
-        address: std::net::Ipv4Addr::new(127, 0, 0, 1).into(),
+        address: std::net::Ipv4Addr::new(0, 0, 0, 0).into(),
         ..Config::debug_default()
     };
 

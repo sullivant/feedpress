@@ -5,6 +5,8 @@ services:
   feedpress:
     image: feedpress:latest
     restart: "no"
+    ports:
+      - 8081:8081
     volumes:
       - ./assets:/assets
       - ./data:/data

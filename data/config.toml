@@ -1,5 +1,5 @@
 show_errors = false
-max_age = 3
+max_age = 2
 feed_limit = 2
 
 [[feed]]

@@ -1,0 +1,17 @@
+	<h1 class="text-3xl font-bold underline">Hello world!</h1>
+
+	<div x-data="configShow()">
+		<button type="submit" @click="fetchConfig()" :disabled="isLoading">Show Config</button>
+		<br/>
+		<br/>
+		<template x-if="config">
+			<div>
+				<p>Show Errors: <span x-text="config.show_errors"></span></p>
+				<p>Max Age: <span x-text="config.max_age"></span></p>
+				<p>Feed Limit: <span x-text="config.feed_limit"></span></p>
+				<template x-for="thisFeed in config.feed" :key="thisFeed.url">
+					<span x-text="thisFeed.url"></span><br/>
+				</template>
+			</div>
+		</template>
+	</div>
