@@ -20,6 +20,9 @@ use hayagriva::types::QualifiedUrl;
 use hayagriva::Entry;
 use hayagriva::Library;
 use html2md::parse_html_custom;
+use rocket::fs::FileServer;
+use rocket::serde::json::Json;
+use rocket::Config;
 use rss::Channel;
 use serde::Deserialize;
 use serde::Serialize;
@@ -31,6 +34,8 @@ use std::io::Read;
 use std::io::Write;
 use std::str::FromStr;
 use url::Url;
+
+#[macro_use] extern crate rocket;
 
 /// Contains our application configuration.
 /// Configuration is written in the TOML format, seen most places.
@@ -146,7 +151,7 @@ struct BiblioEntry {
 #[command(version, about, long_about = None)]
 struct Args {
     /// Name of the url to add to, or remove from, the feed collection
-    #[arg(short, long, required(false))]
+    #[arg(short, long, required(false), default_value_t = format!(""))]
     url: String,
 
     /// Will add the provided URL to the feed listing with default options
@@ -162,6 +167,12 @@ struct Args {
     serve: bool,
 }
 
+#[get("/config")]
+fn api_get_config() -> Json<FeedConfig> {
+    Json(get_config().unwrap())
+}
+
+
 /// Main application entrypoint
 ///
 /// Does the thing it says on the tin, I suppose.  Gathers configuration data, processes each
@@ -169,6 +180,12 @@ struct Args {
 #[tokio::main]
 async fn main() {
     println!("feedpress - pressing all the news that's fit to press");
+
+    let rocket_config = Config {
+        port: 8081,
+        address: std::net::Ipv4Addr::new(127, 0, 0, 1).into(),
+        ..Config::debug_default()
+    };
 
     let args = Args::parse();
 
@@ -182,6 +199,12 @@ async fn main() {
     }
     if args.serve {
         println!("Staring feedpress server...");
+        let _ = rocket::custom(&rocket_config)
+        .mount("/api", rocket::routes![api_get_config])
+        .mount("/", FileServer::from(concat!(env!("CARGO_MANIFEST_DIR"), "/../assets/static")))
+        .launch()
+        .await;
+
         return;
     }
 

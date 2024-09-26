@@ -1,6 +1,6 @@
 [package]
 name = "feedpress"
-version = "0.3.1"
+version = "0.4.1"
 edition = "2021"
 
 [dependencies]
@@ -18,3 +18,4 @@ article_scraper = "2.1.0"
 fast_html2md = "0.0.15"
 spider_transformations = "2.6.16"
 clap = { version = "4.5.18", features = ["derive"] }
+rocket = { version = "0.5.1", features = ["json"] }

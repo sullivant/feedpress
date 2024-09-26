@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+	<script>
+		function configShow() {
+			return {
+				isLoading: false,
+				config: null,
+				fetchConfig() {
+					this.isLoading = true;
+					fetch(`http://localhost:8081/api/config`)
+					.then(res => res.json())
+					.then(data => {
+						this.isLoading = false;
+						this.config = data;
+					});
+				}
+			}
+		}
+
+	</script>
+		
+</head>
+<body>
+	<div x-data="configShow()">
+		<button type="submit" @click="fetchConfig()" :disabled="isLoading">Show Config</button>
+		<br/>
+		<br/>
+		<template x-if="config">
+			<div>
+				<p>Show Errors: <span x-text="config.show_errors"></span></p>
+				<p>Max Age: <span x-text="config.max_age"></span></p>
+				<p>Feed Limit: <span x-text="config.feed_limit"></span></p>
+				<template x-for="thisFeed in config.feed" :key="thisFeed.url">
+					<span x-text="thisFeed.url"></span><br/>
+				</template>
+			</div>
+		</template>
+	</div>
+</body>
+</html>
