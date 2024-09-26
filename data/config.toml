@@ -3,43 +3,7 @@ max_age = 3
 feed_limit = 2
 
 [[feed]]
-url = "https://www.sullivanscientific.com/posts/index.xml"
-feed_limit = 100
-section = "Technology"
-max_age = 0
-
-[[feed]]
 url = "https://feeds.bbci.co.uk/news/world/rss.xml"
-feed_limit = 0
-section = "News"
-max_age = 0
-
-[[feed]]
-url = "https://www.cnbc.com/id/100727362/device/rss/rss.html"
-feed_limit = 0
-section = "News"
-max_age = 0
-
-[[feed]]
-url = "https://www.aljazeera.com/xml/rss/all.xml"
-feed_limit = 0
-section = "News - International"
-max_age = 0
-
-[[feed]]
-url = "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
 feed_limit = 2
 section = "News"
 max_age = 0
-
-[[feed]]
-url = "https://rss.arxiv.org/rss/math"
-feed_limit = 1
-section = "Science"
-max_age = 0
-
-[[feed]]
-url = "https://ctmirror.org/feed"
-feed_limit = 3
-section = "Personal"
-max_age = 3

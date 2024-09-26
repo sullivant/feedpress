@@ -72,5 +72,6 @@ The directories in this project are as follows:
 ### Configuration
 - [ ] CLI utility or flags to add/remove feed URLs and options.
 - [ ] Container execution should involve a small served web page allowing for feed and option manipulation
+- [ ] When in container mode, there should be a static page showing detail of configuration, a "run now" button, and later a scheduled task?
 ### feedpress.dev
 - [ ] Create static markdown driven site - that's just this readme at first?

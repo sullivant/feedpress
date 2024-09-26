@@ -146,72 +146,20 @@ struct BiblioEntry {
 #[command(version, about, long_about = None)]
 struct Args {
     /// Name of the url to add to, or remove from, the feed collection
-    #[arg(short, long, default_value_t, required(false))]
+    #[arg(short, long, required(false))]
     url: String,
 
-    /// Will add the provided URL to the feed listing
+    /// Will add the provided URL to the feed listing with default options
     #[arg(short, long, default_value_t = false)]
     add: bool,
 
     /// Will remove the provided URL from the feed listing
     #[arg(short, long, default_value_t = false)]
     remove: bool,
-}
 
-fn add_feed_url(this_url: &str) {
-    if this_url.is_empty() || !this_url.is_ascii() {
-        println!("Invalid URL, doing nothing.");
-        return;
-    }
-    println!("Adding URL {}", this_url);
-
-    let this_entry = FeedEntry {
-        url: this_url.to_string(),
-        feed_limit: 3,
-        section: "Personal".to_string(),
-        max_age: 3
-    };
-
-    let mut config = get_config().unwrap();
-    if !config.feed.contains(&this_entry) {
-        config.feed.push(this_entry);
-    }
-
-    let toml = toml::to_string(&config).unwrap();
-
-    // Write this updated config to a file
-    let mut file = File::create("../data/config.toml").unwrap();
-    file.write_all(toml.as_bytes()).unwrap();
-
-
-    return;
-}
-
-fn remove_feed_url(url: &str) {
-    if url.is_empty() || !url.is_ascii() {
-        println!("Invalid URL, doing nothing.");
-        return;
-    }
-    println!("Removing URL {}", url);
-}
-
-
-fn get_config() -> Result<FeedConfig, String> {
-    let mut file = File::open("../data/config.toml").expect("Failed to open file");
-    let mut contents = String::new();
-    file.read_to_string(&mut contents)
-        .expect("Failed to read file");
-
-    // Parse the config into a toml object
-    let config: FeedConfig = match toml::from_str(&contents) {
-        Ok(f) => f,
-        Err(_) => {
-            println!("Unable to parse feed entries from config toml.  Going to panic now.");
-            panic!();
-        }
-    };
-
-    Ok(config)
+    /// Will start a configuration and status server on port 8081
+    #[arg(short, long, default_value_t = false)]
+    serve: bool,
 }
 
 /// Main application entrypoint
@@ -232,6 +180,61 @@ async fn main() {
         remove_feed_url(&args.url);
         return;
     }
+    if args.serve {
+        println!("Staring feedpress server...");
+        return;
+    }
+
+
+    // If we are here, we are not doing any one off commands, so let's press the feeds into
+    // a PDF and then exit.
+    press_feeds().await;
+
+
+}
+
+/// Adds a provided feed URL to the array located in the configuration toml
+fn add_feed_url(this_url: &str) {
+    if this_url.is_empty() || !this_url.is_ascii() {
+        println!("Invalid URL, doing nothing.");
+        return;
+    }
+    println!("Adding URL to feed list: {}", this_url);
+
+    let this_entry = FeedEntry {
+        url: this_url.to_string(),
+        feed_limit: 3,
+        section: default_section(),
+        max_age: 3
+    };
+
+    let mut config = get_config().unwrap();
+    if !config.feed.contains(&this_entry) {
+        config.feed.push(this_entry);
+    }
+
+    let toml = toml::to_string(&config).unwrap();
+
+    // Write this updated config to a file
+    let mut file = File::create("../data/config.toml").unwrap();
+    file.write_all(toml.as_bytes()).unwrap();
+
+
+    return;
+}
+
+/// Removes a provided feed URL from the array located in the configuration toml
+fn remove_feed_url(url: &str) {
+    if url.is_empty() || !url.is_ascii() {
+        println!("Invalid URL, doing nothing.");
+        return;
+    }
+    println!("Removing URL {}", url);
+}
+
+/// Processes RSS feeds located in the configuration toml and then prepares an
+/// output file able to be used by typst.
+async fn press_feeds() {
 
     // Parse the config into a toml object
     let config: FeedConfig = get_config().unwrap();
@@ -345,6 +348,25 @@ async fn main() {
     // Call out and create our content and biblio files.
     process_content(press_content);
     process_biblio(press_biblio);
+}
+
+/// Does what it says on the tin.
+fn get_config() -> Result<FeedConfig, String> {
+    let mut file = File::open("../data/config.toml").expect("Failed to open file");
+    let mut contents = String::new();
+    file.read_to_string(&mut contents)
+        .expect("Failed to read file");
+
+    // Parse the config into a toml object
+    let config: FeedConfig = match toml::from_str(&contents) {
+        Ok(f) => f,
+        Err(_) => {
+            println!("Unable to parse feed entries from config toml.  Going to panic now.");
+            panic!();
+        }
+    };
+
+    Ok(config)
 }
 
 /// Utilizes [Readability] to scrape the article's provided link and then send it through
