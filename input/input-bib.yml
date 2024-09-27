@@ -1,10 +1,30 @@
 key-1:
   type: web
-  title: Republican anger clouds Zelensky-Biden 'victory plan' meeting
-  date: 2024-09-27
-  url: https://www.bbc.com/news/articles/c80rkv0k4j8o
+  title: '''Rape me, not my daughter'' - women tell BBC of sexual violence in Sudan''s civil war'
+  date: 2024-09-28
+  url: https://www.bbc.com/news/articles/ce3zq40qq25o
 key-2:
   type: web
-  title: Florida braces for hurricane to bring 20-foot storm surge
-  date: 2024-09-27
-  url: https://www.bbc.com/news/articles/czd13mezz7mo
+  title: Myanmar rebels reject embattled junta's peace offer
+  date: 2024-09-28
+  url: https://www.bbc.com/news/articles/cj04955442ro
+key-4:
+  type: web
+  title: Key Fed inflation gauge at 2.2% in August, lower than expected
+  date: 2024-09-28
+  url: https://www.cnbc.com/2024/09/27/pce-inflation-august-2024.html
+key-5:
+  type: web
+  title: UK PM Keir Starmer touts pro-business agenda as he woos top Wall Street CEOs
+  date: 2024-09-28
+  url: https://www.cnbc.com/2024/09/27/uk-pm-keir-starmer-touts-pro-business-agenda-as-he-meets-us-ceos.html
+key-7:
+  type: web
+  title: Barcelona fans banned for one Champions League game for Nazi-style flag
+  date: 2024-09-28
+  url: https://www.aljazeera.com/sports/2024/9/27/barcelona-fans-banned-for-one-champions-league-game-for-nazi-style-flag-football?traffic_source=rss
+key-8:
+  type: web
+  title: Yemen’s Houthis claim to have targeted Israel’s Tel Aviv and Ashkelon
+  date: 2024-09-28
+  url: https://www.aljazeera.com/news/2024/9/27/yemens-houthis-claim-to-have-targeted-israels-tel-aviv-and-ashkelon?traffic_source=rss
