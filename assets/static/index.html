@@ -15,9 +15,9 @@
 				config: null,		// Press configuration loaded after entering the config tab
 				showingTab: 1,		// The navigation tab currently showing
 				search: "",			// The feed we are searching for
-				fetchConfig() {
+				async fetchConfig() {
 					this.isLoading = true;
-					fetch(`http://localhost:8081/api/config`)
+					await fetch(`http://localhost:8081/api/config`)
 					.then(res => res.json())
 					.then(data => {
 						this.isLoading = false;
@@ -34,6 +34,17 @@
 					return this.config.feed.filter((item) => {
 						return item.url.toLowerCase().includes(this.search.toLowerCase());
 					});
+				},
+				async updateConfig() {
+					newConfig = await (await fetch('http://localhost:8081/api/config', {
+					method: 'POST',
+					body: this.config,
+					headers: {
+						'Content-type': 'application/json; charset=UTF-8',
+					},
+					})).json();
+
+					console.log(newpost);
 				},
 			}
 		}
@@ -81,34 +92,36 @@
 		<div x-show="showingTab==2">
 			<div x-show="!isLoading" x-collapse.duration.500ms>
 				<template x-if="config">
-					<div >
+					<div>
 						<div x-data="{open:false}" class="w-[50vw] mx-auto border-b bg-blue-50">
 							<div class="flex justify-between items-center bg-gray-200 border-b" @click="open=!open" >
 								<p class="px-4">General Configuration</p>
 								<button @click="open=!open" x-html="open ? '-' :'+' " class="px-2 text-black hover:text-gray-500 font-bold text-3xl"></button>
 							</div>
 							<div x-show="open" x-cloak class="mt-10 grid grid-cols-1 gap-x-1 gap-y-1 sm:grid-cols-2 mx-1 py-1" x-transition>
-								<!-- General configuration content -->
-									<div class="text-sm leading-6">
-										<label for="cbErrors" class="font-medium text-gray-900">Show Errors</label>
-									</div>
-									<div class="flex h-6 items-center">
-										<input id="cbErrors" name="cbErrors" type="checkbox" x-model="config.show_errors" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-									</div>
-									
-									<div class="sm:col-span-2">
-										<label for="txtMaxAge" class="block text-sm font-medium leading-6 text-gray-900">Max Age</label>
-										<div class="mt-2">
-										<input x-model="config.max_age" type="text" name="txtMaxAge" id="txtMaxAge" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-										</div>
-									</div>
+								<button @click="updateConfig">Save</button>
 
-									<div class="sm:col-span-2">
-										<label for="txtFeedLimit" class="block text-sm font-medium leading-6 text-gray-900">Feed Limit</label>
-										<div class="mt-2">
-										<input x-model="config.feed_limit" type="text" name="txtFeedLimit" id="txtFeedLimit" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-										</div>
+								<!-- General configuration content -->
+								<div class="text-sm leading-6">
+									<label for="cbErrors" class="font-medium text-gray-900">Show Errors</label>
+								</div>
+								<div class="flex h-6 items-center">
+									<input id="cbErrors" name="cbErrors" type="checkbox" x-model="config.show_errors" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+								</div>
+								
+								<div class="sm:col-span-2">
+									<label for="txtMaxAge" class="block text-sm font-medium leading-6 text-gray-900">Max Age</label>
+									<div class="mt-2">
+									<input x-model="config.max_age" type="text" name="txtMaxAge" id="txtMaxAge" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 									</div>
+								</div>
+
+								<div class="sm:col-span-2">
+									<label for="txtFeedLimit" class="block text-sm font-medium leading-6 text-gray-900">Feed Limit</label>
+									<div class="mt-2">
+									<input x-model="config.feed_limit" type="text" name="txtFeedLimit" id="txtFeedLimit" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+									</div>
+								</div>
 							</div>
 							<hr>
 						</div>

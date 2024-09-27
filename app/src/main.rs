@@ -172,6 +172,16 @@ fn api_get_config() -> Json<FeedConfig> {
     Json(get_config().unwrap())
 }
 
+#[post("/config", format = "json", data = "<config>")]
+fn api_update_config(config: Json<FeedConfig>) {
+    let toml = toml::to_string(&config.0).unwrap();
+
+    // Write this updated config to a file
+    let mut file = File::create("../data/config.toml").unwrap();
+    file.write_all(toml.as_bytes()).unwrap();
+
+    println!("Updated config, pretend I returned OK here...");
+}
 
 /// Main application entrypoint
 ///
@@ -201,6 +211,7 @@ async fn main() {
         println!("Staring feedpress server...");
         let _ = rocket::custom(&rocket_config)
         .mount("/api", rocket::routes![api_get_config])
+        .mount("/api", rocket::routes![api_update_config])
         .mount("/", FileServer::from(concat!(env!("CARGO_MANIFEST_DIR"), "/../assets/static")))
         .launch()
         .await;
