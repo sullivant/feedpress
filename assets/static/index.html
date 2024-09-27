@@ -82,19 +82,37 @@
 			<div x-show="!isLoading" x-collapse.duration.500ms>
 				<template x-if="config">
 					<div >
-						<div x-data="{open:false}" class="w-[60vw] mx-auto border-b bg-red-50">
+						<div x-data="{open:false}" class="w-[50vw] mx-auto border-b bg-blue-50">
 							<div class="flex justify-between items-center bg-gray-200 border-b" @click="open=!open" >
 								<p class="px-4">General Configuration</p>
 								<button @click="open=!open" x-html="open ? '-' :'+' " class="px-2 text-black hover:text-gray-500 font-bold text-3xl"></button>
 							</div>
-							<div x-show="open" x-cloak class="mx-4 py-4" x-transition>
- 								<p><label for="cbErrors">Show Errors</label><input type="checkbox" id="cbErrors" x-model="config.show_errors"></p>
-								<p>Max Age: <span x-text="config.max_age"></span></p>
-								<p>Feed Limit: <span x-text="config.feed_limit"></span></p>
+							<div x-show="open" x-cloak class="mt-10 grid grid-cols-1 gap-x-1 gap-y-1 sm:grid-cols-2 mx-1 py-1" x-transition>
+								<!-- General configuration content -->
+									<div class="text-sm leading-6">
+										<label for="cbErrors" class="font-medium text-gray-900">Show Errors</label>
+									</div>
+									<div class="flex h-6 items-center">
+										<input id="cbErrors" name="cbErrors" type="checkbox" x-model="config.show_errors" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+									</div>
+									
+									<div class="sm:col-span-2">
+										<label for="txtMaxAge" class="block text-sm font-medium leading-6 text-gray-900">Max Age</label>
+										<div class="mt-2">
+										<input x-model="config.max_age" type="text" name="txtMaxAge" id="txtMaxAge" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+										</div>
+									</div>
+
+									<div class="sm:col-span-2">
+										<label for="txtFeedLimit" class="block text-sm font-medium leading-6 text-gray-900">Feed Limit</label>
+										<div class="mt-2">
+										<input x-model="config.feed_limit" type="text" name="txtFeedLimit" id="txtFeedLimit" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+										</div>
+									</div>
 							</div>
 							<hr>
 						</div>
-						<div x-data="{open:false}" class="w-[60vw] mx-auto border-b bg-red-50">
+						<div x-data="{open:false}" class="w-[50vw] mx-auto border-b bg-blue-50">
 							<div class="flex justify-between items-center bg-gray-200 border-b" @click="open=!open">
 								<p class="px-4">Feed Listing</p>
 								<button @click="open=!open" x-html="open ? '-' :'+' " class="px-2 text-black hover:text-gray-500 font-bold text-3xl"></button>
@@ -110,21 +128,17 @@
 										x-on:keydown.window.prevent.slash="$refs.searchField.focus()"
 										placeholder="Search for a feed..."
 										type="search"
-										class="block w-full bg-gray-200 focus:outline-none focus:bg-white focus:shadow text-gray-700 font-bold rounded-lg px-4 py-3"/>
+										class="block w-full bg-gray-50 focus:outline-none focus:bg-white focus:shadow text-gray-700 rounded-lg px-4 py-3"/>
 								
 									<!-- Cards here -->
 									<div class="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 										<template x-for="item in filteredFeeds" :key="item.url">
-											<div class="flex items-center shadow hover:bg-indigo-100 hover:shadow-lg hover:rounded transition duration-150 ease-in-out transform hover:scale-105 p-3">
-												<div class="text-sm">
-													<p
-													  class="text-gray-900 leading-none"
-													  x-text="item.url"
-													></p>
-													<p
-													  class="text-gray-600"
-													  x-text="item.section"
-													></p>
+											<div class="flex items-center shadow bg-blue-150 hover:bg-indigo-100 hover:shadow-lg hover:rounded transition duration-150 ease-in-out transform hover:scale-105 p-3">
+												<div class="text-sm text-gray-900 ">
+													<p class="leading-none">URL: <span x-text="item.url"></span></p>
+													<p class="leading-none">Max Age: <span x-text="item.max_age"></span></p>
+													<p class="leading-none">Feed Limit: <span x-text="item.feed_limit"></span></p>
+													<p class="leading-none">Category: <span x-text="item.section"></span></p>
 												</div>
 											</div>
 										</template>
