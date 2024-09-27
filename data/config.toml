@@ -1,4 +1,4 @@
-show_errors = false
+show_errors = true
 max_age = 2
 feed_limit = 2
 

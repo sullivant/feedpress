@@ -6,13 +6,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>feedpress</title>
 
+	<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 	<script>
 		function pageData() {
 			return {
-				isLoading: false,
-				config: null,
-				showingTab: 1,
+				isLoading: false,	// An indicator to show we are awaiting something
+				config: null,		// Press configuration loaded after entering the config tab
+				showingTab: 1,		// The navigation tab currently showing
+				search: "",			// The feed we are searching for
 				fetchConfig() {
 					this.isLoading = true;
 					fetch(`http://localhost:8081/api/config`)
@@ -21,7 +23,18 @@
 						this.isLoading = false;
 						this.config = data;
 					});
-				}
+				},
+				get filteredFeeds() {
+					if (this.config === null) {
+						return null;
+					}
+					if (this.search === "") {
+						return this.config.feed;
+					}
+					return this.config.feed.filter((item) => {
+						return item.url.toLowerCase().includes(this.search.toLowerCase());
+					});
+				},
 			}
 		}
 
@@ -51,7 +64,7 @@
 						<a href="#" @click="showingTab=1">Home</a>
 					</li>
 					<li class="px-3 cursor-pointer hover:bg-purple-50 flex items-center hover:text-gray-800" :class="showMenu && 'py-1'">
-						<a href="#" @click="showingTab=2">Configuration</a>
+						<a href="#" @click="fetchConfig(); showingTab=2">Configuration</a>
 					</li>
 					<li class="px-3 cursor-pointer hover:bg-purple-50 flex items-center hover:text-gray-800" :class="showMenu && 'py-1'">
 						<a href="#" @click="showingTab=3">About</a>
@@ -61,20 +74,71 @@
 		</nav>
 
 		<!-- Site Content -->
+		<div x-show="showingTab==1">
+
+
+		</div>
 		<div x-show="showingTab==2">
-			<button type="submit" @click="fetchConfig()" :disabled="isLoading">Show Config</button>
-			<br/>
-			<br/>
-			<template x-if="config">
-				<div>
-					<p>Show Errors: <span x-text="config.show_errors"></span></p>
-					<p>Max Age: <span x-text="config.max_age"></span></p>
-					<p>Feed Limit: <span x-text="config.feed_limit"></span></p>
-					<template x-for="thisFeed in config.feed" :key="thisFeed.url">
-						<span x-text="thisFeed.url"></span><br/>
-					</template>
-				</div>
-			</template>
+			<div x-show="!isLoading" x-collapse.duration.500ms>
+				<template x-if="config">
+					<div >
+						<div x-data="{open:false}" class="w-[60vw] mx-auto border-b bg-red-50">
+							<div class="flex justify-between items-center bg-gray-200 border-b" @click="open=!open" >
+								<p class="px-4">General Configuration</p>
+								<button @click="open=!open" x-html="open ? '-' :'+' " class="px-2 text-black hover:text-gray-500 font-bold text-3xl"></button>
+							</div>
+							<div x-show="open" x-cloak class="mx-4 py-4" x-transition>
+ 								<p><label for="cbErrors">Show Errors</label><input type="checkbox" id="cbErrors" x-model="config.show_errors"></p>
+								<p>Max Age: <span x-text="config.max_age"></span></p>
+								<p>Feed Limit: <span x-text="config.feed_limit"></span></p>
+							</div>
+							<hr>
+						</div>
+						<div x-data="{open:false}" class="w-[60vw] mx-auto border-b bg-red-50">
+							<div class="flex justify-between items-center bg-gray-200 border-b" @click="open=!open">
+								<p class="px-4">Feed Listing</p>
+								<button @click="open=!open" x-html="open ? '-' :'+' " class="px-2 text-black hover:text-gray-500 font-bold text-3xl"></button>
+							</div>
+							<div x-show="open" x-cloak class="mx-4 py-4" x-transition>
+
+								<!-- Go through each item in config.feed and present a card with its data -->
+								<div class="container pt-8 mx-auto">
+									<!-- Search / Filter input -->
+									<input
+										x-ref="searchField"
+										x-model="search"
+										x-on:keydown.window.prevent.slash="$refs.searchField.focus()"
+										placeholder="Search for a feed..."
+										type="search"
+										class="block w-full bg-gray-200 focus:outline-none focus:bg-white focus:shadow text-gray-700 font-bold rounded-lg px-4 py-3"/>
+								
+									<!-- Cards here -->
+									<div class="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+										<template x-for="item in filteredFeeds" :key="item.url">
+											<div class="flex items-center shadow hover:bg-indigo-100 hover:shadow-lg hover:rounded transition duration-150 ease-in-out transform hover:scale-105 p-3">
+												<div class="text-sm">
+													<p
+													  class="text-gray-900 leading-none"
+													  x-text="item.url"
+													></p>
+													<p
+													  class="text-gray-600"
+													  x-text="item.section"
+													></p>
+												</div>
+											</div>
+										</template>
+									</div>
+								</div>
+							</div>
+							<hr>
+						</div>
+					</div>
+				</template>
+			</div>
+		</div>
+		<div x-show="showingTab==3">
+			About
 		</div>
 	</div>
 
