@@ -11,6 +11,8 @@
 	<script>
 		function pageData() {
 			return {
+				svgIsClosed: '<svg class="h-8 w-8 text-stone-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>',
+				svgIsOpen: '<svg class="h-8 w-8 text-stone-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>', 
 				isLoading: false,	// An indicator to show we are awaiting something
 				config: null,		// Press configuration loaded after entering the config tab
 				showingTab: 1,		// The navigation tab currently showing
@@ -35,16 +37,24 @@
 						return item.url.toLowerCase().includes(this.search.toLowerCase());
 					});
 				},
-				async updateConfig() {
-					newConfig = await (await fetch('http://localhost:8081/api/config', {
-					method: 'POST',
-					body: this.config,
-					headers: {
-						'Content-type': 'application/json; charset=UTF-8',
-					},
-					})).json();
+				updateConfig() {
+					fetch('http://localhost:8081/api/config', {
+						method: 'POST',
+						headers: { 
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify(this.config)
+					});
 
-					console.log(newpost);
+
+					// newConfig = await (await fetch('http://localhost:8081/api/config', {
+					// method: 'POST',
+					// body: JSON.stringify(this.config),
+					// headers: {
+					// 	'Content-type': 'application/json; charset=UTF-8',
+					// },
+					// })).json();
+					// console.log(newConfig);
 				},
 			}
 		}
@@ -62,6 +72,14 @@
 					<!-- Logo-->
 					<div class="rounded bg-gray-400 text-white font-bold w-10 h-10 flex justify-center text-3xl pt-0.5">F</div>
 					<div class="text-gray-700 font-semibold ml-2">FeedPress</div>
+					<!-- Save Button showing when on config tab -->
+					<div x-show="showingTab==2">
+						<div class="mx-auto flex items-center justify-between">
+							<button @click="updateConfig" class="hover:bg-blue-50 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+								<svg class="h-8 w-8 text-slate-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />  <polyline points="17 21 17 13 7 13 7 21" />  <polyline points="7 3 7 8 15 8" /></svg>
+							</button>
+						</div>
+					</div>
 				</a>
 				<!-- Navbar Toggle Button -->
 				<button @click="showMenu = !showMenu" class="block md:hidden text-gray-700 p-2 rounded hover:border focus:border focus:bg-gray-100 my-2 mr-5" type="button" aria-controls="navbar-main" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,20 +107,25 @@
 
 
 		</div>
+
+		<!-- Configuration -->
 		<div x-show="showingTab==2">
+			<div x-show="isLoading" class="w-[50vw] mx-auto border-b bg-blue-50">
+				<center>
+					<svg class="h-8 w-8 text-stone-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <line x1="12" y1="2" x2="12" y2="6" />  <line x1="12" y1="18" x2="12" y2="22" />  <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />  <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" />  <line x1="2" y1="12" x2="6" y2="12" />  <line x1="18" y1="12" x2="22" y2="12" />  <line x1="4.93" y1="19.07" x2="7.76" y2="16.24" />  <line x1="16.24" y1="7.76" x2="19.07" y2="4.93" /></svg>
+				</center>
+			</div>
 			<div x-show="!isLoading" x-collapse.duration.500ms>
 				<template x-if="config">
 					<div>
 						<div x-data="{open:false}" class="w-[50vw] mx-auto border-b bg-blue-50">
 							<div class="flex justify-between items-center bg-gray-200 border-b" @click="open=!open" >
 								<p class="px-4">General Configuration</p>
-								<button @click="open=!open" x-html="open ? '-' :'+' " class="px-2 text-black hover:text-gray-500 font-bold text-3xl"></button>
+								<button @click="open=!open" x-html="open ? svgIsOpen :svgIsClosed " class="px-2 text-black hover:text-gray-500 font-bold text-3xl"></button>
 							</div>
-							<div x-show="open" x-cloak class="mt-10 grid grid-cols-1 gap-x-1 gap-y-1 sm:grid-cols-2 mx-1 py-1" x-transition>
-								<button @click="updateConfig">Save</button>
-
+							<div x-show="open" x-cloak class="mt-5 grid grid-cols-1 gap-x-1 gap-y-1 sm:grid-cols-2 mx-1 py-1" x-transition>
 								<!-- General configuration content -->
-								<div class="text-sm leading-6">
+								<div class="text-sm leading-6 sm:col-span-2">
 									<label for="cbErrors" class="font-medium text-gray-900">Show Errors</label>
 								</div>
 								<div class="flex h-6 items-center">
@@ -128,7 +151,7 @@
 						<div x-data="{open:false}" class="w-[50vw] mx-auto border-b bg-blue-50">
 							<div class="flex justify-between items-center bg-gray-200 border-b" @click="open=!open">
 								<p class="px-4">Feed Listing</p>
-								<button @click="open=!open" x-html="open ? '-' :'+' " class="px-2 text-black hover:text-gray-500 font-bold text-3xl"></button>
+								<button @click="open=!open" x-html="open ? svgIsOpen :svgIsClosed " class="px-2 text-black hover:text-gray-500 font-bold text-3xl"></button>
 							</div>
 							<div x-show="open" x-cloak class="mx-4 py-4" x-transition>
 
@@ -164,6 +187,8 @@
 				</template>
 			</div>
 		</div>
+
+		<!-- About -->
 		<div x-show="showingTab==3">
 			About
 		</div>

@@ -24,7 +24,10 @@ Documentation: ./docs/index.html
 - rust & cargo
 - typst
 - git
-- tailwindcss (https://tailwindcss.com) (for UI elements)
+- tailwindcss (https://tailwindcss.com) (for UI elements) 
+```bash
+npx tailwindcss -i assets/static/input.css -o assets/static/output.css --watch
+```
 
 ## Running and Configuration
 Get the code: 
