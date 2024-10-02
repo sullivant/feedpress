@@ -167,6 +167,29 @@ struct Args {
     serve: bool,
 }
 
+#[derive(Debug, Serialize)]
+struct Editions {
+    editions: Vec<EditionEntry>,
+}
+
+#[derive(Debug, Serialize)]
+struct EditionEntry {
+    name: String,
+}
+
+#[get("/edition")]
+fn api_get_editions() -> Json<Editions> {
+    let tmp_edition_list: Editions = Editions{
+        editions: Vec::from([
+            EditionEntry{ name: "tempEntry".to_string()},
+            EditionEntry{ name: "tempEntryTwo".to_string()},
+            EditionEntry{ name: "tempEntryThree".to_string()},
+        ]),
+    };
+
+    Json(tmp_edition_list)
+}
+
 #[get("/config")]
 fn api_get_config() -> Json<FeedConfig> {
     Json(get_config().unwrap())
@@ -212,6 +235,7 @@ async fn main() {
         let _ = rocket::custom(&rocket_config)
         .mount("/api", rocket::routes![api_get_config])
         .mount("/api", rocket::routes![api_update_config])
+        .mount("/api", rocket::routes![api_get_editions])
         .mount("/", FileServer::from(concat!(env!("CARGO_MANIFEST_DIR"), "/../assets/static")))
         .launch()
         .await;

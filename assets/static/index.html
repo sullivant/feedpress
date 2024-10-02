@@ -10,13 +10,17 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 	<script>
 		function pageData() {
+			
+
 			return {
 				svgIsClosed: '<svg class="h-8 w-8 text-stone-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>',
 				svgIsOpen: '<svg class="h-8 w-8 text-stone-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>', 
 				isLoading: false,	// An indicator to show we are awaiting something
 				config: null,		// Press configuration loaded after entering the config tab
+				editions: null,
 				showingTab: 1,		// The navigation tab currently showing
-				search: "",			// The feed we are searching for
+				feedSearch: "",			// The feed we are searching for
+				editionSearch: "",		// The edition we are searching for
 				async fetchConfig() {
 					this.isLoading = true;
 					await fetch(`http://localhost:8081/api/config`)
@@ -30,20 +34,27 @@
 					if (this.config === null) {
 						return null;
 					}
-					if (this.search === "") {
+					if (this.feedSearch === "") {
 						return this.config.feed;
 					}
 					return this.config.feed.filter((item) => {
-						return item.url.toLowerCase().includes(this.search.toLowerCase());
+						return item.url.toLowerCase().includes(this.feedSearch.toLowerCase());
 					});
 				},
 				updateConfig() {
+					let postBody = JSON.stringify({
+						"max_age":Number(this.config.max_age),
+						"show_errors":Boolean(this.config.show_errors),
+						"feed_limit":Number(this.config.feed_limit),
+						"feed":this.config.feed,
+					});
+					console.log(postBody);
 					fetch('http://localhost:8081/api/config', {
 						method: 'POST',
 						headers: { 
 							'Content-Type': 'application/json'
 						},
-						body: JSON.stringify(this.config)
+						body: postBody,
 					});
 
 
@@ -104,88 +115,99 @@
 
 		<!-- Site Content -->
 		<div x-show="showingTab==1">
+			<div x-data="{open:false}" class="w-[50vw] mx-auto border-b bg-blue-50">
 
+				<!-- Go through each item in this.editions and present a card with its data -->
+				<div class="container pt-8 mx-auto">
+					<!-- Search / Filter input -->
+					<input
+						x-ref="searchField"
+						x-model="editionSearch"
+						x-on:keydown.window.prevent.slash="$refs.searchField.focus()"
+						placeholder="Search for an edition..."
+						type="editionSearch"
+						class="block w-full bg-gray-50 focus:outline-none focus:bg-white focus:shadow text-gray-700 rounded-lg px-4 py-3"/>
 
+					<!-- Cards here -->
+					<div class="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+						<template x-for="item in filteredFeeds" :key="item.url">
+							<div class="flex items-center shadow bg-blue-150 hover:bg-indigo-100 hover:shadow-lg hover:rounded transition duration-150 ease-in-out transform hover:scale-105 p-3">
+								<div class="text-sm text-gray-900 ">
+									<p class="leading-none">URL: <span x-text="item.url"></span></p>
+									<p class="leading-none">Max Age: <span x-text="item.max_age"></span></p>
+									<p class="leading-none">Feed Limit: <span x-text="item.feed_limit"></span></p>
+									<p class="leading-none">Category: <span x-text="item.section"></span></p>
+								</div>
+							</div>
+						</template>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<!-- Configuration -->
 		<div x-show="showingTab==2">
-			<div x-show="isLoading" class="w-[50vw] mx-auto border-b bg-blue-50">
-				<center>
-					<svg class="h-8 w-8 text-stone-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <line x1="12" y1="2" x2="12" y2="6" />  <line x1="12" y1="18" x2="12" y2="22" />  <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />  <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" />  <line x1="2" y1="12" x2="6" y2="12" />  <line x1="18" y1="12" x2="22" y2="12" />  <line x1="4.93" y1="19.07" x2="7.76" y2="16.24" />  <line x1="16.24" y1="7.76" x2="19.07" y2="4.93" /></svg>
-				</center>
-			</div>
-			<div x-show="!isLoading" x-collapse.duration.500ms>
-				<template x-if="config">
-					<div>
-						<div x-data="{open:false}" class="w-[50vw] mx-auto border-b bg-blue-50">
-							<div class="flex justify-between items-center bg-gray-200 border-b" @click="open=!open" >
-								<p class="px-4">General Configuration</p>
-								<button @click="open=!open" x-html="open ? svgIsOpen :svgIsClosed " class="px-2 text-black hover:text-gray-500 font-bold text-3xl"></button>
+			<template x-if="config">
+				<div>
+					<div class="w-[50vw] mx-auto border-b bg-blue-50">
+						<div x-cloak class="mt-5 grid grid-cols-1 gap-x-1 gap-y-1 sm:grid-cols-2 mx-1 py-1" x-transition>
+							<!-- General configuration content -->
+							<div class="text-sm leading-6 sm:col-span-2">
+								<label for="cbErrors" class="font-medium text-gray-900">Show Errors</label>
 							</div>
-							<div x-show="open" x-cloak class="mt-5 grid grid-cols-1 gap-x-1 gap-y-1 sm:grid-cols-2 mx-1 py-1" x-transition>
-								<!-- General configuration content -->
-								<div class="text-sm leading-6 sm:col-span-2">
-									<label for="cbErrors" class="font-medium text-gray-900">Show Errors</label>
+							<div class="flex h-6 items-center">
+								<input id="cbErrors" name="cbErrors" type="checkbox" x-model="config.show_errors" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+							</div>
+							
+							<div class="sm:col-span-2">
+								<label for="txtMaxAge" class="block text-sm font-medium leading-6 text-gray-900">Max Age</label>
+								<div class="mt-2">
+								<input x-model="config.max_age" type="text" name="txtMaxAge" id="txtMaxAge" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 								</div>
-								<div class="flex h-6 items-center">
-									<input id="cbErrors" name="cbErrors" type="checkbox" x-model="config.show_errors" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-								</div>
-								
-								<div class="sm:col-span-2">
-									<label for="txtMaxAge" class="block text-sm font-medium leading-6 text-gray-900">Max Age</label>
-									<div class="mt-2">
-									<input x-model="config.max_age" type="text" name="txtMaxAge" id="txtMaxAge" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-									</div>
-								</div>
+							</div>
 
-								<div class="sm:col-span-2">
-									<label for="txtFeedLimit" class="block text-sm font-medium leading-6 text-gray-900">Feed Limit</label>
-									<div class="mt-2">
-									<input x-model="config.feed_limit" type="text" name="txtFeedLimit" id="txtFeedLimit" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-									</div>
+							<div class="sm:col-span-2">
+								<label for="txtFeedLimit" class="block text-sm font-medium leading-6 text-gray-900">Feed Limit</label>
+								<div class="mt-2">
+								<input x-model="config.feed_limit" type="text" name="txtFeedLimit" id="txtFeedLimit" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 								</div>
 							</div>
-							<hr>
 						</div>
-						<div x-data="{open:false}" class="w-[50vw] mx-auto border-b bg-blue-50">
-							<div class="flex justify-between items-center bg-gray-200 border-b" @click="open=!open">
-								<p class="px-4">Feed Listing</p>
-								<button @click="open=!open" x-html="open ? svgIsOpen :svgIsClosed " class="px-2 text-black hover:text-gray-500 font-bold text-3xl"></button>
-							</div>
-							<div x-show="open" x-cloak class="mx-4 py-4" x-transition>
-
-								<!-- Go through each item in config.feed and present a card with its data -->
-								<div class="container pt-8 mx-auto">
-									<!-- Search / Filter input -->
-									<input
-										x-ref="searchField"
-										x-model="search"
-										x-on:keydown.window.prevent.slash="$refs.searchField.focus()"
-										placeholder="Search for a feed..."
-										type="search"
-										class="block w-full bg-gray-50 focus:outline-none focus:bg-white focus:shadow text-gray-700 rounded-lg px-4 py-3"/>
-								
-									<!-- Cards here -->
-									<div class="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-										<template x-for="item in filteredFeeds" :key="item.url">
-											<div class="flex items-center shadow bg-blue-150 hover:bg-indigo-100 hover:shadow-lg hover:rounded transition duration-150 ease-in-out transform hover:scale-105 p-3">
-												<div class="text-sm text-gray-900 ">
-													<p class="leading-none">URL: <span x-text="item.url"></span></p>
-													<p class="leading-none">Max Age: <span x-text="item.max_age"></span></p>
-													<p class="leading-none">Feed Limit: <span x-text="item.feed_limit"></span></p>
-													<p class="leading-none">Category: <span x-text="item.section"></span></p>
-												</div>
-											</div>
-										</template>
-									</div>
-								</div>
-							</div>
-							<hr>
-						</div>
+						<hr>
 					</div>
-				</template>
-			</div>
+					<div class="w-[50vw] mx-auto border-b bg-blue-50">
+						<div x-cloak class="mx-4 py-4" x-transition>
+
+							<!-- Go through each item in config.feed and present a card with its data -->
+							<div class="container pt-8 mx-auto">
+								<!-- Search / Filter input -->
+								<input
+									x-ref="searchField"
+									x-model="feedSearch"
+									x-on:keydown.window.prevent.slash="$refs.searchField.focus()"
+									placeholder="Search for a feed..."
+									type="feedSearch"
+									class="block w-full bg-gray-50 focus:outline-none focus:bg-white focus:shadow text-gray-700 rounded-lg px-4 py-3"/>
+							
+								<!-- Cards here -->
+								<div class="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+									<template x-for="item in filteredFeeds" :key="item.url">
+										<div class="flex items-center shadow bg-blue-150 hover:bg-indigo-100 hover:shadow-lg hover:rounded transition duration-150 ease-in-out transform hover:scale-105 p-3">
+											<div class="text-sm text-gray-900 ">
+												<p class="leading-none">URL: <span x-text="item.url"></span></p>
+												<p class="leading-none">Max Age: <span x-text="item.max_age"></span></p>
+												<p class="leading-none">Feed Limit: <span x-text="item.feed_limit"></span></p>
+												<p class="leading-none">Category: <span x-text="item.section"></span></p>
+											</div>
+										</div>
+									</template>
+								</div>
+							</div>
+						</div>
+						<hr>
+					</div>
+				</div>
+			</template>
 		</div>
 
 		<!-- About -->
