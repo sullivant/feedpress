@@ -146,7 +146,7 @@
 						<template x-for="item in filteredEditions" :key="item.name">
 							<div class="flex items-center shadow bg-blue-150 hover:bg-indigo-100 hover:shadow-lg hover:rounded transition duration-150 ease-in-out transform hover:scale-105 p-3">
 								<div class="text-sm text-gray-900 ">
-									<p class="leading-none">Name: <span x-text="item.name"></span></p>
+									<p class="leading-none">Name: <a x-bind:href="/editions/+item.name"><span x-text="item.name"></span></a></p>
 									<p class="leading-none">Date: <span x-text="item.date"></span></p>
 								</div>
 							</div>

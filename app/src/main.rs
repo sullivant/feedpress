@@ -20,7 +20,7 @@ use hayagriva::types::QualifiedUrl;
 use hayagriva::Entry;
 use hayagriva::Library;
 use html2md::parse_html_custom;
-use rocket::fs::FileServer;
+use rocket::fs::{FileServer, NamedFile, relative};
 use rocket::serde::json::Json;
 use rocket::Config;
 use rss::Channel;
@@ -35,6 +35,8 @@ use std::io::Read;
 use std::io::Write;
 use std::str::FromStr;
 use url::Url;
+use std::path::{PathBuf, Path};
+
 
 #[macro_use] extern crate rocket;
 
@@ -180,7 +182,7 @@ struct EditionEntry {
 }
 
 #[get("/edition")]
-fn api_get_editions() -> Json<Editions> {
+fn api_get_edition_list() -> Json<Editions> {
     let mut edition_list: Editions = Editions {
         editions: Vec::new(),
     };
@@ -200,6 +202,11 @@ fn api_get_editions() -> Json<Editions> {
 
     Json(edition_list)
 }
+
+// #[get("/edition/<filename..>")]
+// fn api_get_edition(filename: &str) {
+
+// }
 
 #[get("/config")]
 fn api_get_config() -> Json<FeedConfig> {
@@ -246,7 +253,9 @@ async fn main() {
         let _ = rocket::custom(&rocket_config)
         .mount("/api", rocket::routes![api_get_config])
         .mount("/api", rocket::routes![api_update_config])
-        .mount("/api", rocket::routes![api_get_editions])
+        .mount("/api", rocket::routes![api_get_edition_list])
+        // .mount("/api", rocket::routes![api_get_edition])
+        .mount("/editions", FileServer::from(concat!(env!("CARGO_MANIFEST_DIR"), "/../output")).rank(1))
         .mount("/", FileServer::from(concat!(env!("CARGO_MANIFEST_DIR"), "/../assets/static")))
         .launch()
         .await;
