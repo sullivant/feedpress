@@ -1,6 +1,6 @@
-show_errors = true
+show_errors = false
 max_age = 2
-feed_limit = 3
+feed_limit = 2
 
 [[feed]]
 url = "https://feeds.bbci.co.uk/news/world/rss.xml"
@@ -16,24 +16,6 @@ max_age = 0
 
 [[feed]]
 url = "https://www.aljazeera.com/xml/rss/all.xml"
-feed_limit = 0
-section = "News - International"
-max_age = 0
-
-[[feed]]
-url = "https://www.aljazeera.com/xml/rss/all1.xml"
-feed_limit = 0
-section = "News - International"
-max_age = 0
-
-[[feed]]
-url = "https://www.aljazeera.com/xml/rss/all2.xml"
-feed_limit = 0
-section = "News - International"
-max_age = 0
-
-[[feed]]
-url = "https://www.aljazeera.com/xml/rss/all3.xml"
 feed_limit = 0
 section = "News - International"
 max_age = 0
