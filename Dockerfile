@@ -1,4 +1,4 @@
-FROM rust:latest
+FROM rust:latest AS builder
 
 ## This is a development image meant to allow for compilation of the feedpress application
 ## as well as processing of the output created after an RSS extraction via the installed
@@ -14,21 +14,32 @@ FROM rust:latest
 ## For running just the feedpress->typst application itself, without building, that'll be another
 ## Dockerfile, at a later date.  
 
-# Set the working directory in the container to /my
+RUN rustup target add x86_64-unknown-linux-musl && \
+    apt update && \
+    apt install -y musl-tools musl-dev && \
+    update-ca-certificates
+
+# Set the working directory in the container to /app
 WORKDIR /app
 
 # Install typst
-RUN cargo install --git https://github.com/typst/typst --locked typst-cli
+RUN cargo install --git https://github.com/typst/typst --locked typst-cli 
 
 # Copy the Rust project files to the working directory
+RUN USER=root cargo new feedpress
 COPY ./app/src ./src
 COPY ./app/Cargo.toml ./
 
-# Our utility to run the extract and post process
-COPY --chmod=0755 ./feedpress.sh ./feedpress.sh
+RUN cargo build --release
+RUN cargo install --target x86_64-unknown-linux-musl --path .
 
 # Build the Rust app
-RUN cargo build
+#RUN cargo install --path .
 
-# Set the command to run the Rust app
-CMD ./feedpress.sh
+FROM scratch
+COPY --from=builder /usr/local/cargo/bin/feedpress .
+COPY --from=builder /usr/loca/cargo/bin/typst /usr/local/bin/typst
+USER 1000
+CMD ["./feedpress --serve"]
+
+
