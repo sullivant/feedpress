@@ -29,6 +29,7 @@ use serde::Serialize;
 use spider_transformations::transformation::content::IgnoreTagFactory;
 use std::collections::HashMap;
 use std::error::Error;
+use std::fs;
 use std::fs::File;
 use std::io::Read;
 use std::io::Write;
@@ -175,19 +176,29 @@ struct Editions {
 #[derive(Debug, Serialize)]
 struct EditionEntry {
     name: String,
+    date: String,
 }
 
 #[get("/edition")]
 fn api_get_editions() -> Json<Editions> {
-    let tmp_edition_list: Editions = Editions{
-        editions: Vec::from([
-            EditionEntry{ name: "tempEntry".to_string()},
-            EditionEntry{ name: "tempEntryTwo".to_string()},
-            EditionEntry{ name: "tempEntryThree".to_string()},
-        ]),
+    let mut edition_list: Editions = Editions {
+        editions: Vec::new(),
     };
 
-    Json(tmp_edition_list)
+    for file in fs::read_dir("../output/").unwrap() {
+        let tf = file.unwrap();
+        
+        //let this_date: String = format!("{:?}",&tf.metadata().unwrap().created().unwrap());
+        let datetime: DateTime<Utc> = tf.metadata().unwrap().created().unwrap().into();
+
+        let this_entry = EditionEntry{
+            name: tf.path().file_name().unwrap().to_str().unwrap().to_string(),
+            date: format!("{}", datetime.format("%Y/%m/%d")),
+        };
+        edition_list.editions.push(this_entry);
+    }
+
+    Json(edition_list)
 }
 
 #[get("/config")]

@@ -10,8 +10,6 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 	<script>
 		function pageData() {
-			
-
 			return {
 				svgIsClosed: '<svg class="h-8 w-8 text-stone-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>',
 				svgIsOpen: '<svg class="h-8 w-8 text-stone-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>', 
@@ -30,6 +28,14 @@
 						this.config = data;
 					});
 				},
+				async fetchEditions() {
+					console.log("Fetching editions..");
+					await fetch('http://localhost:8081/api/edition')
+					.then(res => res.json())
+					.then(data => {
+						this.editions = data.editions;
+					});
+				},
 				get filteredFeeds() {
 					if (this.config === null) {
 						return null;
@@ -39,6 +45,17 @@
 					}
 					return this.config.feed.filter((item) => {
 						return item.url.toLowerCase().includes(this.feedSearch.toLowerCase());
+					});
+				},
+				get filteredEditions() {
+					if (this.editions === null) {
+						return null;
+					}
+					if (this.editionSearch === "") {
+						return this.editions;
+					}
+					return this.editions.filter((item) => {
+						return item.name.toLowerCase().includes(this.editionSearch.toLowerCase());
 					});
 				},
 				updateConfig() {
@@ -92,10 +109,6 @@
 						</div>
 					</div>
 				</a>
-				<!-- Navbar Toggle Button -->
-				<button @click="showMenu = !showMenu" class="block md:hidden text-gray-700 p-2 rounded hover:border focus:border focus:bg-gray-100 my-2 mr-5" type="button" aria-controls="navbar-main" aria-expanded="false" aria-label="Toggle navigation">
-					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-				</button>
 				<!-- Nav Links-->
 				<ul class="md:flex text-gray-700 text-base mr-3 origin-top"
 					:class="{ 'block absolute top-14 border-b bg-white w-full p-2': showMenu, 'hidden': !showMenu}"
@@ -115,7 +128,7 @@
 
 		<!-- Site Content -->
 		<div x-show="showingTab==1">
-			<div x-data="{open:false}" class="w-[50vw] mx-auto border-b bg-blue-50">
+			<div x-data="fetchEditions()" class="w-[50vw] mx-auto border-b bg-blue-50">
 
 				<!-- Go through each item in this.editions and present a card with its data -->
 				<div class="container pt-8 mx-auto">
@@ -130,13 +143,11 @@
 
 					<!-- Cards here -->
 					<div class="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-						<template x-for="item in filteredFeeds" :key="item.url">
+						<template x-for="item in filteredEditions" :key="item.name">
 							<div class="flex items-center shadow bg-blue-150 hover:bg-indigo-100 hover:shadow-lg hover:rounded transition duration-150 ease-in-out transform hover:scale-105 p-3">
 								<div class="text-sm text-gray-900 ">
-									<p class="leading-none">URL: <span x-text="item.url"></span></p>
-									<p class="leading-none">Max Age: <span x-text="item.max_age"></span></p>
-									<p class="leading-none">Feed Limit: <span x-text="item.feed_limit"></span></p>
-									<p class="leading-none">Category: <span x-text="item.section"></span></p>
+									<p class="leading-none">Name: <span x-text="item.name"></span></p>
+									<p class="leading-none">Date: <span x-text="item.date"></span></p>
 								</div>
 							</div>
 						</template>
