@@ -1,7 +1,6 @@
 # <img src="https://github.com/sullivant/feedpress/blob/main/assets/logo.jpg?raw=true" height=100 width=100> feedpress
 RSS to Newspaper Tooling
 
-
 ## The Pitch
 I am a big fan of RSS feeds and readers - in fact my current setup involves using a self-hosted feed processing container [freshrss](https://freshrss.org) which is then "read" by an iOS app, [reeder](https://reederapp.com/).
 
@@ -22,7 +21,15 @@ Documentation: ./docs/index.html
 - git (https://git-scm.com)
 ### Development
 - rust & cargo
+```bash
+# Build in your normal and comforable way, serve via cargo:
+cargo run -- --serve
+```
 - typst
+```bash
+# Set typst to watch the input files, so you can tinker with layouts:
+typst watch templates/feedpress.typ output/feedpress.pdf --root ./
+```
 - git
 - tailwindcss (https://tailwindcss.com) (for UI elements) 
 ```bash
@@ -54,14 +61,21 @@ feed_limit = 2  # max number of articles to pull from a feed
 From the app directory, you can run this program.  It will refer to the parent directory for configurations, etc.
 
 ```bash
+# Will execute a feed pull and create input files suitable for typst.
 cargo run --release
+
+# Will serve a webpage located at localhost:8081/
+cargo run -- --serve
+
+# Will show options
+cargo run -- --help
 ```
 
 The directories in this project are as follows:
 ```
 ./ - Root directory of this repository
 ./app - Contains the code to feedpress and the target binary
-./assets - Contains local images used for logos, etc
+./assets - Contains local images used for logos, served webpage, etc.
 ./data - Contains configuration 
 ./docs - Documentation
 ./input - Input that is feed into typst
@@ -75,15 +89,14 @@ The directories in this project are as follows:
 
 ## Next Steps
 ### General
+- [ ] Unit tests
+- [ ] Documentation of all functions
+- [ ] Proper error "match" handling, with Result<> etc.
 - [x] Dockerization of build process
-- [ ] Releases and runnability on its own in a container
-- [ ] Integration of typst as a library not a separate callout
-- [ ] Output should be datestamped in PDF name, not static
-- [ ] On container startup or `cargo run` default behavior should be to serve the static site
-- [ ] But still allow for parameterized CLI execution
-### Configuration
-- [ ] CLI utility or flags to add/remove feed URLs and options.
-- [ ] Container execution should involve a small served web page allowing for feed and option manipulation
-- [ ] When in container mode, there should be a static page showing detail of configuration, a "run now" button, and later a scheduled task?
+- [x] Releases and runnability on its own in a container
+- [x] Output should be datestamped in PDF name, not static
+- [x] On container startup or `cargo run` default behavior should be to serve the static site
+- [x] But still allow for parameterized CLI execution
+- [x] When in container mode, there should be a static page showing detail of configuration, a "run now" button, and later a scheduled task?
 ### feedpress.dev
 - [ ] Create static markdown driven site - that's just this readme at first?

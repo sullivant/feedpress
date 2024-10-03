@@ -14,32 +14,26 @@ FROM rust:latest AS builder
 ## For running just the feedpress->typst application itself, without building, that'll be another
 ## Dockerfile, at a later date.  
 
-RUN rustup target add x86_64-unknown-linux-musl && \
-    apt update && \
-    apt install -y musl-tools musl-dev libssl-dev && \
-    update-ca-certificates
-
-# Set the working directory in the container to /app
-WORKDIR /app
-
 # Install typst
 RUN cargo install --git https://github.com/typst/typst --locked typst-cli 
 
-# Copy the Rust project files to the working directory
-RUN USER=root cargo new feedpress
+WORKDIR /app
 COPY ./app/src ./src
 COPY ./app/Cargo.toml ./
-
 RUN cargo build --release
-RUN cargo install --target x86_64-unknown-linux-musl --path .
+RUN strip target/release/feedpress
 
-# Build the Rust app
-#RUN cargo install --path .
 
-FROM scratch
-COPY --from=builder /usr/local/cargo/bin/feedpress .
-COPY --from=builder /usr/loca/cargo/bin/typst /usr/local/bin/typst
-USER 1000
+
+FROM alpine:latest as release
+WORKDIR /app
+COPY --from=builder /app/target/release/feedpress .
+COPY --from=builder /usr/local/cargo/bin/typst /usr/local/bin/typst
+
+ENV ROCKET_ADDRESS=0.0.0.0
+ENV ROCKET_PORT=8081
+EXPOSE 8081
+
 CMD ["./feedpress --serve"]
 
 
