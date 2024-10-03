@@ -1,8 +1,5 @@
 #!/bin/bash
 
-cd /app || exit
+echo "Starting feedpress with command: feedpress --serve"
+/app/feedpress --serve
 
-
-#cargo run -- --serve
-#cd /
-#typst compile templates/feedpress.typ output/feedpress.pdf --root ./

@@ -1,7 +1,7 @@
 pub mod endpoints {
 	use chrono::prelude::*;
 	use rocket::serde::json::Json;
-	use std::fs;
+	use std::fs::{self, DirEntry};
 	use std::fs::File;
 	use std::io::Write;
 	use std::process::Command;
@@ -10,6 +10,30 @@ pub mod endpoints {
 	use crate::config::config::FeedConfig;
 	use crate::editions::editions::{EditionEntry, Editions};
 	use crate::get_config;
+
+	pub fn get_file_create(file: &DirEntry) -> String {
+		let tf_meta = match file.metadata() {
+			Ok(m) => m,
+			Err(_) => return "01011900".to_string(),
+		};
+
+		let created: DateTime<Utc> = match tf_meta.created() {
+			Ok(c) => c.into(),
+			Err(_) => return "01011900".to_string(),
+		};
+
+		format!("{}", created.format("%Y/%m/%d"))
+	}
+
+	pub fn get_file_name(file: &DirEntry) -> String {
+		let binding = file.path();
+  		let name = match binding.file_name() {
+			Some(n) => n,
+			None => return "null".to_string(),
+		};
+
+		name.to_str().unwrap_or("null").to_string()
+	}
 
 
 	#[get("/edition")]
@@ -20,13 +44,17 @@ pub mod endpoints {
 
 		for file in fs::read_dir("../output/").unwrap() {
 			let tf = file.unwrap();
+
+			let create_string: String = get_file_create(&tf);
+			let name_string: String = get_file_name(&tf);
 			
-			//let this_date: String = format!("{:?}",&tf.metadata().unwrap().created().unwrap());
-			let datetime: DateTime<Utc> = tf.metadata().unwrap().created().unwrap().into();
+			if !name_string.ends_with("pdf") {
+				continue;
+			}
 
 			let this_entry = EditionEntry{
-				name: tf.path().file_name().unwrap().to_str().unwrap().to_string(),
-				date: format!("{}", datetime.format("%Y/%m/%d")),
+				name: name_string,
+				date: create_string,
 			};
 			edition_list.editions.push(this_entry);
 		}

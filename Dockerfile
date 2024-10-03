@@ -24,9 +24,16 @@ RUN cargo build --release
 RUN strip target/release/feedpress
 
 
+FROM rust:latest as release
 
-FROM alpine:latest as release
+RUN useradd feedpress -u 1000
+
 WORKDIR /app
+
+COPY ./feedpress.sh /feedpress.sh
+RUN chmod +x /feedpress.sh
+
+COPY --from=builder /app/Cargo.toml /app/Cargo.toml
 COPY --from=builder /app/target/release/feedpress .
 COPY --from=builder /usr/local/cargo/bin/typst /usr/local/bin/typst
 
@@ -34,6 +41,4 @@ ENV ROCKET_ADDRESS=0.0.0.0
 ENV ROCKET_PORT=8081
 EXPOSE 8081
 
-CMD ["./feedpress --serve"]
-
-
+CMD ["/feedpress.sh"]

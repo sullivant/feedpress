@@ -3,7 +3,7 @@ services:
   
   #feedpress
   feedpress:
-    image: feedpress:latest
+    image: sullivant/feedpress:latest
     restart: "no"
     ports:
       - 8081:8081

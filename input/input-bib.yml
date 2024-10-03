@@ -1,40 +1,30 @@
 key-1:
   type: web
-  title: 'Watch: Explosions seen on Israel-Lebanon border'
-  date: 2024-10-02
-  url: https://www.bbc.com/news/videos/cvg396ldmd5o
+  title: Missile attack on Israel lays bare deep divisions among Iranians
+  date: 2024-10-04
+  url: https://www.bbc.com/news/articles/cqjrwg9dly1o
 key-2:
   type: web
-  title: Twenty children dead after Thailand school bus fire
-  date: 2024-10-02
-  url: https://www.bbc.com/news/articles/c0jwqzzw986o
+  title: TikTok influencer 'Mr Prada' arrested for second degree murder
+  date: 2024-10-04
+  url: https://www.bbc.com/news/articles/c9wkvnwdqpqo
 key-4:
   type: web
-  title: A historic strike is underway at U.S. ports — and the impact on global supply chains could be huge
-  date: 2024-10-02
-  url: https://www.cnbc.com/2024/10/01/what-a-lengthy-us-port-strike-could-mean-for-global-supply-chains.html
+  title: U.S. crude oil jumps as Biden comments on possible Israel retaliation against Iran
+  date: 2024-10-04
+  url: https://www.cnbc.com/2024/10/03/crude-oil-prices-today.html
 key-5:
   type: web
-  title: Mastercard to buy Swedish startup that makes it easier to manage and cancel subscription plans
-  date: 2024-10-02
-  url: https://www.cnbc.com/2024/10/01/mastercard-to-buy-subscription-management-startup-minna-technologies.html
-key-6:
+  title: Digital bank Revolut slams Meta over approach to scams, says tech giant should compensate victims
+  date: 2024-10-04
+  url: https://www.cnbc.com/2024/10/03/digital-bank-revolut-slams-meta-over-approach-to-scams.html
+key-7:
   type: web
-  title: With shares at 10-year lows, Assassin's Creed maker Ubisoft faces questions over its future
-  date: 2024-10-02
-  url: https://www.cnbc.com/2024/10/01/assassins-creed-maker-ubisoft-ubi-faces-questions-over-its-future.html
+  title: FIFA defers decision on appeal to ban Israel from football amid war on Gaza
+  date: 2024-10-04
+  url: https://www.aljazeera.com/sports/2024/10/3/fifa-defers-decision-on-appeal-to-ban-israel-from-football-amid-war-on-gaza?traffic_source=rss
 key-8:
   type: web
-  title: At least 21 killed as Israel revives strikes on Gaza
-  date: 2024-10-02
-  url: https://www.aljazeera.com/news/2024/10/1/at-least-21-killed-as-israel-revives-strikes-on-gaza?traffic_source=rss
-key-9:
-  type: web
-  title: What we know about Israeli ‘ground offensive’ in Lebanon
-  date: 2024-10-02
-  url: https://www.aljazeera.com/program/newsfeed/2024/10/1/what-we-know-about-israeli-ground-offensive-in-lebanon?traffic_source=rss
-key-10:
-  type: web
-  title: 'Video: Reporter sees people fleeing southern Lebanon'
-  date: 2024-10-02
-  url: https://www.aljazeera.com/program/newsfeed/2024/10/1/video-reporter-sees-people-fleeing-southern-lebanon?traffic_source=rss
+  title: 'Biden: Discussing Israeli strikes on Iran oil facilities'
+  date: 2024-10-04
+  url: https://www.aljazeera.com/program/newsfeed/2024/10/3/biden-discussing-israeli-strikes-on-iran-oil-facilities?traffic_source=rss

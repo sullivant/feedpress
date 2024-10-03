@@ -37,6 +37,14 @@ npx tailwindcss -i assets/static/input.css -o assets/static/output.css --watch
 ```
 
 ## Running and Configuration
+
+### Running via docker
+Sample docker-compose that should work:
+```yml
+#TODO
+```
+
+### Running locally (development, etc)
 Get the code: 
 `git@github.com:sullivant/feedpress.git`
 
