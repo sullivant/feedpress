@@ -111,6 +111,10 @@ The directories in this project are as follows:
 - [ ] Unit tests
 - [ ] Documentation of all functions
 - [ ] Proper error "match" handling, with Result<> etc.
+- [ ] UI ability to add feeds or edit existing ones
+- [ ] Ability to schedule a feed pressing
+- [ ] Delivery of editions to an email address
+- [ ] Cleanup of old editions and ability to remove them manually, like with feeds
 - [x] Dockerization of build process
 - [x] Releases and runnability on its own in a container
 - [x] Output should be datestamped in PDF name, not static
