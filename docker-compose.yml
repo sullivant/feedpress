@@ -7,9 +7,6 @@ services:
     restart: "no"
     ports:
       - 8081:8081
-    volumes:
-      - ./assets:/assets
-      - ./data:/data
-      - ./input:/input
-      - ./output:/output
-      - ./templates:/templates
+## if desired, volumes can be created to redirect the output directory, etc.
+#   volumes:
+#     - ./output:/output

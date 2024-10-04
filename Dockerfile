@@ -30,6 +30,13 @@ RUN useradd feedpress -u 1000
 
 WORKDIR /app
 
+## Setup the things we need for normal operation, docker-compose users can
+## if desired, map the /output (or any other) directories.
+COPY ./assets/ /assets/
+COPY ./data/ /data/
+COPY ./input/ /input/
+COPY ./output/ /output/
+COPY ./templates/ /templates/
 COPY ./feedpress.sh /feedpress.sh
 RUN chmod +x /feedpress.sh
 

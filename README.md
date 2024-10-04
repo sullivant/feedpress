@@ -41,7 +41,18 @@ npx tailwindcss -i assets/static/input.css -o assets/static/output.css --watch
 ### Running via docker
 Sample docker-compose that should work:
 ```yml
-#TODO
+version: "2.4"
+services:
+  
+  #feedpress
+  feedpress:
+    image: sullivant/feedpress:latest
+    restart: "no"
+    ports:
+      - 8081:8081
+## if desired, volumes can be created to redirect the output directory, etc.
+#   volumes:
+#     - ./output:/output
 ```
 
 ### Running locally (development, etc)

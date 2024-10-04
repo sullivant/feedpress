@@ -33,7 +33,7 @@
 					.then(data => {
 						this.editions = data.editions;
 					});
-				},
+			},
 				get filteredFeeds() {
 					if (this.config === null) {
 						return null;
@@ -81,6 +81,7 @@
 				},
 				pressEdition() {
 					console.log("Pressing new edition, replacing today's if already run.");
+					this.isLoading = true;
 					this.showingTab = 1;
 					fetch('http://localhost:8081/api/press', {
 						method: 'POST',
@@ -91,6 +92,7 @@
 					})
 					.then(res => res.json())
 					.then(data => {
+						this.isLoading = false;
 						this.editions = data.editions;
 					});
 				}
@@ -113,9 +115,14 @@
 					<!-- Press Button - fires off a new feed pressing -->
 					<div>
 						<div class="mx-auto flex items-center justify-between">
-							<button @click="pressEdition" class="hover:bg-blue-50 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-								<svg class="h-8 w-8 text-slate-800"  fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
-							</button>
+							<div x-show="isLoading">
+								<svg class="h-8 w-8 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"/></svg>								  
+							</div>
+							<div x-show="!isLoading">
+								<button @click="pressEdition" class="hover:bg-blue-50 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+									<svg class="h-8 w-8 text-slate-800"  fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+								</button>
+							</div>
 						</div>
 					</div>
 					<!-- Save Button showing when on config tab -->
