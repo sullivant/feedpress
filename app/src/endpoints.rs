@@ -9,7 +9,7 @@ pub mod endpoints {
 
 	use crate::config::config::FeedConfig;
 	use crate::editions::editions::{EditionEntry, Editions};
-	use crate::get_config;
+	use crate::{get_config, press_feeds};
 
 	pub fn get_file_create(file: &DirEntry) -> String {
 		let tf_meta = match file.metadata() {
@@ -79,11 +79,14 @@ pub mod endpoints {
 	}
 
 	#[post("/press")]
-	pub fn api_press_edition() -> Json<Editions> {
+	pub async fn api_press_edition() -> Json<Editions> {
 		let local_time: DateTime<Local> = Local::now();
 		let filename = format!("{}", local_time.format("%Y%m%d"));
 
 		println!("Pressing new edition with filename: {}.", &filename);
+
+		// Press our feeds first to create a new input file..
+		press_feeds().await;
 
 		// Sample command: 
 		// typst compile templates/feedpress.typ output/feedpress.pdf --root ./
