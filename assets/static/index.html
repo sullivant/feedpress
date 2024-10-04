@@ -19,7 +19,7 @@
 				editionSearch: "",		// The edition we are searching for
 				async fetchConfig() {
 					this.isLoading = true;
-					await fetch(`http://localhost:8081/api/config`)
+					await fetch(`/api/config`)
 					.then(res => res.json())
 					.then(data => {
 						this.isLoading = false;
@@ -28,7 +28,7 @@
 				},
 				async fetchEditions() {
 					console.log("Fetching editions..");
-					await fetch('http://localhost:8081/api/edition')
+					await fetch('/api/edition')
 					.then(res => res.json())
 					.then(data => {
 						this.editions = data.editions;
@@ -71,7 +71,7 @@
 						"feed":this.config.feed,
 					});
 					console.log(postBody);
-					fetch('http://localhost:8081/api/config', {
+					fetch('/api/config', {
 						method: 'POST',
 						headers: { 
 							'Content-Type': 'application/json'
@@ -83,7 +83,7 @@
 					console.log("Pressing new edition, replacing today's if already run.");
 					this.isLoading = true;
 					this.showingTab = 1;
-					fetch('http://localhost:8081/api/press', {
+					fetch('/api/press', {
 						method: 'POST',
 						headers: { 
 							'Content-Type': 'application/json'
