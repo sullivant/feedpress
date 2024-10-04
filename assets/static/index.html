@@ -17,6 +17,29 @@
 				showingTab: 1,		// The navigation tab currently showing
 				feedSearch: "",			// The feed we are searching for
 				editionSearch: "",		// The edition we are searching for
+				noticesHandler() {
+					return {
+						notices: [],
+						visible: [],
+						add(notice) {
+							notice.id = Date.now()
+							this.notices.push(notice)
+							this.fire(notice.id)
+						},
+						fire(id) {
+							this.visible.push(this.notices.find(notice => notice.id == id))
+							const timeShown = 2000 * this.visible.length
+							setTimeout(() => {
+								this.remove(id)
+							}, timeShown)
+						},
+						remove(id) {
+							const notice = this.visible.find(notice => notice.id == id)
+							const index = this.visible.indexOf(notice)
+							this.visible.splice(index, 1)
+						},
+					}
+				},			
 				async fetchConfig() {
 					this.isLoading = true;
 					await fetch(`/api/config`)
@@ -33,7 +56,7 @@
 					.then(data => {
 						this.editions = data.editions;
 					});
-			},
+				},
 				get filteredFeeds() {
 					if (this.config === null) {
 						return null;
@@ -119,7 +142,7 @@
 								<svg class="h-8 w-8 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"/></svg>								  
 							</div>
 							<div x-show="!isLoading">
-								<button @click="pressEdition" class="hover:bg-blue-50 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+								<button @click="pressEdition; $dispatch('notice', {type: 'info', text: 'Pressing Today\'s Edition'})" class="hover:bg-blue-50 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
 									<svg class="h-8 w-8 text-slate-800"  fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
 								</button>
 							</div>
@@ -128,7 +151,7 @@
 					<!-- Save Button showing when on config tab -->
 					<div x-show="showingTab==2">
 						<div class="mx-auto flex items-center justify-between">
-							<button @click="updateConfig" class="hover:bg-blue-50 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+							<button @click="updateConfig; $dispatch('notice', {type: 'info', text: 'Saving Configuration'})" class="hover:bg-blue-50 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
 								<svg class="h-8 w-8 text-slate-800"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />  <polyline points="17 21 17 13 7 13 7 21" />  <polyline points="7 3 7 8 15 8" /></svg>
 							</button>
 						</div>
@@ -249,8 +272,37 @@
 
 		<!-- About -->
 		<div x-show="showingTab==3">
-			About
+			feedpress
 		</div>
+
+		<div
+			x-data="noticesHandler()"
+			class="fixed inset-0 flex flex-col-reverse items-end justify-start h-screen w-screen"
+			@notice.window="add($event.detail)"
+			style="pointer-events:none">
+			<template x-for="notice of notices" :key="notice.id">
+				<div
+					x-show="visible.includes(notice)"
+					x-transition:enter="transition ease-in duration-200"
+					x-transition:enter-start="transform opacity-0 translate-y-2"
+					x-transition:enter-end="transform opacity-100"
+					x-transition:leave="transition ease-out duration-500"
+					x-transition:leave-start="transform translate-x-0 opacity-100"
+					x-transition:leave-end="transform translate-x-full opacity-0"
+					@click="remove(notice.id)"
+					class="rounded mb-4 mr-6 w-56  h-16 flex items-center justify-center text-white shadow-lg font-bold text-lg cursor-pointer"
+					:class="{
+						'bg-green-400': notice.type === 'success',
+						'bg-blue-400': notice.type === 'info',
+						'bg-orange-400': notice.type === 'warning',
+						'bg-red-400': notice.type === 'error',
+					}"
+					style="pointer-events:all"
+					x-text="notice.text">
+				</div>
+			</template>
+		</div>
+
 	</div>
 
 </body>
