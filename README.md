@@ -33,13 +33,14 @@ typst watch templates/feedpress.typ output/feedpress.pdf --root ./
 - git
 - tailwindcss (https://tailwindcss.com) (for UI elements) 
 ```bash
+npm install
 npx tailwindcss -i assets/static/input.css -o assets/static/output.css --watch
 ```
 
 ## Running and Configuration
 
 ### Running via docker
-Sample docker-compose that should work:
+Sample docker-compose that should work and start the web-based UI:
 ```yml
 version: "2.4"
 services:
@@ -54,6 +55,8 @@ services:
 #   volumes:
 #     - ./output:/output
 ```
+
+I reckon one can even pull the docker image `sullivant/feedpress:latest` and then do a docker run on it, overriding the entrypoint so it can pull feeds at your own schedule, etc.  Leaving that as an exercise for the reader.
 
 ### Running locally (development, etc)
 Get the code: 
@@ -109,12 +112,14 @@ The directories in this project are as follows:
 ## Next Steps
 ### General
 - [ ] Unit tests
+- [ ] Security. ("Security")
 - [ ] Documentation of all functions
 - [ ] Proper error "match" handling, with Result<> etc.
 - [ ] UI ability to add feeds or edit existing ones
 - [ ] Ability to schedule a feed pressing
 - [ ] Delivery of editions to an email address
 - [ ] Cleanup of old editions and ability to remove them manually, like with feeds
+- [ ] A responsive UI that allows for mobile devices.  It looks like crap now.
 - [x] Dockerization of build process
 - [x] Releases and runnability on its own in a container
 - [x] Output should be datestamped in PDF name, not static

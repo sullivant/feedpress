@@ -17,6 +17,7 @@ use config::config::FeedConfig;
 use config::config::FeedEntry;
 use endpoints::endpoints::api_get_config;
 use endpoints::endpoints::api_get_edition_list;
+use endpoints::endpoints::api_get_version;
 use endpoints::endpoints::api_press_edition;
 use endpoints::endpoints::api_remove_edition;
 use endpoints::endpoints::api_update_config;
@@ -52,6 +53,7 @@ mod press;
 
 #[macro_use] extern crate rocket;
 
+const VERSION: &str = env!("CARGO_PKG_VERSION");
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
@@ -105,6 +107,7 @@ async fn main() {
         .mount("/api", rocket::routes![api_get_edition_list])
         .mount("/api", rocket::routes![api_press_edition])
         .mount("/api", rocket::routes![api_remove_edition])
+        .mount("/api", rocket::routes![api_get_version])
         // .mount("/api", rocket::routes![api_get_edition])
         .mount("/editions", FileServer::from(concat!(env!("CARGO_MANIFEST_DIR"), "/../output")).rank(1))
         .mount("/", FileServer::from(concat!(env!("CARGO_MANIFEST_DIR"), "/../assets/static")))

@@ -9,7 +9,7 @@ pub mod endpoints {
 
 	use crate::config::config::FeedConfig;
 	use crate::editions::editions::{EditionEntry, Editions};
-	use crate::{get_config, press_feeds};
+	use crate::{get_config, press_feeds, VERSION};
 
 	pub fn get_file_create(file: &DirEntry) -> String {
 		let tf_meta = match file.metadata() {
@@ -35,6 +35,10 @@ pub mod endpoints {
 		name.to_str().unwrap_or("null").to_string()
 	}
 
+	#[get("/version")]
+	pub fn api_get_version() -> String {
+		VERSION.to_string()
+	}
 
 	#[get("/edition")]
 	pub fn api_get_edition_list() -> Json<Editions> {
