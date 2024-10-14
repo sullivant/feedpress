@@ -153,24 +153,11 @@
 				<a href="#" class="flex items-center cursor-pointer hover:bg-purple-50 px-2 ml-3">
 					<!-- Logo-->
 					<div class="rounded bg-gray-400 text-white font-bold w-10 h-10 flex justify-center text-3xl pt-0.5">F</div>
-					<div class="text-gray-700 font-semibold ml-2">FeedPress</div>
-					<!-- Press Button - fires off a new feed pressing -->
-					<div>
-						<div class="mx-auto flex items-center justify-between">
-							<div x-show="isLoading">
-								<svg class="h-8 w-8 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"/></svg>								  
-							</div>
-							<div x-show="!isLoading">
-								<button @click="pressEdition; $dispatch('notice', {type: 'info', text: 'Pressing Today\'s Edition'})" class="hover:bg-blue-50 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-									<svg class="h-8 w-8 text-slate-800"  fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
-								</button>
-							</div>
-						</div>
-					</div>
+					<div class="text-gray-700 font-semibold ml-2">FeedPress </div>
 					<!-- Save Button showing when on config tab -->
 					<div x-show="showingTab==2">
 						<div class="mx-auto flex items-center justify-between">
-							<button @click="updateConfig; $dispatch('notice', {type: 'info', text: 'Saving Configuration'})" class="hover:bg-blue-50 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+							<button @click="updateConfig; $dispatch('notice', {type: 'info', text: 'Saving Configuration'})" class="text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
 								<svg class="h-8 w-8 text-slate-800"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />  <polyline points="17 21 17 13 7 13 7 21" />  <polyline points="7 3 7 8 15 8" /></svg>
 							</button>
 						</div>
@@ -180,13 +167,26 @@
 				<ul class="md:flex text-gray-700 text-base mr-3 origin-top"
 					:class="{ 'block absolute top-14 border-b bg-white w-full p-2': showMenu, 'hidden': !showMenu}"
 					id="navbar-main" x-cloak>
-					<li class="px-3 cursor-pointer hover:bg-purple-50 flex items-center hover:text-gray-800" :class="showMenu && 'py-1'">
+					<li class="px-3 cursor-pointer hover:bg-teal-100 flex items-center hover:text-gray-800" :class="showMenu && 'py-1'">
+						<!-- Press Button - fires off a new feed pressing -->
+						<div>
+							<div class="mx-auto flex items-center justify-between">
+								<div x-show="isLoading">
+									<svg class="h-8 w-8 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"/></svg>								  
+								</div>
+								<div x-show="!isLoading">
+									<svg @click="pressEdition; $dispatch('notice', {type: 'info', text: 'Pressing Today\'s Edition'})" class="h-8 w-8 text-slate-800"  fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="px-3 cursor-pointer hover:bg-teal-100 flex items-center hover:text-gray-800" :class="showMenu && 'py-1'">
 						<a href="#" @click="showingTab=1">Home</a>
 					</li>
-					<li class="px-3 cursor-pointer hover:bg-purple-50 flex items-center hover:text-gray-800" :class="showMenu && 'py-1'">
+					<li class="px-3 cursor-pointer hover:bg-teal-100 flex items-center hover:text-gray-800" :class="showMenu && 'py-1'">
 						<a href="#" @click="fetchConfig(); showingTab=2">Configuration</a>
 					</li>
-					<li class="px-3 cursor-pointer hover:bg-purple-50 flex items-center hover:text-gray-800" :class="showMenu && 'py-1'">
+					<li class="px-3 cursor-pointer hover:bg-teal-100 flex items-center hover:text-gray-800" :class="showMenu && 'py-1'">
 						<a href="#" @click="showingTab=3">About</a>
 					</li>
 				</ul>
@@ -195,7 +195,7 @@
 
 		<!-- Site Content -->
 		<div x-show="showingTab==1">
-			<div x-data="fetchEditions()" class="w-[50vw] mx-auto border-b bg-blue-50">
+			<div x-data="fetchEditions()" class="w-[50vw] mx-auto">
 
 				<!-- Go through each item in this.editions and present a card with its data -->
 				<div class="container pt-8 mx-auto">
@@ -211,11 +211,13 @@
 					<!-- Cards here -->
 					<div class="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 						<template x-for="item in filteredEditions" :key="item.name">
-							<div class="flex items-center shadow bg-blue-150 hover:bg-indigo-100 hover:shadow-lg hover:rounded transition duration-150 ease-in-out transform hover:scale-105 p-3">
+							<div class="flex items-center shadow hover:bg-green-100 hover:shadow-lg hover:rounded transition duration-150 ease-in-out transform hover:scale-105 p-3">
 								<div class="text-sm text-gray-900 ">
-									<svg @click="removeEdition(item)" class="h-4 w-4 text-red-800"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="4" y1="7" x2="20" y2="7" />  <line x1="10" y1="11" x2="10" y2="17" />  <line x1="14" y1="11" x2="14" y2="17" />  <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />  <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
-									<p class="leading-none">Name: <a x-bind:href="/editions/+item.name"><span x-text="item.name"></span></a></p>
-									<p class="leading-none">Date: <span x-text="item.date"></span></p>
+									<svg @click="removeEdition(item); $dispatch('notice', {type: 'warning', text: 'Removing Edition'})" class="h-4 w-4 text-red-800"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="4" y1="7" x2="20" y2="7" />  <line x1="10" y1="11" x2="10" y2="17" />  <line x1="14" y1="11" x2="14" y2="17" />  <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />  <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
+									<a x-bind:href="/editions/+item.name">
+										<p class="leading-none">Name: <span x-text="item.name"></span></p>
+										<p class="leading-none">Date: <span x-text="item.date"></span></p>
+									</a>
 								</div>
 							</div>
 						</template>
@@ -228,7 +230,7 @@
 		<div x-show="showingTab==2">
 			<template x-if="config">
 				<div>
-					<div class="w-[50vw] mx-auto border-b bg-blue-50">
+					<div class="w-[50vw] mx-auto border-b">
 						<div x-cloak class="mt-5 grid grid-cols-1 gap-x-1 gap-y-1 sm:grid-cols-2 mx-1 py-1" x-transition>
 							<!-- General configuration content -->
 							<div class="text-sm leading-6 sm:col-span-2">
@@ -254,7 +256,7 @@
 						</div>
 						<hr>
 					</div>
-					<div class="w-[50vw] mx-auto border-b bg-blue-50">
+					<div class="w-[50vw] mx-auto border-b">
 						<div x-cloak class="mx-4 py-4" x-transition>
 
 							<!-- Go through each item in config.feed and present a card with its data -->
@@ -271,7 +273,7 @@
 								<!-- Cards here -->
 								<div class="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 									<template x-for="item in filteredFeeds" :key="item.url">
-										<div class="flex items-center shadow bg-blue-150 hover:bg-indigo-100 hover:shadow-lg hover:rounded transition duration-150 ease-in-out transform hover:scale-105 p-3">
+										<div class="flex items-center shadow hover:bg-indigo-100 hover:shadow-lg hover:rounded transition duration-150 ease-in-out transform hover:scale-105 p-3">
 											<div class="text-sm text-gray-900 ">
 												<svg @click="removeFeedURL(item.url)" class="h-4 w-4 text-red-800"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="4" y1="7" x2="20" y2="7" />  <line x1="10" y1="11" x2="10" y2="17" />  <line x1="14" y1="11" x2="14" y2="17" />  <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />  <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
 												<p class="leading-none">URL: <span x-text="item.url"></span></p>
@@ -312,10 +314,10 @@
 					@click="remove(notice.id)"
 					class="rounded mb-4 mr-6 w-56  h-16 flex items-center justify-center text-white shadow-lg font-bold text-lg cursor-pointer"
 					:class="{
-						'bg-green-400': notice.type === 'success',
-						'bg-blue-400': notice.type === 'info',
-						'bg-orange-400': notice.type === 'warning',
-						'bg-red-400': notice.type === 'error',
+						'bg-green-200': notice.type === 'success',
+						'bg-blue-200': notice.type === 'info',
+						'bg-orange-200': notice.type === 'warning',
+						'bg-red-200': notice.type === 'error',
 					}"
 					style="pointer-events:all"
 					x-text="notice.text">
