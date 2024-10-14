@@ -78,6 +78,17 @@ pub mod endpoints {
 
 	}
 
+	#[delete("/press", format = "json", data = "<edition>")]
+	pub fn api_remove_edition(edition: Json<EditionEntry>) -> Json<Editions> {
+		if edition.name.ends_with("pdf") {
+			let this_path = format!("../output/{}", edition.name);
+			println!("Removing edition: {}, dated: {}, at: {}", edition.name, edition.date, this_path);
+			fs::remove_file(this_path).unwrap();
+		}
+
+		api_get_edition_list()
+	}
+
 	#[post("/press")]
 	pub async fn api_press_edition() -> Json<Editions> {
 		let local_time: DateTime<Local> = Local::now();

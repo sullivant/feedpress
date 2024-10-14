@@ -18,6 +18,7 @@ use config::config::FeedEntry;
 use endpoints::endpoints::api_get_config;
 use endpoints::endpoints::api_get_edition_list;
 use endpoints::endpoints::api_press_edition;
+use endpoints::endpoints::api_remove_edition;
 use endpoints::endpoints::api_update_config;
 use hayagriva::io::to_yaml_str;
 use hayagriva::types::Date;
@@ -103,6 +104,7 @@ async fn main() {
         .mount("/api", rocket::routes![api_update_config])
         .mount("/api", rocket::routes![api_get_edition_list])
         .mount("/api", rocket::routes![api_press_edition])
+        .mount("/api", rocket::routes![api_remove_edition])
         // .mount("/api", rocket::routes![api_get_edition])
         .mount("/editions", FileServer::from(concat!(env!("CARGO_MANIFEST_DIR"), "/../output")).rank(1))
         .mount("/", FileServer::from(concat!(env!("CARGO_MANIFEST_DIR"), "/../assets/static")))
