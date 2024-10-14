@@ -5,9 +5,9 @@ key-1:
   url: https://www.bbc.com/news/articles/c5y8zj8qrn5o
 key-2:
   type: web
-  title: Ex-Stasi officer jailed for 1974 Berlin border killing
+  title: Spacecraft blasts off to hunt alien life on a distant moon
   date: 2024-10-15
-  url: https://www.bbc.com/news/articles/c2kdyl90dewo
+  url: https://www.bbc.com/news/articles/c1482xzrge1o
 key-4:
   type: web
   title: ServiceNow, Coreweave and others to invest $8.2 billion in UK data centers to fuel AI growth$
@@ -15,16 +15,16 @@ key-4:
   url: https://www.cnbc.com/2024/10/14/servicenow-to-invest-1point5-billion-in-uk-to-localize-ai-data-processing.html
 key-5:
   type: web
-  title: European Central Bank set for third interest rate cut of the year in meeting this week
+  title: UK trade deals with India and Gulf nations are 'the priority,’ business minister says
   date: 2024-10-15
-  url: https://www.cnbc.com/2024/10/14/european-central-bank-heads-for-third-interest-rate-cut-of-the-year.html
+  url: https://www.cnbc.com/2024/10/14/uk-trade-deals-with-india-gulf-are-the-priority-business-minister.html
 key-7:
+  type: web
+  title: Zionist ‘safety patrols’ on campus have little concern for Jewish safety
+  date: 2024-10-15
+  url: https://www.aljazeera.com/opinions/2024/10/14/zionist-safety-patrols-on-campus-have-little-concern-for-jewish-safety?traffic_source=rss
+key-8:
   type: web
   title: Israeli strike in northern Lebanon kills at least 18 people
   date: 2024-10-15
   url: https://www.aljazeera.com/program/newsfeed/2024/10/14/israeli-strike-in-northern-lebanon-kills-at-least-18-people?traffic_source=rss
-key-8:
-  type: web
-  title: How did a ‘bank snooping’ scandal ensnare politicians in Italy?
-  date: 2024-10-15
-  url: https://www.aljazeera.com/news/2024/10/14/how-did-a-bank-snooping-scandal-ensnare-politicians-in-italy?traffic_source=rss

@@ -5,6 +5,42 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>feedpress</title>
+	<style>
+		[x-cloak] {
+			display: none !important;
+		}
+		.modal {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: fixed;
+			z-index: 10;
+			width: 100%;
+			height: 100%;
+		}
+		.model-inner {
+			background-color: white;
+			border-radius: 0.5em;
+			max-width: 600px;
+			padding: 2em;
+			margin: auto;
+		}
+		.modal-header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-bottom: 2px solid black;
+		}     
+		.overlay {
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+			background: black;
+			opacity: 0.75;
+		}
+	</style>
 
 	<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -17,6 +53,23 @@
 				showingTab: 1,		// The navigation tab currently showing
 				feedSearch: "",			// The feed we are searching for
 				editionSearch: "",		// The edition we are searching for
+
+				// Modal configuration
+				isModalOpen: false, // Indicates the modal for feed modification is showing
+				modalFeed: {
+					"max_age":Number(-1),
+					"section":"N/A",
+					"feed_limit":Number(-1),
+					"url": "N/A"
+				},
+				modalHandler(thisFeed) { 		// Handles opening the modal for editing of feeds, etc.
+					console.log("Opening modal for feed: "+thisFeed.url);
+					this.modalFeed = thisFeed;
+					console.log(this.modalFeed);
+					this.isModalOpen = true;
+				},
+
+				// Snackbar like notices
 				noticesHandler() {
 					return {
 						notices: [],
@@ -142,10 +195,11 @@
 		}
 
 	</script>
+
 	<link href="./output.css" rel="stylesheet">
 </head>
-<body class="h-full">
-	<div x-data="pageData()">
+<body class="h-full" x-data="pageData()" x-on:keydown.escape="isModalOpen = false">
+	<div >
 		<!-- Thank you: https://5balloons.info/building-a-responsive-navigation-using-tailwindcss-and-alpinejs/ -->
 		<nav class="border-b">
 			<div x-data="{showMenu : false}" class="container max-w-screen-lg mx-auto flex justify-between h-14">
@@ -228,7 +282,40 @@
 
 		<!-- Configuration -->
 		<div x-show="showingTab==2">
-			<template x-if="config">
+			<div class="modal"
+				role="dialog"
+				tabindex="-1"
+				x-show="isModalOpen"
+				x-on:click.away="isModalOpen = false"
+				x-cloak
+				x-transition>
+				<div class="model-inner">
+					<div class="modal-header">
+					<h3>Edit Feed</h3>
+					<button aria-label="Close" x-on:click="isModalOpen=false">✖</button>
+					</div>
+					<p class="leading-none">URL: <span x-text="modalFeed.url"></span></p>
+
+					<div class="sm:col-span-1">
+						<label for="txtMaxAge" class="block text-sm font-medium leading-6 text-gray-900">Max Age</label>
+						<input x-model="modalFeed.max_age" type="text" name="txtMaxAge" id="txtMaxAge" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+					</div>
+
+					<div class="sm:col-span-1">
+						<label for="txtMaxAge" class="block text-sm font-medium leading-6 text-gray-900">Feed Limit</label>
+						<input x-model="modalFeed.feed_limit" type="text" name="txtMaxAge" id="txtMaxAge" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+					</div>
+
+					<div class="sm:col-span-1">
+						<label for="txtMaxAge" class="block text-sm font-medium leading-6 text-gray-900">Category</label>
+						<input x-model="modalFeed.section" type="text" name="txtMaxAge" id="txtMaxAge" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+					</div>
+					
+				</div>
+			</div>
+			<div class="overlay" x-show="isModalOpen" x-cloak></div>
+
+			<template x-if="config" x-cloak>
 				<div>
 					<div class="w-[50vw] mx-auto border-b">
 						<div x-cloak class="mt-5 grid grid-cols-1 gap-x-1 gap-y-1 sm:grid-cols-2 mx-1 py-1" x-transition>
@@ -276,6 +363,11 @@
 										<div class="flex items-center shadow hover:bg-indigo-100 hover:shadow-lg hover:rounded transition duration-150 ease-in-out transform hover:scale-105 p-3">
 											<div class="text-sm text-gray-900 ">
 												<svg @click="removeFeedURL(item.url)" class="h-4 w-4 text-red-800"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="4" y1="7" x2="20" y2="7" />  <line x1="10" y1="11" x2="10" y2="17" />  <line x1="14" y1="11" x2="14" y2="17" />  <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />  <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
+												<svg @click="modalHandler(item)" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="size-4">
+													<path d="M13.488 2.513a1.75 1.75 0 0 0-2.475 0L6.75 6.774a2.75 2.75 0 0 0-.596.892l-.848 2.047a.75.75 0 0 0 .98.98l2.047-.848a2.75 2.75 0 0 0 .892-.596l4.261-4.262a1.75 1.75 0 0 0 0-2.474Z" />
+													<path d="M4.75 3.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h6.5c.69 0 1.25-.56 1.25-1.25V9A.75.75 0 0 1 14 9v2.25A2.75 2.75 0 0 1 11.25 14h-6.5A2.75 2.75 0 0 1 2 11.25v-6.5A2.75 2.75 0 0 1 4.75 2H7a.75.75 0 0 1 0 1.5H4.75Z" />
+												</svg>
+												  
 												<p class="leading-none">URL: <span x-text="item.url"></span></p>
 												<p class="leading-none">Max Age: <span x-text="item.max_age"></span></p>
 												<p class="leading-none">Feed Limit: <span x-text="item.feed_limit"></span></p>
