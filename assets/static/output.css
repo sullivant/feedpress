@@ -807,6 +807,10 @@ select {
   top: 3.5rem;
 }
 
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
 .mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
@@ -981,6 +985,10 @@ select {
 
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .flex-col-reverse {
@@ -1208,6 +1216,10 @@ select {
 
 .pt-8 {
   padding-top: 2rem;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .text-3xl {
