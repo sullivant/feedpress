@@ -3,13 +3,13 @@ max_age = 2
 feed_limit = 2
 
 [[feed]]
+url = "https://www.aljazeera.com/xml/rss/all.xml"
+feed_limit = 1
+section = "World News"
+max_age = 1
+
+[[feed]]
 url = "https://feeds.bbci.co.uk/news/world/rss.xml"
 feed_limit = 2
 section = "World News"
-max_age = 2
-
-[[feed]]
-url = "https://www.aljazeera.com/xml/rss/all.xml"
-feed_limit = 0
-section = "World News"
-max_age = 0
+max_age = 1
