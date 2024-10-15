@@ -5,6 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>feedpress</title>
+	<link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
 	<style>
 		[x-cloak] {
 			display: none !important;
@@ -142,7 +143,7 @@
 						this.editions = data.editions;
 					});
 				},
-				get filteredFeeds() {
+				getfilteredFeeds() {
 					if (this.config === null) {
 						return null;
 					}
@@ -263,7 +264,10 @@
 						</div>
 					</div>
 				</a>
-				<!-- Nav Links-->
+				<!-- Navbar Toggle Button -->
+				<button @click="showMenu = !showMenu" class="block md:hidden text-gray-700 p-2 rounded hover:border focus:border focus:bg-gray-100 my-2 mr-5" type="button" aria-controls="navbar-main" aria-expanded="false" aria-label="Toggle navigation">
+					<svg class="w-5 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+				</button>
 				<ul class="md:flex text-gray-700 text-base mr-3 origin-top"
 					:class="{ 'block absolute top-14 border-b bg-white w-full p-2': showMenu, 'hidden': !showMenu}"
 					id="navbar-main" x-cloak>
@@ -281,13 +285,13 @@
 						</div>
 					</li>
 					<li class="px-3 cursor-pointer hover:bg-teal-100 flex items-center hover:text-gray-800" :class="showMenu && 'py-1'">
-						<a href="#" @click="showingTab=1">Home</a>
+						<a href="#" @click="showMenu=false; showingTab=1">Home</a>
 					</li>
 					<li class="px-3 cursor-pointer hover:bg-teal-100 flex items-center hover:text-gray-800" :class="showMenu && 'py-1'">
-						<a href="#" @click="fetchConfig(); showingTab=2">Configuration</a>
+						<a href="#" @click="showMenu=false; fetchConfig(); showingTab=2">Configuration</a>
 					</li>
 					<li class="px-3 cursor-pointer hover:bg-teal-100 flex items-center hover:text-gray-800" :class="showMenu && 'py-1'">
-						<a href="#" @click="showingTab=3">About</a>
+						<a href="#" @click="showMenu=false; showingTab=3">About</a>
 					</li>
 				</ul>
 			</div>
