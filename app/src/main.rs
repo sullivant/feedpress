@@ -55,6 +55,8 @@ mod press;
 
 const VERSION: &str = env!("CARGO_PKG_VERSION");
 
+/// Command line arguments meant to provide ability to add or remove feeds,
+/// or press into an edition, via scheduled tasks, cronts, etc.
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
 struct Args {

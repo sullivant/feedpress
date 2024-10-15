@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"fn":["default_section","get_feed","main","process_biblio","process_content","scrape_this"],"struct":["BiblioEntry","ContentEntry","FeedConfig","FeedEntry","Press"]};
+window.SIDEBAR_ITEMS = {"constant":["VERSION"],"fn":["add_feed_url","get_config","get_feed","main","press_feeds","process_biblio","process_content","remove_feed_url","scrape_this"],"mod":["config","editions","endpoints","press"],"struct":["Args"]};

@@ -11,6 +11,8 @@ pub mod endpoints {
 	use crate::editions::editions::{EditionEntry, Editions};
 	use crate::{get_config, press_feeds, VERSION};
 
+	/// Returns a formatted string containing the file's creation date
+	/// or "01011900" if unable to determine.
 	pub fn get_file_create(file: &DirEntry) -> String {
 		let tf_meta = match file.metadata() {
 			Ok(m) => m,
@@ -25,6 +27,8 @@ pub mod endpoints {
 		format!("{}", created.format("%Y/%m/%d"))
 	}
 
+	/// Returns a formatted filename or the string "null" if unable
+	/// to determine.
 	pub fn get_file_name(file: &DirEntry) -> String {
 		let binding = file.path();
   		let name = match binding.file_name() {
@@ -35,6 +39,8 @@ pub mod endpoints {
 		name.to_str().unwrap_or("null").to_string()
 	}
 
+	/// GET request will return a version string, located in the
+	/// env variable [VERSION]
 	#[get("/version")]
 	pub fn api_get_version() -> String {
 		VERSION.to_string()
