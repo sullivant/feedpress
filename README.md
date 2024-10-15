@@ -115,7 +115,7 @@ The directories in this project are as follows:
 - [ ] Security. ("Security")
 - [ ] Documentation of all functions
 - [ ] Proper error "match" handling, with Result<> etc.
-- [ ] UI ability to add feeds or edit existing ones
+- [x] UI ability to add feeds or edit existing ones
 - [ ] Ability to schedule a feed pressing
 - [ ] Delivery of editions to an email address
 - [ ] Cleanup of old editions and ability to remove them manually, like with feeds
