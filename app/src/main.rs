@@ -46,6 +46,9 @@ use std::str::FromStr;
 use std::time::Duration;
 use url::Url;
 
+use log::{error, info, warn};
+use log4rs;
+
 
 mod endpoints;
 mod editions;
@@ -88,7 +91,8 @@ struct Args {
 /// feed, and creates content as well as biblio entries.
 #[tokio::main]
 async fn main() {
-    println!("feedpress - pressing all the news that's fit to press");
+    log4rs::init_file("config/log4rs.yaml", Default::default()).unwrap();
+    info!("feedpress - pressing all the news that's fit to press");
 
     let rocket_config = Config {
         port: 8081,
@@ -107,7 +111,7 @@ async fn main() {
         return;
     }
     if args.serve {
-        println!("Staring feedpress server...");
+        info!("Staring feedpress server...");
         let _ = rocket::custom(&rocket_config)
         .mount("/api", rocket::routes![api_get_config])
         .mount("/api", rocket::routes![api_update_config])
@@ -135,10 +139,10 @@ async fn main() {
 /// Adds a provided feed URL to the array located in the configuration toml
 fn add_feed_url(this_url: &str) {
     if this_url.is_empty() || !this_url.is_ascii() {
-        println!("Invalid URL, doing nothing.");
+        warn!("Invalid URL, doing nothing.");
         return;
     }
-    println!("Adding URL to feed list: {}", this_url);
+    info!("Adding URL to feed list: {}", this_url);
 
     let this_entry = FeedEntry {
         url: this_url.to_string(),
@@ -165,10 +169,10 @@ fn add_feed_url(this_url: &str) {
 /// Removes a provided feed URL from the array located in the configuration toml
 fn remove_feed_url(url: &str) {
     if url.is_empty() || !url.is_ascii() {
-        println!("Invalid URL, doing nothing.");
+        warn!("Invalid URL, doing nothing.");
         return;
     }
-    println!("Removing URL {}", url);
+    info!("Removing URL {}", url);
 }
 
 /// Processes RSS feeds located in the configuration toml and then prepares an
@@ -179,7 +183,7 @@ async fn press_feeds() {
     let config: FeedConfig = get_config().unwrap();
 
     let local_time: DateTime<Local> = Local::now();
-    println!(
+    info!(
         "Done parsing configuration.  Current time is: {}",
         local_time
     );
@@ -195,7 +199,7 @@ async fn press_feeds() {
             Ok(c) => c,
             Err(e) => {
                 if config.show_errors {
-                    println!("Unable to get feed URL: {} error={}", &this_entry.url, e);
+                    error!("Unable to get feed URL: {} error={}", &this_entry.url, e);
                 }
                 continue;
             }
@@ -216,7 +220,7 @@ async fn press_feeds() {
             max_age = this_entry.max_age;
         }
 
-        println!(
+        info!(
             "Processing: {} with feed limit of {} and max age of {} days",
             channel.title(),
             feed_limit,
@@ -244,7 +248,7 @@ async fn press_feeds() {
 
             if article_age > TimeDelta::days(max_age as i64) {
                 if config.show_errors {
-                    println!("Article is {} days old, skipping.", article_age.num_days());
+                    warn!("Article is {} days old, skipping.", article_age.num_days());
                 }
                 continue;
             }
@@ -300,7 +304,7 @@ fn get_config() -> Result<FeedConfig, String> {
     let config: FeedConfig = match toml::from_str(&contents) {
         Ok(f) => f,
         Err(_) => {
-            println!("Unable to parse feed entries from config toml.  Going to panic now.");
+            error!("Unable to parse feed entries from config toml.  Going to panic now.");
             panic!();
         }
     };
@@ -391,9 +395,9 @@ async fn get_feed(url: &str) -> Result<Channel, Box<dyn Error>> {
         Ok(res) => res.bytes().await?,
         Err(err) => {
             if err.is_timeout() {
-                println!("Request has timed out for url: {}",url);
+                warn!("Request has timed out for url: {}",url);
             } else {
-                println!("Request has failed for url {} with reason: {:?}", url, err);
+                warn!("Request has failed for url {} with reason: {:?}", url, err);
             }
 
             return Err(Box::new(err));

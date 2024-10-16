@@ -92,7 +92,7 @@ pub mod endpoints {
 	pub fn api_remove_edition(edition: Json<EditionEntry>) -> Json<Editions> {
 		if edition.name.ends_with("pdf") {
 			let this_path = format!("../output/{}", edition.name);
-			println!("Removing edition: {}, dated: {}, at: {}", edition.name, edition.date, this_path);
+			info!("Removing edition: {}, dated: {}, at: {}", edition.name, edition.date, this_path);
 			fs::remove_file(this_path).unwrap();
 		}
 
@@ -104,7 +104,7 @@ pub mod endpoints {
 		let local_time: DateTime<Local> = Local::now();
 		let filename = format!("{}", local_time.format("%Y%m%d"));
 
-		println!("Pressing new edition with filename: {}.", &filename);
+		info!("Pressing new edition with filename: {}.", &filename);
 
 		// Press our feeds first to create a new input file..
 		press_feeds().await;
@@ -118,7 +118,7 @@ pub mod endpoints {
         .output()
         .expect("Failed to execute command");
 
-		println!("Executed compile: {:?}", output.stdout);
+		info!("Executed compile: {:?}", output.stdout);
 
 		api_get_edition_list()
 	}

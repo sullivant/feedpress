@@ -19,3 +19,5 @@ fast_html2md = "0.0.15"
 spider_transformations = "2.6.16"
 clap = { version = "4.5.18", features = ["derive"] }
 rocket = { version = "0.5.1", features = ["json"] }
+log = "0.4.22"
+log4rs = "1.3.0"
