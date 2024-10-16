@@ -1,15 +1,20 @@
 key-1:
   type: web
-  title: 'India-Canada diplomatic row reignites: What to know and what comes next'
-  date: 2024-10-15
-  url: https://www.aljazeera.com/news/2024/10/14/india-canada-diplomatic-row-reignites-what-to-know-and-what-comes-next?traffic_source=rss
+  title: Italy sends first asylum seekers to Albania under controversial deal
+  date: 2024-10-17
+  url: https://www.aljazeera.com/news/2024/10/16/italy-sends-first-asylum-seekers-to-albania-under-controversial-deal?traffic_source=rss
 key-3:
   type: web
-  title: Lebanon says 21 killed in air strike in country’s north
-  date: 2024-10-15
-  url: https://www.bbc.com/news/articles/c5y80p1yr9qo
+  title: Zelensky presents 'victory plan' to Ukrainian parliament
+  date: 2024-10-17
+  url: https://www.bbc.com/news/articles/cd0z8gg5v14o
 key-4:
   type: web
-  title: ‘I say bye to my kids, in case we don’t wake up’ – two Gazans film year under Israeli attack
-  date: 2024-10-15
-  url: https://www.bbc.com/news/videos/c4g5jxky8q0o
+  title: US gives Israel 30 days to boost Gaza aid or risk cut to military support
+  date: 2024-10-17
+  url: https://www.bbc.com/news/articles/c9wk0e8zey2o
+key-6:
+  type: web
+  title: Maximal subrings of certain non-commutative rings
+  date: 2024-10-17
+  url: https://arxiv.org/abs/2410.10822

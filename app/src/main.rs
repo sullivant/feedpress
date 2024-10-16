@@ -32,6 +32,7 @@ use html2md::parse_html_custom;
 use press::press::BiblioEntry;
 use press::press::ContentEntry;
 use press::press::Press;
+use reqwest::Client;
 use rocket::fs::FileServer;
 use rocket::Config;
 use rss::Channel;
@@ -42,6 +43,7 @@ use std::fs::File;
 use std::io::Read;
 use std::io::Write;
 use std::str::FromStr;
+use std::time::Duration;
 use url::Url;
 
 
@@ -50,10 +52,13 @@ mod editions;
 mod config;
 mod press;
 
-
 #[macro_use] extern crate rocket;
 
+/// The package version
 const VERSION: &str = env!("CARGO_PKG_VERSION");
+
+/// Seconds allowed before timing out when requesting a URL
+const REQUEST_TIMEOUT_SECS: u64 = 10;
 
 /// Command line arguments meant to provide ability to add or remove feeds,
 /// or press into an edition, via scheduled tasks, cronts, etc.
@@ -374,7 +379,28 @@ fn process_biblio(press_biblio: Vec<BiblioEntry>) -> bool {
 
 /// Gets the feed data in the form of a [Channel]
 async fn get_feed(url: &str) -> Result<Channel, Box<dyn Error>> {
-    let content = reqwest::get(url).await?.bytes().await?;
+    let client = Client::new();
+    let timeout_duration = Duration::from_secs(REQUEST_TIMEOUT_SECS);
+
+    let response = client.get(url)
+        .timeout(timeout_duration)
+        .send()
+        .await;
+
+    let content=  match response {
+        Ok(res) => res.bytes().await?,
+        Err(err) => {
+            if err.is_timeout() {
+                println!("Request has timed out for url: {}",url);
+            } else {
+                println!("Request has failed for url {} with reason: {:?}", url, err);
+            }
+
+            return Err(Box::new(err));
+        }
+    };
+
+    // let content = reqwest::get(url).await?.bytes().await?;
     let channel = Channel::read_from(&content[..])?;
     Ok(channel)
 }

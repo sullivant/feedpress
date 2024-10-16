@@ -113,13 +113,15 @@ The directories in this project are as follows:
 ### General
 - [ ] Unit tests
 - [ ] Security. ("Security")
+- [ ] Feed timeouts when pulling
+- [ ] Logs in "about" section? 
 - [ ] Documentation of all functions
 - [ ] Proper error "match" handling, with Result<> etc.
-- [x] UI ability to add feeds or edit existing ones
 - [ ] Ability to schedule a feed pressing
 - [ ] Delivery of editions to an email address
-- [ ] Cleanup of old editions and ability to remove them manually, like with feeds
 - [ ] A responsive UI that allows for mobile devices.  It looks like crap now.
+- [x] Cleanup of old editions and ability to remove them manually, like with feeds
+- [x] UI ability to add feeds or edit existing ones
 - [x] Dockerization of build process
 - [x] Releases and runnability on its own in a container
 - [x] Output should be datestamped in PDF name, not static
