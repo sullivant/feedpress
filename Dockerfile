@@ -19,6 +19,7 @@ RUN cargo install --git https://github.com/typst/typst --locked typst-cli
 
 WORKDIR /app
 COPY ./app/src ./src
+COPY ./app/config ./config
 COPY ./app/Cargo.toml ./
 RUN cargo build --release
 RUN strip target/release/feedpress
@@ -40,6 +41,7 @@ COPY ./templates/ /templates/
 COPY ./feedpress.sh /feedpress.sh
 RUN chmod +x /feedpress.sh
 
+COPY --from=builder /app/config/log4rs.yaml /app/config/log4rs.yaml
 COPY --from=builder /app/Cargo.toml /app/Cargo.toml
 COPY --from=builder /app/target/release/feedpress .
 COPY --from=builder /usr/local/cargo/bin/typst /usr/local/bin/typst
