@@ -117,9 +117,11 @@ The directories in this project are as follows:
 - [ ] Logs in "about" section? 
 - [ ] Documentation of all functions
 - [ ] Proper error "match" handling, with Result<> etc.
+- [ ] Prettier cards for edition listing
+- [ ] API endpoint to just "return the current edition" so it may be called via shortcuts, external apps, curl, etc.
 - [ ] Ability to schedule a feed pressing
 - [ ] Delivery of editions to an email address
-- [ ] A responsive UI that allows for mobile devices.  It looks like crap now.
+- [ ] A responsive UI that allows for mobile devices.  (It looks like crap now.)
 - [x] Cleanup of old editions and ability to remove them manually, like with feeds
 - [x] UI ability to add feeds or edit existing ones
 - [x] Dockerization of build process

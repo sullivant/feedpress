@@ -8,5 +8,5 @@ services:
     ports:
       - 8081:8081
 ## if desired, volumes can be created to redirect the output directory, etc.
-#   volumes:
-#     - ./output:/output
+    volumes:
+      - ./output:/output
