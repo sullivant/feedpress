@@ -21,9 +21,9 @@ WORKDIR /app
 COPY ./app/src ./src
 COPY ./app/config ./config
 COPY ./app/Cargo.toml ./
+COPY ./app/Cargo.lock ./
 RUN cargo build --release
 RUN strip target/release/feedpress
-
 
 FROM rust:latest as release
 
@@ -46,7 +46,7 @@ COPY --from=builder /app/Cargo.toml /app/Cargo.toml
 COPY --from=builder /app/target/release/feedpress .
 COPY --from=builder /usr/local/cargo/bin/typst /usr/local/bin/typst
 
-RUN apt install poppler-utils
+RUN apt update && apt install -y poppler-utils && rm -rf /var/lib/apt/lists/*
 
 ENV ROCKET_ADDRESS=0.0.0.0
 ENV ROCKET_PORT=8081

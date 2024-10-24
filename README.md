@@ -113,7 +113,6 @@ The directories in this project are as follows:
 
 ## Next Steps
 ### General
-- [/] Prettier cards for edition listing
 - [ ] Unit tests
 - [ ] Security. ("Security")
 - [ ] Feed timeouts when pulling
@@ -124,6 +123,7 @@ The directories in this project are as follows:
 - [ ] Ability to schedule a feed pressing
 - [ ] Delivery of editions to an email address
 - [ ] A responsive UI that allows for mobile devices.  (It looks like crap now.)
+- [x] Prettier cards for edition listing
 - [x] Cleanup of old editions and ability to remove them manually, like with feeds
 - [x] UI ability to add feeds or edit existing ones
 - [x] Dockerization of build process
