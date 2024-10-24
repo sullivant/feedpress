@@ -13,5 +13,8 @@ pub mod editions {
 	pub struct EditionEntry {
 		pub name: String,
 		pub date: String,
+		pub size: String,
+		pub pages: usize,
+		pub img: String,
 	}
 }

@@ -36,6 +36,8 @@ typst watch templates/feedpress.typ output/feedpress.pdf --root ./
 npm install
 npx tailwindcss -i assets/static/input.css -o assets/static/output.css --watch
 ```
+- poppler-utils (for calling pdftoppm to get 1st page images..)
+`brew install poppler` (mac) or your preferred package management tool.  See the [poppler](https://poppler.freedesktop.org/) site for more information.  In the dockerfile, this is installed on the final image, too.
 
 ## Running and Configuration
 
@@ -111,13 +113,13 @@ The directories in this project are as follows:
 
 ## Next Steps
 ### General
+- [/] Prettier cards for edition listing
 - [ ] Unit tests
 - [ ] Security. ("Security")
 - [ ] Feed timeouts when pulling
 - [ ] Logs in "about" section? 
 - [ ] Documentation of all functions
 - [ ] Proper error "match" handling, with Result<> etc.
-- [ ] Prettier cards for edition listing
 - [ ] API endpoint to just "return the current edition" so it may be called via shortcuts, external apps, curl, etc.
 - [ ] Ability to schedule a feed pressing
 - [ ] Delivery of editions to an email address
