@@ -1,5 +1,5 @@
 # <img src="https://github.com/sullivant/feedpress/blob/main/assets/logo.jpg?raw=true" height=100 width=100> feedpress
-RSS to Newspaper Tooling
+RSS to Newspaper Tooling.
 
 <img src="https://github.com/sullivant/feedpress/blob/main/site/images/Screenshot-Main.png?raw=true">
 
@@ -45,7 +45,9 @@ npx tailwindcss -i assets/static/input.css -o assets/static/output.css --watch
 ### Running the feedpress.dev site locally
 ```bash
 # While in ./site
-npx @11ty/eleventy --serve
+cp ../README.md ./index.md
+rm ./index.html
+npx @11ty/eleventy --output ./
 ```
 
 ## Running and Configuration

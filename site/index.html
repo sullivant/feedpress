@@ -1,5 +1,5 @@
 <h1><img src="https://github.com/sullivant/feedpress/blob/main/assets/logo.jpg?raw=true" height=100 width=100> feedpress</h1>
-<p>RSS to Newspaper Tooling</p>
+<p>RSS to Newspaper Tooling.</p>
 <img src="https://github.com/sullivant/feedpress/blob/main/site/images/Screenshot-Main.png?raw=true">
 <h2>The Pitch</h2>
 <p>I am a big fan of RSS feeds and readers - in fact my current setup involves using a self-hosted feed processing container <a href="https://freshrss.org">freshrss</a> which is then &quot;read&quot; by an iOS app, <a href="https://reederapp.com/">reeder</a>.</p>
@@ -45,7 +45,9 @@ npx tailwindcss -i assets/static/input.css -o assets/static/output.css --watch
 </ul>
 <h3>Running the feedpress.dev site locally</h3>
 <pre><code class="language-bash"># While in ./site
-npx @11ty/eleventy --serve
+cp ../README.md ./index.md
+rm ./index.html
+npx @11ty/eleventy --output ./
 </code></pre>
 <h2>Running and Configuration</h2>
 <h3>Running via docker</h3>
