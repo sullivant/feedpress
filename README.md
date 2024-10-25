@@ -9,7 +9,6 @@ I am a big fan of RSS feeds and readers - in fact my current setup involves usin
 However it was occurring to me that sometimes I'd like a simple, collected, PDF with articles I found most interesting, in a newspaper format.  Even if I simply read this PDF on an ipad or sent it to a printer each day, I think I'd enjoy that.
 
 Enter **feedpress**:
-
 - [x] Pull a few articles from curated RSS feeds
 - [x] Process them, cleaning up as much crap as possible
 - [x] Output a *typst* formatted file - and combined with layout/templating, use typst to create a PDF
@@ -17,11 +16,13 @@ Enter **feedpress**:
 Documentation: ./docs/index.html
 
 ## Requisites
-### Building
+### Building (really more like a "thanks to...")
 - rust & cargo (https://rust-lang.org)
 - typst (https://typst.app)
 - git (https://git-scm.com)
+- [tailwindcss](https://tailwindcss.com)
 - node (for tailwind and if you want to edit the feedpress.dev site with 11ty)
+- [11ty](https://www.11ty.dev)
 ### Development
 - rust & cargo
 ```bash
@@ -135,6 +136,7 @@ The directories in this project are as follows:
 - [ ] Ability to schedule a feed pressing
 - [ ] Delivery of editions to an email address
 - [ ] Keywords extracted from each edition (maybe biblio or titles) and searchability by that not just name
+- [ ] Include more detail on the frameworks used in the README
 - [x] Prettier cards for edition listing
 - [x] Cleanup of old editions and ability to remove them manually, like with feeds
 - [x] UI ability to add feeds or edit existing ones
@@ -145,4 +147,4 @@ The directories in this project are as follows:
 - [x] But still allow for parameterized CLI execution
 - [x] When in container mode, there should be a static page showing detail of configuration, a "run now" button, and later a scheduled task?
 ### feedpress.dev
-- [ ] Create static markdown driven site - that's just this readme at first?
+- [x] Create static markdown driven site - that's just this readme at first?
