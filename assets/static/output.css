@@ -989,6 +989,10 @@ select {
   width: 3.5rem;
 }
 
+.w-\[75vw\] {
+  width: 75vw;
+}
+
 .max-w-screen-lg {
   max-width: 1024px;
 }
@@ -1135,6 +1139,12 @@ select {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .rounded {

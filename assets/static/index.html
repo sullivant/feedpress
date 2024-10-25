@@ -302,7 +302,7 @@
 
 		<!-- Site Content -->
 		<div x-show="showingTab==1">
-			<div x-data="fetchEditions()" class="w-[50vw] mx-auto">
+			<div x-data="fetchEditions()" class="w-[75vw] mx-auto">
 
 				<!-- Go through each item in this.editions and present a card with its data -->
 				<div class="container pt-8 mx-auto">
@@ -426,7 +426,7 @@
 
 			<template x-if="config" x-cloak>
 				<div>
-					<div class="w-[50vw] mx-auto border-b">
+					<div class="w-[75vw] mx-auto border-b">
 						<div x-cloak class="mt-5 grid grid-cols-1 gap-x-1 gap-y-1 sm:grid-cols-2 mx-1 py-1" x-transition>
 							<!-- General configuration content -->
 							<div class=" mt-1 grid grid-cols-2 px-4 gap-1 place-content-start lg:place-content-center">
@@ -456,7 +456,7 @@
 						</div>
 						<hr>
 					</div>
-					<div class="w-[50vw] mx-auto border-b">
+					<div class="w-[75vw] mx-auto border-b">
 						<div x-cloak class="mx-4 py-4" x-transition>
 
 							<!-- Go through each item in config.feed and present a card with its data -->
@@ -477,10 +477,10 @@
 										<!-- A feed's card -->
 										<div class="max-w-sm overflow-hidden items-center shadow hover:bg-indigo-100 hover:shadow-lg hover:rounded transition duration-150 ease-in-out transform hover:scale-105 p-3">
 											<div class="text-sm text-gray-900 ">
-												<p class="leading-none text-sm">URL: <span x-text="item.url"></span></p>
+												<p class="truncate leading-none text-sm">URL: <span x-text="item.url"></span></p>
 												<p class="leading-none text-sm">Max Age: <span x-text="item.max_age"></span></p>
 												<p class="leading-none text-sm">Feed Limit: <span x-text="item.feed_limit"></span></p>
-												<p class="leading-none text-sm">Category: <span x-text="item.section"></span></p>
+												<p class="truncate leading-none text-sm">Category: <span x-text="item.section"></span></p>
 											</div>
 
 											<!-- action icons for this card -->
@@ -523,7 +523,7 @@
 
 		<!-- About -->
 		<div x-show="showingTab==3">
-			<div class="w-[50vw] mx-auto mt-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4" x-data="getVersion()">
+			<div class="w-[75vw] mx-auto mt-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4" x-data="getVersion()">
 				<p class="leading-none">feedpress version: <span x-text="appVersion"></span></p>
 				<p class="leading-none">Author: Thomas Sullivan (thomas@sullivanscientific.com)</p>
 				<p class="leading-none">
