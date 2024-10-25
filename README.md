@@ -1,6 +1,8 @@
 # <img src="https://github.com/sullivant/feedpress/blob/main/assets/logo.jpg?raw=true" height=100 width=100> feedpress
 RSS to Newspaper Tooling
 
+<img src="https://github.com/sullivant/feedpress/blob/main/site/images/Screenshot-Main.png?raw=true">
+
 ## The Pitch
 I am a big fan of RSS feeds and readers - in fact my current setup involves using a self-hosted feed processing container [freshrss](https://freshrss.org) which is then "read" by an iOS app, [reeder](https://reederapp.com/).
 
