@@ -170,9 +170,19 @@ pub mod endpoints {
 		// Sample command: 
 		// typst compile templates/feedpress.typ output/feedpress.pdf --root ./
 		
-		let output = Command::new("sh")
-		.arg("-c")
-		.arg(format!("typst compile ../templates/feedpress.typ {} --root ../",output_pdf_path))
+		info!("Calling typst for compilation");
+
+		// let output = Command::new("sh")
+		// .arg("-c")
+		// .arg(format!("typst compile ../templates/feedpress.typ {} --root ../",output_pdf_path))
+        // .output()
+        // .expect("Failed to execute command");
+		let output = Command::new("typst")
+		.arg("compile")
+		.arg("../templates/feedpress.typ")
+		.arg(format!("{}",output_pdf_path))
+		.arg("--root")
+		.arg("../")
         .output()
         .expect("Failed to execute command");
 
@@ -181,6 +191,8 @@ pub mod endpoints {
 		} else {
 			warn!("Trouble executing compile: {:?}", output.stderr);
 		}
+
+		info!("Executing pdf to png image generation for thumbnail.");
 
 		// once an output file PDF is created use the utility pdftoppm to create a PNG
 		// of the first page of the PDF, located in the sam eoutput directory.

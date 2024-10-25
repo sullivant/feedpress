@@ -1,0 +1,136 @@
+<h1><img src="https://github.com/sullivant/feedpress/blob/main/assets/logo.jpg?raw=true" height=100 width=100> feedpress</h1>
+<p>RSS to Newspaper Tooling</p>
+<img src="https://github.com/sullivant/feedpress/blob/main/site/images/Screenshot-Main.png?raw=true">
+<h2>The Pitch</h2>
+<p>I am a big fan of RSS feeds and readers - in fact my current setup involves using a self-hosted feed processing container <a href="https://freshrss.org">freshrss</a> which is then &quot;read&quot; by an iOS app, <a href="https://reederapp.com/">reeder</a>.</p>
+<p>However it was occurring to me that sometimes I'd like a simple, collected, PDF with articles I found most interesting, in a newspaper format.  Even if I simply read this PDF on an ipad or sent it to a printer each day, I think I'd enjoy that.</p>
+<p>Enter <strong>feedpress</strong>:</p>
+<ul>
+<li>[x] Pull a few articles from curated RSS feeds</li>
+<li>[x] Process them, cleaning up as much crap as possible</li>
+<li>[x] Output a <em>typst</em> formatted file - and combined with layout/templating, use typst to create a PDF</li>
+</ul>
+<p>Documentation: ./docs/index.html</p>
+<h2>Requisites</h2>
+<h3>Building</h3>
+<ul>
+<li>rust &amp; cargo (https://rust-lang.org)</li>
+<li>typst (https://typst.app)</li>
+<li>git (https://git-scm.com)</li>
+<li>node (for tailwind and if you want to edit the feedpress.dev site with 11ty)</li>
+</ul>
+<h3>Development</h3>
+<ul>
+<li>rust &amp; cargo</li>
+</ul>
+<pre><code class="language-bash"># Build in your normal and comforable way, serve via cargo:
+cargo run -- --serve
+</code></pre>
+<ul>
+<li>typst</li>
+</ul>
+<pre><code class="language-bash"># Set typst to watch the input files, so you can tinker with layouts:
+typst watch templates/feedpress.typ output/feedpress.pdf --root ./
+</code></pre>
+<ul>
+<li>git</li>
+<li>tailwindcss (https://tailwindcss.com) (for UI elements)</li>
+</ul>
+<pre><code class="language-bash">npm install
+npx tailwindcss -i assets/static/input.css -o assets/static/output.css --watch
+</code></pre>
+<ul>
+<li>poppler-utils (for calling pdftoppm to get 1st page images..)
+<code>brew install poppler</code> (mac) or your preferred package management tool.  See the <a href="https://poppler.freedesktop.org/">poppler</a> site for more information.  In the dockerfile, this is installed on the final image, too.</li>
+</ul>
+<h3>Running the feedpress.dev site locally</h3>
+<pre><code class="language-bash"># While in ./site
+npx @11ty/eleventy --serve
+</code></pre>
+<h2>Running and Configuration</h2>
+<h3>Running via docker</h3>
+<p>Sample docker-compose that should work and start the web-based UI:</p>
+<pre><code class="language-yml">version: &quot;2.4&quot;
+services:
+  
+  #feedpress
+  feedpress:
+    image: sullivant/feedpress:latest
+    restart: &quot;no&quot;
+    ports:
+      - 8081:8081
+## if desired, volumes can be created to redirect the output directory, etc.
+    volumes:
+      - ./output:/output ## So we can access it easier, while developing
+      - ./log:/log ## Watching logs locally not via the browser
+</code></pre>
+<p>I reckon one can even pull the docker image <code>sullivant/feedpress:latest</code> and then do a docker run on it, overriding the entrypoint so it can pull feeds at your own schedule, etc.  Leaving that as an exercise for the reader.</p>
+<h3>Running locally (development, etc)</h3>
+<p>Get the code:
+<code>git@github.com:sullivant/feedpress.git</code></p>
+<p>Update some configuration.  After checkout of this repository, note that there are a few &quot;defaults&quot; configured and a few example feeds.  Without parameters, the application will run and serve a simple front end, available at <code>http://localhost:8081/</code>.</p>
+<p>Configuration is located in <code>data/config.toml</code></p>
+<pre><code class="language-toml"># global configurations
+show_errors = false # true if you'd like to see feed collection errors
+max_age = 3 # number of days old an article is skipped if it is older than
+feed_limit = 2  # max number of articles to pull from a feed
+
+# feed array
+# example:
+# [[feed]]
+#   url = &quot;https://yourfeedurl/rss.xml&quot;
+#   feed_limit = 10
+#   section = &quot;Personal&quot;
+
+</code></pre>
+<p>From the app directory, you can run this program.  It will refer to the parent directory for configurations, etc.</p>
+<pre><code class="language-bash"># Will execute a feed pull and create input files suitable for typst.
+cargo run --release
+
+# Will serve a webpage located at localhost:8081/
+cargo run -- --serve
+
+# Will show options
+cargo run -- --help
+</code></pre>
+<p>The directories in this project are as follows:</p>
+<pre><code>./ - Root directory of this repository
+./app - Contains the code to feedpress and the target binary
+./assets - Contains local images used for logos, served webpage, etc.
+./data - Contains configuration 
+./docs - Documentation
+./input - Input that is feed into typst
+./output - Output PDF files for viewing or delivery
+./site - Contains the source for feedpress.dev
+./templates - The actual typst configuration
+./templates/bookshelf.typ - How each article looks on the page
+./templates/feedpress.typ - The root typst &quot;application&quot;; imports the other .typ files
+./templates/layout.typ - The overall layout of the page
+</code></pre>
+<h2>Next Steps</h2>
+<h3>General</h3>
+<ul>
+<li>[ ] Unit tests</li>
+<li>[ ] Security. (&quot;Security&quot;)</li>
+<li>[ ] Feed timeouts when pulling</li>
+<li>[ ] Logs in &quot;about&quot; section?</li>
+<li>[ ] Documentation of all functions</li>
+<li>[ ] Proper error &quot;match&quot; handling, with Result&lt;&gt; etc.</li>
+<li>[ ] API endpoint to just &quot;return the current edition&quot; so it may be called via shortcuts, external apps, curl, etc.</li>
+<li>[ ] Ability to schedule a feed pressing</li>
+<li>[ ] Delivery of editions to an email address</li>
+<li>[ ] Keywords extracted from each edition (maybe biblio or titles) and searchability by that not just name</li>
+<li>[x] Prettier cards for edition listing</li>
+<li>[x] Cleanup of old editions and ability to remove them manually, like with feeds</li>
+<li>[x] UI ability to add feeds or edit existing ones</li>
+<li>[x] Dockerization of build process</li>
+<li>[x] Releases and runnability on its own in a container</li>
+<li>[x] Output should be datestamped in PDF name, not static</li>
+<li>[x] On container startup or <code>cargo run</code> default behavior should be to serve the static site</li>
+<li>[x] But still allow for parameterized CLI execution</li>
+<li>[x] When in container mode, there should be a static page showing detail of configuration, a &quot;run now&quot; button, and later a scheduled task?</li>
+</ul>
+<h3>feedpress.dev</h3>
+<ul>
+<li>[ ] Create static markdown driven site - that's just this readme at first?</li>
+</ul>

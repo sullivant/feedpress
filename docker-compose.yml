@@ -10,3 +10,4 @@ services:
 ## if desired, volumes can be created to redirect the output directory, etc.
     volumes:
       - ./output:/output
+      - ./log:/log

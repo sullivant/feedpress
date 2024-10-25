@@ -17,15 +17,25 @@ FROM rust:latest AS builder
 # Install typst
 RUN cargo install --git https://github.com/typst/typst --locked typst-cli 
 
+# Install musl stuff
+RUN apt update && apt install -y musl-tools && rm -rf /var/lib/apt/lists/*
+RUN rustup target add x86_64-unknown-linux-musl
+
 WORKDIR /app
 COPY ./app/src ./src
 COPY ./app/config ./config
 COPY ./app/Cargo.toml ./
 COPY ./app/Cargo.lock ./
-RUN cargo build --release
+RUN cargo build --target x86_64-unknown-linux-musl --release 
 RUN strip target/release/feedpress
 
-FROM rust:latest as release
+
+
+
+
+
+FROM debian:bullseye-slim as release
+# FROM rust:latest as release
 
 RUN useradd feedpress -u 1000
 
@@ -47,6 +57,22 @@ COPY --from=builder /app/target/release/feedpress .
 COPY --from=builder /usr/local/cargo/bin/typst /usr/local/bin/typst
 
 RUN apt update && apt install -y poppler-utils && rm -rf /var/lib/apt/lists/*
+
+## Runtime necessary files
+ENV ARCH x86_64
+# # COPY --from=builder /usr/lib/${ARCH}-linux-gnu/* /usr/lib/${ARCH}-linux-gnu/
+# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libxml2* /usr/lib/${ARCH}-linux-gnu/
+# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libgcc* /usr/lib/${ARCH}-linux-gnu/
+# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libicuuc* /usr/lib/${ARCH}-linux-gnu/
+# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libz* /usr/lib/${ARCH}-linux-gnu/
+# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/liblz* /usr/lib/${ARCH}-linux-gnu/
+# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libicudata* /usr/lib/${ARCH}-linux-gnu/
+# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libstdc* /usr/lib/${ARCH}-linux-gnu/
+# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libssl* /usr/lib/${ARCH}-linux-gnu/
+# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libcrypto* /usr/lib/${ARCH}-linux-gnu/
+# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libc* /usr/lib/${ARCH}-linux-gnu/
+
+
 
 ENV ROCKET_ADDRESS=0.0.0.0
 ENV ROCKET_PORT=8081
