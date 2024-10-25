@@ -124,7 +124,7 @@ The directories in this project are as follows:
 - [ ] API endpoint to just "return the current edition" so it may be called via shortcuts, external apps, curl, etc.
 - [ ] Ability to schedule a feed pressing
 - [ ] Delivery of editions to an email address
-- [ ] A responsive UI that allows for mobile devices.  (It looks like crap now.)
+- [ ] Keywords extracted from each edition (maybe biblio or titles) and searchability by that not just name
 - [x] Prettier cards for edition listing
 - [x] Cleanup of old editions and ability to remove them manually, like with feeds
 - [x] UI ability to add feeds or edit existing ones

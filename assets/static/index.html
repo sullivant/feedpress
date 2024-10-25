@@ -320,7 +320,7 @@
 						<template x-for="item in filteredEditions" :key="item.name">
 
 							<!-- a card -->
-							<div class="max-w-sm rounded overflow-hidden shadow-lg"> 
+							<div class="max-w-sm rounded overflow-hidden shadow-lg hover:bg-indigo-100 hover:shadow-lg hover:rounded hover:scale-105 transition duration-150 ease-in-out transform "> 
 								<div class="px-6 py-4 bg-blue-100">
 									<a x-bind:href="/editions/+item.name">
 										<img class="w-full" x-bind:src="/editions/+item.img" alt="">
@@ -475,12 +475,12 @@
 									<template x-for="item in filteredFeeds" :key="item.url">
 
 										<!-- A feed's card -->
-										<div class="max-w-sm overflow-hidden items-center shadow hover:bg-indigo-100 hover:shadow-lg hover:rounded transition duration-150 ease-in-out transform hover:scale-105 p-3">
-											<div class="text-sm text-gray-900 ">
+										<div class="max-w-sm overflow-hidden items-center shadow hover:bg-indigo-100 hover:shadow-lg hover:rounded hover:scale-105 transition duration-150 ease-in-out transform p-3">
+											<div class="text-sm text-gray-900">
 												<p class="truncate leading-none text-sm">URL: <span x-text="item.url"></span></p>
 												<p class="leading-none text-sm">Max Age: <span x-text="item.max_age"></span></p>
 												<p class="leading-none text-sm">Feed Limit: <span x-text="item.feed_limit"></span></p>
-												<p class="truncate leading-none text-sm">Category: <span x-text="item.section"></span></p>
+												<p class="truncate pb-2 leading-none text-sm">Category: <span x-text="item.section"></span></p>
 											</div>
 
 											<!-- action icons for this card -->

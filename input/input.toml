@@ -1,41 +1,21 @@
 [[content]]
-section = "World News"
-source = "Breaking News, World News and Video from Al Jazeera"
-link = "https://www.aljazeera.com/news/2024/10/25/dozens-killed-as-tropical-storm-trami-batters-the-philippines?traffic_source=rss"
-pub_date = "Fri, 25 Oct 2024 12:49:57 +0000"
-title = "At least 76 killed as Tropical Storm Trami batters the Philippines"
+section = "Science"
+source = "math updates on the arXiv.org e-print archive."
+link = "https://arxiv.org/abs/2410.18119"
+pub_date = "Fri, 25 Oct 2024 00:00:00 -0400"
+title = "Stability of equilibriums and bifurcation analysis of two-dimensional autonomous competitive Lotka-Volterra dynamical system"
 bib_key = "key-1"
-content = """
+content = '''
 
 
-*Nearly 320,000 people forced to leave their homes due to flooding and landslides, while thousands are stranded at air and seaports.*
+> Abstract:A detailed analysis of the stability of equilibriums and bifurcations of the two-dimensional autonomous competitive Lotka-Volterra dynamical system is performed. Necessary and sufficient conditions are determined for equilibriums (without the origin) to be asymptotically stable or unstable on $\\left[0, +\\infty\\right)^2$. Necessary and sufficient conditions are determined so that the observed dynamical system has no equilibriums in $\\left(0, +\\infty\\right)^2 $. All results are presented in five tables and five figures. We also found that four transcritical bifurcations occur in the observed dynamical system if it is analyzed on $\\mathrm{R}^2$.
 
-At least 76 people have been killed in central and northern Philippines afterbattered the country, triggering landslides and flooding that trapped residents on their roofs and displaced nearly 320,000.
+## Submission history
 
-As the storm leaves the country on Friday with a trail of destruction, state forecasters are raising the rare possibility that it could make a U-turn next week as it is pushed back by high-pressure winds developing in the South China Sea.
+From: Danijela Branković []
+**[v1]**Thu, 10 Oct 2024 15:52:07 UTC (356 KB)
 
-A Philippine provincial police chief said on Friday that 47 people were killed mainly in landslides set off by Trami in Batangas province south of the capital, Manila.
-
-Seventeen other villagers remained missing in Batangas, Colonel Jacinto Malinao Jr told ABS-CBN News from the lakeside town of Talisay, where several of the victims were buried in a deep mound of mud, boulders and trees.
-
-Although Trami did not strengthen into a typhoon, it dumped unusually heavy rains in some regions, including some that saw one to two months’ worth of rainfall in just 24 hours, inundating communities with flash floods.
-
-More than 2.6 million people were affected by the deluge, with nearly 320,000 fleeing to evacuation centres or relatives’ homes, disaster mitigation officials told the AP.
-
-As of Friday, 7,510 passengers remain stuck in ports and 36 flights were cancelled.
-
-In the Bicol region in central Philippines, 29 people were reported killed in floodwaters and landslides, according to the Philippine National Police. At least 11 of the victims died by drowning.
-
-A reported nine other people were injured and four remain missing.
-
-In the foothills of thein Albay province, mud and other debris cascaded towards nearby towns as the storm hit, engulfing houses and cars in black mudflows.
-
-The storm was last tracked on Friday afternoon blowing 410km (255 miles) west of the northwestern Philippines with sustained winds of up to 95km/h (59 mph) and gusts of up to 115km/h (78 mph). It was moving northwestward towards Vietnam.
-
-Each year, about 20 storms and typhoons batter the Philippines, a Southeast Asian archipelago which lies between the Pacific Ocean and the South China Sea.
-
-In September, at least 11 people were killed whenhit the country.
-People wade through floods caused by Tropical Storm Trami in Naga in the Bicol region in central Philippines [Zalrian Sayat/AFP]"""
+'''
 
 [[content]]
 section = "World News"
@@ -234,76 +214,5 @@ Along the shores of north-eastern France, you can find the remnants of failed cr
 The deflated dinghies and abandoned life jackets on these beaches may look worthless, but someone will have paid huge sums for what they hoped was a route to a better life.
 
 It is a trade in misery, desperation and, in the worst cases, death - but one that continues to evolve and thrive deep inside Europe.
-
-'''
-
-[[content]]
-section = "World News"
-source = "BBC News - World"
-link = "https://www.bbc.com/news/articles/crr957ee559o"
-pub_date = "Fri, 25 Oct 2024 12:58:57 GMT"
-title = "Kurdish militant group behind attack on Turkish aerospace firm"
-bib_key = "key-4"
-content = '''
-
-
-A Kurdish militant group has said it was responsible for an attack on a state-owned defence manufacturer's headquarters near the Turkish capital, Ankara, which saw five people killed.
-
-The PKK said it had targeted Turkish Aerospace Industries (TAI) on Wednesday because the weapons it produced had killed "thousands" of Kurds.
-
-In a statement, the group said the attack, which also saw 22 people injured, was "planned a long time ago" and was "nothing to do with the political agenda debated in Turkey in the last month".
-
-It appears to rebuff speculation that the attack was an attempt to frustrate rumoured peace talks between the PKK and Turkish government.
-
-The Turkish government had previously implicated the PKK, identifying the attackers as PKK members Ali Orek and Mine Sevjin Alcicek.
-
-It subsequently launched.
-
-Turkey says it has killed 59 "terrorists" - though the Kurdish-led Syrian Democratic Forces said at least 12 civilians were among the dead.
-
-The Kurdistan Workers' Party (PKK) is banned as a terrorist organisation in Turkey, the US and UK, and has been fighting against the Turkish state since the 1980s for greater rights for the country’s significant Kurdish minority.
-
-The PKK's armed wing, the HPG, described Orek and Alcicek as an "autonomous team" belonging to the "Immortals Battalion".
-
-It described them as "heroes" who carried out the attack with "high determination".
-
-The HPG said TAI was a "military target" that it had a "legitimate right" to attack as it was where "weapons of massacre are produced".
-
-It claimed the military equipment produced there had killed "thousands of civilians, including women and children".
-
-Turkish President Recep Tayyip Erdogan called the attack "heinous".
-
-He said that "no terrorist organisation, no evil focus targeting our security will be able to achieve their goals".
-
-Turkish Vice-President Cevdet Yilmaz said four of the victims attack near Ankara were TAI employees, while the fifth was a taxi driver.
-
-The victims were named by Turkey's state-run news agency as Cengiz Coskun, a quality control officer, Zahide Guclu, a mechanical engineer, Atakan Sahin Erdogan, a security guard, another employee called Huseyin Canbaz and Murat Arslan, the taxi driver.
-
-TAI is a key player in Turkey’s aerospace industry, designing, developing and manufacturing various aircraft for commercial and military use.
-
-It is the company designated by the Nato member to be the licensed manufacturer for the US-designed F-16 fighter jets. TAI also plays a role in modernising older aircraft for the Turkish military.
-
-The HPG said it "does not take actions frequently as a principle", but occasionally carried out "self-sacrificing" acts that served as "warnings and messages" to the Turkish government.
-
-Interior Minister Ali Yerlikaya said the two attackers had been "neutralised".
-
-'''
-
-[[content]]
-section = "Science"
-source = "math updates on the arXiv.org e-print archive."
-link = "https://arxiv.org/abs/2410.18119"
-pub_date = "Fri, 25 Oct 2024 00:00:00 -0400"
-title = "Stability of equilibriums and bifurcation analysis of two-dimensional autonomous competitive Lotka-Volterra dynamical system"
-bib_key = "key-6"
-content = '''
-
-
-> Abstract:A detailed analysis of the stability of equilibriums and bifurcations of the two-dimensional autonomous competitive Lotka-Volterra dynamical system is performed. Necessary and sufficient conditions are determined for equilibriums (without the origin) to be asymptotically stable or unstable on $\\left[0, +\\infty\\right)^2$. Necessary and sufficient conditions are determined so that the observed dynamical system has no equilibriums in $\\left(0, +\\infty\\right)^2 $. All results are presented in five tables and five figures. We also found that four transcritical bifurcations occur in the observed dynamical system if it is analyzed on $\\mathrm{R}^2$.
-
-## Submission history
-
-From: Danijela Branković []
-**[v1]**Thu, 10 Oct 2024 15:52:07 UTC (356 KB)
 
 '''
