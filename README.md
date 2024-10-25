@@ -45,7 +45,8 @@ npx tailwindcss -i assets/static/input.css -o assets/static/output.css --watch
 ### Running the feedpress.dev site locally
 ```bash
 # While in ./site
-npx @11ty/eleventy --serve
+cp ../README.md ./index.md
+npx @11ty/eleventy --output ./
 ```
 
 ## Running and Configuration

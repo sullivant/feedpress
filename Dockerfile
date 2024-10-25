@@ -18,15 +18,15 @@ FROM rust:latest AS builder
 RUN cargo install --git https://github.com/typst/typst --locked typst-cli 
 
 # Install musl stuff
-RUN apt update && apt install -y musl-tools && rm -rf /var/lib/apt/lists/*
-RUN rustup target add x86_64-unknown-linux-musl
+# RUN apt update && apt install -y musl-tools libssl-dev openssl && rm -rf /var/lib/apt/lists/*
+# RUN rustup target add x86_64-unknown-linux-musl
 
 WORKDIR /app
 COPY ./app/src ./src
 COPY ./app/config ./config
 COPY ./app/Cargo.toml ./
 COPY ./app/Cargo.lock ./
-RUN cargo build --target x86_64-unknown-linux-musl --release 
+RUN cargo build --release 
 RUN strip target/release/feedpress
 
 
@@ -34,8 +34,8 @@ RUN strip target/release/feedpress
 
 
 
-FROM debian:bullseye-slim as release
-# FROM rust:latest as release
+# FROM debian:bullseye-slim as release
+FROM rust:latest as release
 
 RUN useradd feedpress -u 1000
 
