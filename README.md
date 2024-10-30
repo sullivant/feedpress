@@ -16,7 +16,7 @@ Enter **feedpress**:
 Documentation: ./docs/index.html
 
 ## The Code
-- <img src="https://raw.githubusercontent.com/sullivant/feedpress/3150394ebb930d087bddaf7cfcb2b465b3163cb0/site/images/github-brands-solid.svg" width=24 height=24> [github](https://github.com/sullivant/feedpress)
+<img src="https://raw.githubusercontent.com/sullivant/feedpress/3150394ebb930d087bddaf7cfcb2b465b3163cb0/site/images/github-brands-solid.svg" width=24 height=24> [github](https://github.com/sullivant/feedpress)
 
 ## Requisites
 ### Building (really more like a "thanks to...")
