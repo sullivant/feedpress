@@ -140,6 +140,7 @@ The directories in this project are as follows:
 - [ ] Delivery of editions to an email address
 - [ ] Keywords extracted from each edition (maybe biblio or titles) and searchability by that not just name
 - [ ] Include more detail on the frameworks used in the README
+- [ ] Flag/indication to show a save is necessary when altering configuration
 - [x] Prettier cards for edition listing
 - [x] Cleanup of old editions and ability to remove them manually, like with feeds
 - [x] UI ability to add feeds or edit existing ones

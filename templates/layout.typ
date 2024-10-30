@@ -19,7 +19,7 @@
   )
   set par(justify: true)
   set text(
-    font: "Linux Libertine",
+    font: "Libertinus Serif",
     size: 8pt,
   )
 
