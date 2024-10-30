@@ -30,14 +30,15 @@ RUN cargo build --release
 RUN strip target/release/feedpress
 
 
-
+RUN apt update && apt install -y poppler-utils && rm -rf /var/lib/apt/lists/*
 
 
 
 # FROM debian:bullseye-slim as release
-FROM rust:latest as release
+# FROM rust:latest as release
+FROM gcr.io/distroless/cc-debian12 as release
 
-RUN useradd feedpress -u 1000
+# RUN useradd feedpress -u 1000
 
 WORKDIR /app
 
@@ -49,33 +50,46 @@ COPY ./input/ /input/
 COPY ./output/ /output/
 COPY ./templates/ /templates/
 COPY ./feedpress.sh /feedpress.sh
-RUN chmod +x /feedpress.sh
 
+COPY --from=builder /bin/chmod /bin/chmod
+COPY --from=builder /bin/sh /bin/sh
+COPY --from=builder /bin/rm /bin/rm
 COPY --from=builder /app/config/log4rs.yaml /app/config/log4rs.yaml
 COPY --from=builder /app/Cargo.toml /app/Cargo.toml
 COPY --from=builder /app/target/release/feedpress .
 COPY --from=builder /usr/local/cargo/bin/typst /usr/local/bin/typst
+COPY --from=builder /bin/pdftoppm /usr/local/bin/pdftoppm
 
-RUN apt update && apt install -y poppler-utils && rm -rf /var/lib/apt/lists/*
+RUN chmod +x /feedpress.sh
 
 ## Runtime necessary files
 ENV ARCH x86_64
+# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libapt* /usr/lib/${ARCH}-linux-gnu/
+# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libz* /usr/lib/${ARCH}-linux-gnu/
+# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libbz* /usr/lib/${ARCH}-linux-gnu/
+# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/liblz* /usr/lib/${ARCH}-linux-gnu/
+# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libudev* /usr/lib/${ARCH}-linux-gnu/
+# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libsystem* /usr/lib/${ARCH}-linux-gnu/
+# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libcrypt* /usr/lib/${ARCH}-linux-gnu/
+# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libgcrypt* /usr/lib/${ARCH}-linux-gnu/
+COPY --from=builder /usr/lib/${ARCH}-linux-gnu/lib* /usr/lib/${ARCH}-linux-gnu/
+# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libcap* /usr/lib/${ARCH}-linux-gnu/
+# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libgpg* /usr/lib/${ARCH}-linux-gnu/
 # # COPY --from=builder /usr/lib/${ARCH}-linux-gnu/* /usr/lib/${ARCH}-linux-gnu/
 # COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libxml2* /usr/lib/${ARCH}-linux-gnu/
 # COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libgcc* /usr/lib/${ARCH}-linux-gnu/
 # COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libicuuc* /usr/lib/${ARCH}-linux-gnu/
-# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libz* /usr/lib/${ARCH}-linux-gnu/
-# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/liblz* /usr/lib/${ARCH}-linux-gnu/
 # COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libicudata* /usr/lib/${ARCH}-linux-gnu/
 # COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libstdc* /usr/lib/${ARCH}-linux-gnu/
 # COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libssl* /usr/lib/${ARCH}-linux-gnu/
-# COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libcrypto* /usr/lib/${ARCH}-linux-gnu/
 # COPY --from=builder /usr/lib/${ARCH}-linux-gnu/libc* /usr/lib/${ARCH}-linux-gnu/
 
+
+# RUN apt update && apt install -y poppler-utils && rm -rf /var/lib/apt/lists/*
 
 
 ENV ROCKET_ADDRESS=0.0.0.0
 ENV ROCKET_PORT=8081
 EXPOSE 8081
 
-CMD ["/feedpress.sh"]
+ENTRYPOINT ["/app/feedpress", "--serve"]
