@@ -15,6 +15,9 @@ Enter **feedpress**:
 
 Documentation: ./docs/index.html
 
+## The Code
+![github](<img src="https://github.com/sullivant/feedpress/blob/main/site/images/github-brands-solid.svg?raw=true">)
+
 ## Requisites
 ### Building (really more like a "thanks to...")
 - rust & cargo (https://rust-lang.org)
