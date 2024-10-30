@@ -128,6 +128,12 @@ The directories in this project are as follows:
 ```
 
 ## Next Steps
+### Scheduled v0.8.0
+- [ ] Ability to schedule a feed pressing
+- [ ] Include more detail on the frameworks used in the README
+- [ ] Sorting options when viewing editions listing
+- [ ] Smaller thumbnails when viewing editions listing?
+- [ ] Flag/indication to show a save is necessary when altering configuration
 ### General
 - [ ] Unit tests
 - [ ] Security. ("Security")
@@ -136,11 +142,8 @@ The directories in this project are as follows:
 - [ ] Documentation of all functions
 - [ ] Proper error "match" handling, with Result<> etc.
 - [ ] API endpoint to just "return the current edition" so it may be called via shortcuts, external apps, curl, etc.
-- [ ] Ability to schedule a feed pressing
 - [ ] Delivery of editions to an email address
 - [ ] Keywords extracted from each edition (maybe biblio or titles) and searchability by that not just name
-- [ ] Include more detail on the frameworks used in the README
-- [ ] Flag/indication to show a save is necessary when altering configuration
 - [x] Prettier cards for edition listing
 - [x] Cleanup of old editions and ability to remove them manually, like with feeds
 - [x] UI ability to add feeds or edit existing ones
