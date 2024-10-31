@@ -1,6 +1,8 @@
 show_errors = false
 max_age = 2
 feed_limit = 2
+schedule = "* 0/30 * * * *"
+schedule_enabled = true
 
 [[feed]]
 url = "https://www.aljazeera.com/xml/rss/all.xml"

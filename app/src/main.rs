@@ -22,7 +22,6 @@ use endpoints::endpoints::api_press_edition;
 use endpoints::endpoints::api_remove_edition;
 use endpoints::endpoints::api_update_config;
 use hayagriva::io::to_yaml_str;
-use hayagriva::types::Date;
 use hayagriva::types::EntryType;
 use hayagriva::types::FormatString;
 use hayagriva::types::QualifiedUrl;
@@ -36,18 +35,19 @@ use reqwest::Client;
 use rocket::fs::FileServer;
 use rocket::Config;
 use rss::Channel;
+use scheduler::scheduler::Scheduler;
 use spider_transformations::transformation::content::IgnoreTagFactory;
 use std::collections::HashMap;
 use std::error::Error;
 use std::fs::File;
 use std::io::Read;
 use std::io::Write;
-use std::ops::ControlFlow;
 use std::path::Path;
 use std::process::Command;
 use std::str::FromStr;
 use std::time::Duration;
 use url::Url;
+
 
 use log::{error, info, warn};
 use log4rs;
@@ -57,6 +57,7 @@ mod endpoints;
 mod editions;
 mod config;
 mod press;
+mod scheduler;
 
 #[macro_use] extern crate rocket;
 
@@ -114,6 +115,11 @@ async fn main() {
         return;
     }
     if args.serve {
+        // Spawn away our scheduler
+        let mut scheduler = Scheduler::new();
+        scheduler.run().await;
+        info!("Thread is running: {}", scheduler.running);
+
         info!("Staring feedpress server...");
         let _ = rocket::custom(&rocket_config)
         .mount("/api", rocket::routes![api_get_config])
