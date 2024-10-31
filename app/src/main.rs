@@ -42,6 +42,9 @@ use std::error::Error;
 use std::fs::File;
 use std::io::Read;
 use std::io::Write;
+use std::ops::ControlFlow;
+use std::path::Path;
+use std::process::Command;
 use std::str::FromStr;
 use std::time::Duration;
 use url::Url;
@@ -128,11 +131,8 @@ async fn main() {
         return;
     }
 
-
-    // If we are here, we are not doing any one off commands, so let's press the feeds into
-    // a PDF and then exit.
-    press_feeds().await;
-
+    // When doing nothing else, just create an edition allowing for CLI execution.
+    create_edition().await;
 
 }
 
@@ -173,6 +173,24 @@ fn remove_feed_url(url: &str) {
         return;
     }
     info!("Removing URL {}", url);
+}
+
+/// Really a soft of collected convenience method that allows for an edition to be 
+/// created both from the endpoint API and the command line.  Does all that is necessary.
+async fn create_edition() {
+    let local_time: DateTime<Local> = Local::now();
+    let filename = format!("{}", local_time.format("%Y%m%d"));
+
+    let output_png_path = format!("../output/{}.png", &filename);
+    let output_pdf_path = format!("../output/{}.pdf", &filename);
+
+    info!("Pressing new edition with filename: {}.", &output_pdf_path);
+
+    // Press our feeds first to create a new input file.
+    press_feeds().await;
+
+    // Compile them into both PDF and PNG formats.
+    compile_feeds(&output_pdf_path, &output_png_path).await;
 }
 
 /// Processes RSS feeds located in the configuration toml and then prepares an
@@ -238,18 +256,8 @@ async fn press_feeds() {
                 break;
             }
 
-            // TODO: A better way to deal with the dates.
             let pub_date = DateTime::parse_from_rfc2822(this_item.pub_date().unwrap()).unwrap();
-            let mut bib_date = Date::from_year(pub_date.year());
-            bib_date.day = Some(pub_date.day().try_into().unwrap());
-            bib_date.month = Some(pub_date.month0().try_into().unwrap());
-
-            let article_age = local_time.fixed_offset() - pub_date;
-
-            if article_age > TimeDelta::days(max_age as i64) {
-                if config.show_errors {
-                    warn!("Article is {} days old, skipping.", article_age.num_days());
-                }
+            if article_too_old(local_time, pub_date, max_age, config.show_errors) {
                 continue;
             }
 
@@ -259,8 +267,6 @@ async fn press_feeds() {
             let article_content = scrape_this(&article_link)
                 .await
                 .unwrap_or(article_short_content.clone());
-
-            // println!("{}", article_content);
 
             // Build a new struct of this particular content for outbound formatting
             let this_content = ContentEntry {
@@ -278,7 +284,6 @@ async fn press_feeds() {
                 r#type: EntryType::Web,
                 key: format!("key-{}", r),
                 title: this_item.title().unwrap_or("No Title").to_string(),
-                date: bib_date,
                 url: this_item.link().unwrap().to_string(),
             };
 
@@ -291,6 +296,71 @@ async fn press_feeds() {
     // Call out and create our content and biblio files.
     process_content(press_content);
     process_biblio(press_biblio);
+}
+
+fn article_too_old(local_time: DateTime<Local>, pub_date: DateTime<FixedOffset>, max_age: usize, show_errors: bool) -> bool {
+    let article_age = local_time.fixed_offset() - pub_date;
+    if article_age > TimeDelta::days(max_age as i64) {
+        if show_errors {
+            warn!("Article is {} days old, skipping.", article_age.num_days());
+        }
+        return true;
+    }
+    false
+}
+
+/// Will compile the created feed data into both PDF and PNG formats (for a 1st page thumbnail)
+async fn compile_feeds(output_pdf_path: &str, output_png_path: &str) {
+    // Sample command: 
+    // typst compile templates/feedpress.typ output/feedpress.pdf --root ./
+    
+    info!("Calling typst for compilation");
+
+    let output = Command::new("typst")
+    .arg("compile")
+    .arg("../templates/feedpress.typ")
+    .arg(format!("{}",output_pdf_path))
+    .arg("--root")
+    .arg("../")
+    .output()
+    .expect("Failed to execute command");
+
+    if output.status.success() {
+    	info!("Executed compile: {:?}", output.stdout);
+    } else {
+    	warn!("Trouble executing compile: {:?}", output.stderr);
+    }
+
+    info!("Executing pdf to png image generation for thumbnail.");
+
+    // once an output file PDF is created use the utility pdftoppm to create a PNG
+    // of the first page of the PDF, located in the sam eoutput directory.
+    let output_png = Path::new(&output_png_path);
+    let input_pdf = Path::new(&output_pdf_path);
+
+    let png_output = Command::new("pdftoppm")
+    .arg(input_pdf)
+    .arg("-png")
+    .arg("-singlefile")
+    .arg("-f")
+    .arg("1") // First page
+    .arg("-l")
+    .arg("1") // Only one page
+    .arg("-r")
+    .arg("100") // Resolution (DPI)
+    .arg(output_png.with_extension(""))
+    .output()
+    .expect("Failed to execute pdftoppm command");
+
+    // Check if the command succeeded
+    if png_output.status.success() {
+    	info!("PNG file created: {:?}", output_png);
+    } else {
+    	warn!(
+    		"Error creating PNG: {}",
+    		String::from_utf8_lossy(&output.stderr)
+    	);
+    }
 }
 
 /// Does what it says on the tin.
@@ -370,7 +440,7 @@ fn process_biblio(press_biblio: Vec<BiblioEntry>) -> bool {
         let mut entry: Entry = Entry::new(&bib_entry.key, bib_entry.r#type);
         entry.set_title(FormatString::from_str(&bib_entry.title).unwrap());
         entry.set_url(QualifiedUrl::from_str(&bib_entry.url).unwrap());
-        entry.set_date(bib_entry.date);
+       
         library.push(&entry);
     }
 
