@@ -5,6 +5,8 @@ pub mod scheduler {
 	use std::str::FromStr;
 	use tokio::task;
 	use tokio::time::sleep;
+	use std::time::Duration;
+	use tokio_cron_scheduler::{Job, JobScheduler, JobSchedulerError};
 
     use crate::{create_edition, get_config};
 
@@ -28,16 +30,7 @@ pub mod scheduler {
 			} 
 
 			info!("Attempting to use schedule of: {}",config.schedule);
-			let schedule = match Schedule::from_str(&config.schedule){
-				Ok(s) => s,
-				Err(_) => {warn!("Failed to parse CRON expression, not running schedule.");
-					return;
-				},
-			};
 
-			let next = schedule.upcoming(Utc).next().unwrap();
-			println!("Now: {}", Utc::now());
-			println!("Next press: {}", next);
 
 		}
 	}
