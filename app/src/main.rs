@@ -35,7 +35,6 @@ use reqwest::Client;
 use rocket::fs::FileServer;
 use rocket::Config;
 use rss::Channel;
-use scheduler::scheduler::Scheduler;
 use spider_transformations::transformation::content::IgnoreTagFactory;
 use std::collections::HashMap;
 use std::error::Error;
@@ -57,7 +56,6 @@ mod endpoints;
 mod editions;
 mod config;
 mod press;
-mod scheduler;
 
 #[macro_use] extern crate rocket;
 
@@ -115,11 +113,6 @@ async fn main() {
         return;
     }
     if args.serve {
-        // Spawn away our scheduler
-        let mut scheduler = Scheduler::new();
-        scheduler.run().await;
-        info!("Thread is running: {}", scheduler.running);
-
         info!("Staring feedpress server...");
         let _ = rocket::custom(&rocket_config)
         .mount("/api", rocket::routes![api_get_config])

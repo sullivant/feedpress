@@ -17,10 +17,6 @@ pub mod config {
 		/// Maximum number of articles for each feed to print
 		#[serde(default)]
 		pub feed_limit: usize,
-		/// Schedule for edition pressing automation
-		pub schedule: String,
-		/// Boolean to control if schedule is active
-		pub schedule_enabled: bool,
 		/// The vec containing each feed we will process
 		pub feed: Vec<FeedEntry>,
 	}
