@@ -58,7 +58,6 @@ COPY --from=builder /app/target/release/feedpress .
 COPY --from=builder /usr/local/cargo/bin/typst /usr/local/bin/typst
 COPY --from=builder /bin/pdftoppm /usr/local/bin/pdftoppm
 
-# RUN chmod +x /feedpress.sh
 
 ## Runtime necessary files
 ENV ARCH x86_64

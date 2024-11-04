@@ -12,15 +12,15 @@ use article_scraper::Readability;
 use chrono::prelude::*;
 use chrono::TimeDelta;
 use clap::Parser;
-use config::config::default_section;
-use config::config::FeedConfig;
-use config::config::FeedEntry;
-use endpoints::endpoints::api_get_config;
-use endpoints::endpoints::api_get_edition_list;
-use endpoints::endpoints::api_get_version;
-use endpoints::endpoints::api_press_edition;
-use endpoints::endpoints::api_remove_edition;
-use endpoints::endpoints::api_update_config;
+use config::default_section;
+use config::FeedConfig;
+use config::FeedEntry;
+use endpoints::api_get_config;
+use endpoints::api_get_edition_list;
+use endpoints::api_get_version;
+use endpoints::api_press_edition;
+use endpoints::api_remove_edition;
+use endpoints::api_update_config;
 use hayagriva::io::to_yaml_str;
 use hayagriva::types::EntryType;
 use hayagriva::types::FormatString;
@@ -28,9 +28,9 @@ use hayagriva::types::QualifiedUrl;
 use hayagriva::Entry;
 use hayagriva::Library;
 use html2md::parse_html_custom;
-use press::press::BiblioEntry;
-use press::press::ContentEntry;
-use press::press::Press;
+use press::BiblioEntry;
+use press::ContentEntry;
+use press::Press;
 use reqwest::Client;
 use rocket::fs::FileServer;
 use rocket::Config;
@@ -49,8 +49,6 @@ use url::Url;
 
 
 use log::{error, info, warn};
-use log4rs;
-
 
 mod endpoints;
 mod editions;
@@ -160,9 +158,6 @@ fn add_feed_url(this_url: &str) {
     // Write this updated config to a file
     let mut file = File::create("../data/config.toml").unwrap();
     file.write_all(toml.as_bytes()).unwrap();
-
-
-    return;
 }
 
 /// Removes a provided feed URL from the array located in the configuration toml
@@ -318,7 +313,7 @@ async fn compile_feeds(output_pdf_path: &str, output_png_path: &str) {
     let output = Command::new("typst")
     .arg("compile")
     .arg("../templates/feedpress.typ")
-    .arg(format!("{}",output_pdf_path))
+    .arg(output_pdf_path)
     .arg("--root")
     .arg("../")
     .output()

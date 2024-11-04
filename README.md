@@ -21,11 +21,13 @@ Documentation: ./docs/index.html
 ## Requisites
 ### Building (really more like a "thanks to...")
 - rust & cargo (https://rust-lang.org)
-- typst (https://typst.app)
+- typst (https://typst.app) - for compilation of article content into PDF
+- [poppler] (https://poppler.freedesktop.org/) - for rendering of PDF to PNG previews.
 - git (https://git-scm.com)
-- [tailwindcss](https://tailwindcss.com)
 - node (for tailwind and if you want to edit the feedpress.dev site with 11ty)
-- [11ty](https://www.11ty.dev)
+- [tailwindcss](https://tailwindcss.com) - uses node
+- [11ty](https://www.11ty.dev) - uses node
+
 ### Development
 - rust & cargo
 ```bash
@@ -138,7 +140,7 @@ The directories in this project are as follows:
 
 ## Next Steps
 ### Scheduled v0.8.0
-- [ ] Include more detail on the frameworks used in the README
+- [x] Include more detail on the frameworks used in the README
 - [ ] Sorting options when viewing editions listing
 - [ ] Smaller thumbnails when viewing editions listing?
 - [ ] Flag/indication to show a save is necessary when altering configuration
