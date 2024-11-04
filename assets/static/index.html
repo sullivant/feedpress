@@ -43,6 +43,7 @@
 		}
 	</style>
 
+	<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/sort@3.x.x/dist/cdn.min.js"></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 	<script>
@@ -137,9 +138,11 @@
 				},
 				async fetchEditions() {
 					console.log("Fetching editions..");
-					await fetch('/api/edition')
+					this.isLoading = true;
+					return await fetch('/api/edition')
 					.then(res => res.json())
 					.then(data => {
+						this.isLoading = false;
 						this.editions = data.editions;
 					});
 				},
@@ -154,14 +157,30 @@
 						return item.url.toLowerCase().includes(this.feedSearch.toLowerCase());
 					});
 				},
-				get filteredEditions() {
+				async filteredEditions() {
 					if (this.editions === null) {
-						return null;
+						
+						await this.fetchEditions();
+
+						if(this.editions === null) {
+							return null;
+						}
 					}
+
+					let retVal = this.editions.sort(
+						function(a,b){
+							let aDate = new Date(a.date);
+							let bDate = new Date(b.date);
+							if (aDate < bDate) { return 1; }
+							if (aDate > bDate) { return -1; }
+							return 0;
+						}
+					);
+
 					if (this.editionSearch === "") {
-						return this.editions;
+						return retVal;
 					}
-					return this.editions.filter((item) => {
+					return retVal.filter((item) => {
 						return item.name.toLowerCase().includes(this.editionSearch.toLowerCase());
 					});
 				},
@@ -302,7 +321,8 @@
 
 		<!-- Site Content -->
 		<div x-show="showingTab==1">
-			<div x-data="fetchEditions()" class="w-[75vw] mx-auto">
+			<div class="w-[75vw] mx-auto">
+				<!-- x-data="fetchEditions()" -->
 
 				<!-- Go through each item in this.editions and present a card with its data -->
 				<div class="container pt-8 mx-auto">
@@ -316,11 +336,11 @@
 						class="block w-full bg-gray-50 focus:outline-none focus:bg-white focus:shadow text-gray-700 rounded-lg px-4 py-3"/>
 
 					<!-- Cards here -->
-					<div class="mt-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 place-items-center gap-4">
+					<div x-sort class="mt-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 place-items-center gap-4">
 						<template x-for="item in filteredEditions" :key="item.name">
 
 							<!-- a card -->
-							<div class="max-w-sm rounded overflow-hidden shadow-lg hover:bg-indigo-100 hover:shadow-lg hover:rounded hover:scale-105 transition duration-150 ease-in-out transform "> 
+							<div x-sort:item class="max-w-sm rounded overflow-hidden shadow-lg hover:bg-indigo-100 hover:shadow-lg hover:rounded hover:scale-105 transition duration-150 ease-in-out transform "> 
 								<div class="px-6 py-4 bg-blue-100">
 									<a x-bind:href="/editions/+item.name">
 										<img class="w-full" x-bind:src="/editions/+item.img" alt="">
@@ -333,6 +353,7 @@
 									<a x-bind:href="/editions/+item.name">
 										<p class="text-gray-500 text-sm">Size: <span x-text="item.size"></span></p>
 										<p class="text-gray-500 text-sm">Pages: <span x-text="item.pages"></span></p>
+										<p class="text-gray-500 text-sm">Date: <span x-text="item.date"></span></p>
 									</a>
 									<!-- <p class="text-gray-500 text-sm">@<span x-text="item.date"></span></p> -->
 								</div>
@@ -536,6 +557,7 @@
 			</div>
 		</div>
 
+		<!-- Notices / Snackbars -->
 		<div
 			x-data="noticesHandler()"
 			class="fixed top-0 right-0 flex flex-col-reverse items-end justify-end h-screen w-screen"
