@@ -17,11 +17,12 @@
 <h3>Building (really more like a &quot;thanks to...&quot;)</h3>
 <ul>
 <li>rust &amp; cargo (https://rust-lang.org)</li>
-<li>typst (https://typst.app)</li>
+<li>typst (https://typst.app) - for compilation of article content into PDF</li>
+<li>[poppler] (https://poppler.freedesktop.org/) - for rendering of PDF to PNG previews.</li>
 <li>git (https://git-scm.com)</li>
-<li><a href="https://tailwindcss.com">tailwindcss</a></li>
 <li>node (for tailwind and if you want to edit the feedpress.dev site with 11ty)</li>
-<li><a href="https://www.11ty.dev">11ty</a></li>
+<li><a href="https://tailwindcss.com">tailwindcss</a> - uses node</li>
+<li><a href="https://www.11ty.dev">11ty</a> - uses node</li>
 </ul>
 <h3>Development</h3>
 <ul>
@@ -70,7 +71,13 @@ services:
       - ./output:/output ## So we can access it easier, while developing
       - ./log:/log ## Watching logs locally not via the browser
 </code></pre>
-<p>I reckon one can even pull the docker image <code>sullivant/feedpress:latest</code> and then do a docker run on it, overriding the entrypoint so it can pull feeds at your own schedule, etc.  Leaving that as an exercise for the reader.</p>
+<h2>Scheduling Editions (in docker only)</h2>
+<p>Editions can be scheduled to press by using your host's scheduled task method.  Cron, Windows scheduler, etc.  The
+process to fire off a manual edition is all we need to call:</p>
+<pre><code class="language-bash">docker exec feedpress &quot;/app/feedpress&quot;
+</code></pre>
+<p>Logs will append to the internal log file and the edition will be pressed the same as if you had fired it off from the web UI.</p>
+<p>A future release may contain an internal scheduler.</p>
 <h3>Running locally (development, etc)</h3>
 <p>Get the code:
 <code>git@github.com:sullivant/feedpress.git</code></p>
@@ -116,23 +123,24 @@ cargo run -- --help
 <h2>Next Steps</h2>
 <h3>Scheduled v0.8.0</h3>
 <ul>
-<li>[ ] Ability to schedule a feed pressing</li>
-<li>[ ] Include more detail on the frameworks used in the README</li>
-<li>[ ] Sorting options when viewing editions listing</li>
-<li>[ ] Smaller thumbnails when viewing editions listing?</li>
-<li>[ ] Flag/indication to show a save is necessary when altering configuration</li>
+<li>[x] Include more detail on the frameworks used in the README</li>
+<li>[x] Sorting options when viewing editions listing (sorts by date pressed)</li>
+<li>[x] Smaller thumbnails when viewing editions listing?</li>
+<li>[x] Flag/indication to show a save is necessary when altering configuration</li>
+<li>[ ] Logs in &quot;about&quot; section?</li>
 </ul>
 <h3>General</h3>
 <ul>
+<li>[ ] Ability to size thumbs with a menu</li>
 <li>[ ] Unit tests</li>
 <li>[ ] Security. (&quot;Security&quot;)</li>
 <li>[ ] Feed timeouts when pulling</li>
-<li>[ ] Logs in &quot;about&quot; section?</li>
 <li>[ ] Documentation of all functions</li>
 <li>[ ] Proper error &quot;match&quot; handling, with Result&lt;&gt; etc.</li>
 <li>[ ] API endpoint to just &quot;return the current edition&quot; so it may be called via shortcuts, external apps, curl, etc.</li>
 <li>[ ] Delivery of editions to an email address</li>
 <li>[ ] Keywords extracted from each edition (maybe biblio or titles) and searchability by that not just name</li>
+<li>[/] Ability to schedule a feed pressing (Schedule via external cron for now..)</li>
 <li>[x] Prettier cards for edition listing</li>
 <li>[x] Cleanup of old editions and ability to remove them manually, like with feeds</li>
 <li>[x] UI ability to add feeds or edit existing ones</li>

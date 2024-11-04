@@ -141,14 +141,15 @@ The directories in this project are as follows:
 ## Next Steps
 ### Scheduled v0.8.0
 - [x] Include more detail on the frameworks used in the README
-- [ ] Sorting options when viewing editions listing
-- [ ] Smaller thumbnails when viewing editions listing?
-- [ ] Flag/indication to show a save is necessary when altering configuration
+- [x] Sorting options when viewing editions listing (sorts by date pressed)
+- [x] Smaller thumbnails when viewing editions listing?
+- [x] Flag/indication to show a save is necessary when altering configuration
+- [ ] Logs in "about" section? 
 ### General
+- [ ] Ability to size thumbs with a menu
 - [ ] Unit tests
 - [ ] Security. ("Security")
 - [ ] Feed timeouts when pulling
-- [ ] Logs in "about" section? 
 - [ ] Documentation of all functions
 - [ ] Proper error "match" handling, with Result<> etc.
 - [ ] API endpoint to just "return the current edition" so it may be called via shortcuts, external apps, curl, etc.
