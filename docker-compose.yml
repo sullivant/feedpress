@@ -3,6 +3,7 @@ services:
   
   #feedpress
   feedpress:
+    container_name: feedpress
     image: sullivant/feedpress:latest
     restart: "no"
     ports:

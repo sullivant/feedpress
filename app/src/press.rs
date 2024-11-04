@@ -52,8 +52,6 @@ pub mod press {
 		pub key: String,
 		/// The title of the article
 		pub title: String,
-		/// The date published
-		pub date: Date,
 		/// The direct location of the article
 		pub url: String,
 	}

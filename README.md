@@ -74,7 +74,16 @@ services:
       - ./log:/log ## Watching logs locally not via the browser
 ```
 
-I reckon one can even pull the docker image `sullivant/feedpress:latest` and then do a docker run on it, overriding the entrypoint so it can pull feeds at your own schedule, etc.  Leaving that as an exercise for the reader.
+## Scheduling Editions (in docker only)
+Editions can be scheduled to press by using your host's scheduled task method.  Cron, Windows scheduler, etc.  The 
+process to fire off a manual edition is all we need to call:
+```bash
+docker exec feedpress "/app/feedpress"
+```
+
+Logs will append to the internal log file and the edition will be pressed the same as if you had fired it off from the web UI.
+
+A future release may contain an internal scheduler.  
 
 ### Running locally (development, etc)
 Get the code: 
@@ -129,7 +138,6 @@ The directories in this project are as follows:
 
 ## Next Steps
 ### Scheduled v0.8.0
-- [ ] Ability to schedule a feed pressing
 - [ ] Include more detail on the frameworks used in the README
 - [ ] Sorting options when viewing editions listing
 - [ ] Smaller thumbnails when viewing editions listing?
@@ -144,6 +152,7 @@ The directories in this project are as follows:
 - [ ] API endpoint to just "return the current edition" so it may be called via shortcuts, external apps, curl, etc.
 - [ ] Delivery of editions to an email address
 - [ ] Keywords extracted from each edition (maybe biblio or titles) and searchability by that not just name
+- [/] Ability to schedule a feed pressing (Schedule via external cron for now..)
 - [x] Prettier cards for edition listing
 - [x] Cleanup of old editions and ability to remove them manually, like with feeds
 - [x] UI ability to add feeds or edit existing ones

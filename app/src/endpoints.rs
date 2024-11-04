@@ -1,17 +1,14 @@
 pub mod endpoints {
 	use chrono::prelude::*;
-	use log::warn;
 	use rocket::serde::json::Json;
 	use std::fs::{self, DirEntry};
 	use std::fs::File;
 	use std::io::Write;
-	use std::path::Path;
-	use std::process::Command;
 	use lopdf::Document;
 
 	use crate::config::config::FeedConfig;
 	use crate::editions::editions::{EditionEntry, Editions};
-	use crate::{get_config, press_feeds, VERSION};
+	use crate::{create_edition, get_config, VERSION};
 
 	/// Returns a formatted string containing the file's creation date
 	/// or "01011900" if unable to determine.
@@ -156,73 +153,10 @@ pub mod endpoints {
 
 	#[post("/press")]
 	pub async fn api_press_edition() -> Json<Editions> {
-		let local_time: DateTime<Local> = Local::now();
-		let filename = format!("{}", local_time.format("%Y%m%d"));
-
-		let output_png_path = format!("../output/{}.png", &filename);
-		let output_pdf_path = format!("../output/{}.pdf", &filename);
-
-		info!("Pressing new edition with filename: {}.", &output_pdf_path);
-
-		// Press our feeds first to create a new input file..
-		press_feeds().await;
-
-		// Sample command: 
-		// typst compile templates/feedpress.typ output/feedpress.pdf --root ./
+		// Create an edition
+		create_edition().await;
 		
-		info!("Calling typst for compilation");
-
-		// let output = Command::new("sh")
-		// .arg("-c")
-		// .arg(format!("typst compile ../templates/feedpress.typ {} --root ../",output_pdf_path))
-        // .output()
-        // .expect("Failed to execute command");
-		let output = Command::new("typst")
-		.arg("compile")
-		.arg("../templates/feedpress.typ")
-		.arg(format!("{}",output_pdf_path))
-		.arg("--root")
-		.arg("../")
-        .output()
-        .expect("Failed to execute command");
-
-		if output.status.success() {
-			info!("Executed compile: {:?}", output.stdout);
-		} else {
-			warn!("Trouble executing compile: {:?}", output.stderr);
-		}
-
-		info!("Executing pdf to png image generation for thumbnail.");
-
-		// once an output file PDF is created use the utility pdftoppm to create a PNG
-		// of the first page of the PDF, located in the sam eoutput directory.
-		let output_png = Path::new(&output_png_path);
-		let input_pdf = Path::new(&output_pdf_path);
-
-		let png_output = Command::new("pdftoppm")
-        .arg(input_pdf)
-        .arg("-png")
-        .arg("-singlefile")
-        .arg("-f")
-        .arg("1") // First page
-        .arg("-l")
-        .arg("1") // Only one page
-        .arg("-r")
-        .arg("100") // Resolution (DPI)
-        .arg(output_png.with_extension(""))
-        .output()
-        .expect("Failed to execute pdftoppm command");
-
-		// Check if the command succeeded
-		if png_output.status.success() {
-			info!("PNG file created: {:?}", output_png);
-		} else {
-			warn!(
-				"Error creating PNG: {}",
-				String::from_utf8_lossy(&output.stderr)
-			);
-		}
-
+		// Refresh our edition list.
 		api_get_edition_list()
 	}
 
