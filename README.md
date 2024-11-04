@@ -74,7 +74,16 @@ services:
       - ./log:/log ## Watching logs locally not via the browser
 ```
 
-I reckon one can even pull the docker image `sullivant/feedpress:latest` and then do a docker run on it, overriding the entrypoint so it can pull feeds at your own schedule, etc.  Leaving that as an exercise for the reader.
+## Scheduling Editions (in docker only)
+Editions can be scheduled to press by using your host's scheduled task method.  Cron, Windows scheduler, etc.  The 
+process to fire off a manual edition is all we need to call:
+```bash
+docker exec feedpress "/app/feedpress"
+```
+
+Logs will append to the internal log file and the edition will be pressed the same as if you had fired it off from the web UI.
+
+A future release may contain an internal scheduler.  
 
 ### Running locally (development, etc)
 Get the code: 
