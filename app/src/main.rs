@@ -15,12 +15,7 @@ use clap::Parser;
 use config::default_section;
 use config::FeedConfig;
 use config::FeedEntry;
-use endpoints::api_get_config;
-use endpoints::api_get_edition_list;
-use endpoints::api_get_version;
-use endpoints::api_press_edition;
-use endpoints::api_remove_edition;
-use endpoints::api_update_config;
+use endpoints::*;
 use hayagriva::io::to_yaml_str;
 use hayagriva::types::EntryType;
 use hayagriva::types::FormatString;
@@ -28,9 +23,7 @@ use hayagriva::types::QualifiedUrl;
 use hayagriva::Entry;
 use hayagriva::Library;
 use html2md::parse_html_custom;
-use press::BiblioEntry;
-use press::ContentEntry;
-use press::Press;
+use press::*;
 use reqwest::Client;
 use rocket::fs::FileServer;
 use rocket::Config;
@@ -97,6 +90,7 @@ async fn main() {
     let rocket_config = Config {
         port: 8081,
         address: std::net::Ipv4Addr::new(0, 0, 0, 0).into(),
+        cli_colors: false,
         ..Config::debug_default()
     };
 
@@ -119,6 +113,7 @@ async fn main() {
         .mount("/api", rocket::routes![api_press_edition])
         .mount("/api", rocket::routes![api_remove_edition])
         .mount("/api", rocket::routes![api_get_version])
+        .mount("/api", rocket::routes![api_get_logs])
         // .mount("/api", rocket::routes![api_get_edition])
         .mount("/editions", FileServer::from(concat!(env!("CARGO_MANIFEST_DIR"), "/../output")).rank(1))
         .mount("/", FileServer::from(concat!(env!("CARGO_MANIFEST_DIR"), "/../assets/static")))

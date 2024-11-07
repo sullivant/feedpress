@@ -2,12 +2,16 @@ use chrono::prelude::*;
 use rocket::serde::json::Json;
 use std::fs::{self, DirEntry};
 use std::fs::File;
-use std::io::Write;
+use std::io::{BufReader, Read, Write};
 use lopdf::Document;
 
 use crate::config::FeedConfig;
 use crate::editions::{EditionEntry, Editions};
 use crate::{create_edition, get_config, VERSION};
+
+
+use std::io::prelude::*;
+
 
 /// Returns a formatted string containing the file's creation date
 /// or "01011900" if unable to determine.
@@ -81,6 +85,27 @@ pub fn get_file_pages(file: &DirEntry) -> usize {
 #[get("/version")]
 pub fn api_get_version() -> String {
 	VERSION.to_string()
+}
+
+/// GET request will return the contents of the log file
+/// for display on the UI or access elsewhere.
+#[get("/logs")]
+pub fn api_get_logs() -> Result<Json<String>, String> {
+	let mut file = File::open("../log/feedpress.log").expect("no such file");
+    // let buf = BufReader::new(file);
+    // let file_lines: Vec<String> = buf.lines()
+    //     .map(|l| l.expect("Could not parse line"))
+    //     .collect();
+
+
+	// let mut buffer = Vec::new();
+	let mut buffer = String::new();
+	// read the whole file into a byte vec
+	file.read_to_string(&mut buffer).unwrap();
+
+	Ok(Json(buffer))
+
+
 }
 
 #[get("/edition")]
