@@ -2,16 +2,12 @@ use chrono::prelude::*;
 use rocket::serde::json::Json;
 use std::fs::{self, DirEntry};
 use std::fs::File;
-use std::io::{BufReader, Read, Write};
+use std::io::{Read, Write};
 use lopdf::Document;
 
 use crate::config::FeedConfig;
 use crate::editions::{EditionEntry, Editions};
 use crate::{create_edition, get_config, VERSION};
-
-
-use std::io::prelude::*;
-
 
 /// Returns a formatted string containing the file's creation date
 /// or "01011900" if unable to determine.
@@ -91,17 +87,23 @@ pub fn api_get_version() -> String {
 /// for display on the UI or access elsewhere.
 #[get("/logs")]
 pub fn api_get_logs() -> Result<Json<String>, String> {
-	let mut file = File::open("../log/feedpress.log").expect("no such file");
-    // let buf = BufReader::new(file);
-    // let file_lines: Vec<String> = buf.lines()
-    //     .map(|l| l.expect("Could not parse line"))
-    //     .collect();
-
+	let mut file = match File::open("../log/feedpress.log") {
+		Ok(f) => f,
+		Err(_) => {
+			// If we can't open the log file, just make the textarea display an error.
+			return Ok(Json("Unable to open log file.".to_string())); 
+		},
+	};
 
 	// let mut buffer = Vec::new();
 	let mut buffer = String::new();
 	// read the whole file into a byte vec
-	file.read_to_string(&mut buffer).unwrap();
+	match file.read_to_string(&mut buffer){
+		Ok(_) => (),
+		Err(_) => {
+			return Ok(Json("Unable to parse log file.".to_string()));
+		},
+	};
 
 	Ok(Json(buffer))
 
