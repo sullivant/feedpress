@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"constant":["VERSION"],"fn":["add_feed_url","get_config","get_feed","main","press_feeds","process_biblio","process_content","remove_feed_url","scrape_this"],"mod":["config","editions","endpoints","press"],"struct":["Args"]};
+window.SIDEBAR_ITEMS = {"constant":["REQUEST_TIMEOUT_SECS","VERSION"],"fn":["add_feed_url","article_too_old","compile_feeds","create_edition","get_config","get_feed","main","press_feeds","process_biblio","process_content","remove_feed_url","scrape_this"],"mod":["config","editions","endpoints","press"],"struct":["Args"]};

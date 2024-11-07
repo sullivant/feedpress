@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":["editions"]};
+window.SIDEBAR_ITEMS = {"struct":["EditionEntry","Editions"]};

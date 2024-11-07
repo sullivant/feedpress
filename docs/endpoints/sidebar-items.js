@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":["endpoints"]};
+window.SIDEBAR_ITEMS = {"fn":["api_get_config","api_get_edition_list","api_get_logs","api_get_version","api_press_edition","api_remove_edition","api_update_config","get_file_create","get_file_name","get_file_pages","get_file_size","get_img_name"]};

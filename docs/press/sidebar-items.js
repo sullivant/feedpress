@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":["press"]};
+window.SIDEBAR_ITEMS = {"struct":["BiblioEntry","ContentEntry","Press"]};
