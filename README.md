@@ -141,6 +141,9 @@ The directories in this project are as follows:
 ## Next Steps
 ### Scheduled v0.8.1
 - [ ] Bookmark ability - determine use case and decide implementation
+- [ ] Ability to size thumbs with a menu
+- [ ] Proper error "match" handling, with Result<> etc.
+- [ ] API endpoint to just "return the current edition" so it may be called via shortcuts, external apps, curl, etc.
 ### v0.8.0
 - [x] Include more detail on the frameworks used in the README
 - [x] Sorting options when viewing editions listing (sorts by date pressed)
@@ -148,13 +151,10 @@ The directories in this project are as follows:
 - [x] Flag/indication to show a save is necessary when altering configuration
 - [x] Logs in "about" section? 
 ### General
-- [ ] Ability to size thumbs with a menu
 - [ ] Unit tests
 - [ ] Security. ("Security")
 - [ ] Feed timeouts when pulling
 - [ ] Documentation of all functions
-- [ ] Proper error "match" handling, with Result<> etc.
-- [ ] API endpoint to just "return the current edition" so it may be called via shortcuts, external apps, curl, etc.
 - [ ] Delivery of editions to an email address
 - [ ] Keywords extracted from each edition (maybe biblio or titles) and searchability by that not just name
 - [/] Ability to schedule a feed pressing (Schedule via external cron for now..)
